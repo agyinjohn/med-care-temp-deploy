@@ -7,12 +7,12 @@
 .sec {
   &-title {
     font-weight: 500;
-    font-size: 60px;
+    font-size: 30px;
     line-height: 1;
     color: var(--black-2);
 
     @media #{$xl} {
-      font-size: 50px;
+      font-size: 30px;
     }
 
     @media #{$lg} {

@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="GROGATE Company Limited - Construction, Logistics and Supply, and Cleaning Services" />
+
+    <title>GROGATE Company Limited - GTHINK Group</title>
+
+    <!-- Fav Icon -->
+    <link rel="icon" type="image/x-icon" href="assets/imgs/logo/favicon.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- All CSS files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/progressbar.css" />
+    <link rel="stylesheet" href="assets/css/meanmenu.min.css" />
+    <link rel="stylesheet" href="assets/css/master.css" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Professional Design Enhancements */
+      .service__item-3:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.15) !important;
+      }
+      .feature__item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.15) !important;
+      }
+      .service__item-2:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 50px rgba(0,0,0,0.12) !important;
+      }
+      .about__img-3 img:hover {
+        transform: scale(1.05);
+      }
+      @media (max-width: 991px) {
+        .service__list-2 {
+          grid-template-columns: 1fr !important;
+        }
+      }
+      @media (max-width: 768px) {
+        .service__item-3,
+        .feature__item,
+        .service__item-2 {
+          margin-bottom: 30px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Cursor Animation -->
+    <div class="cursor1"></div>
+    <div class="cursor2"></div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="loading">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+        <div class="bar bar4"></div>
+        <div class="bar bar5"></div>
+        <div class="bar bar6"></div>
+        <div class="bar bar7"></div>
+        <div class="bar bar8"></div>
+      </div>
+    </div>
+
+    <!-- Switcher Area Start -->
+    <div class="switcher__area">
+      <div class="switcher__icon">
+        <button id="switcher_open"><i class="fa-solid fa-gear"></i></button>
+        <button id="switcher_close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="switcher__items">
+        <div class="switcher__item">
+          <div class="switch__title-wrap">
+            <h2 class="switcher__title">Cursor</h2>
+          </div>
+          <div class="switcher__btn">
+            <select name="cursor-style" id="cursor_style">
+              <option value="1">default</option>
+              <option selected value="2">animated</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="switcher__item">
+          <div class="switch__title-wrap">
+            <h2 class="switcher__title">mode</h2>
+          </div>
+          <div class="switcher__btn mode-type wc-col-2">
+            <button class="active" data-mode="light">light</button>
+            <button data-mode="dark">dark</button>
+          </div>
+        </div>
+
+        <div class="switcher__item">
+          <div class="switch__title-wrap">
+            <h2 class="switcher__title">Language Support</h2>
+          </div>
+          <div class="switcher__btn lang_dir wc-col-2">
+            <button class="active" data-mode="ltr">AR</button>
+            <button data-mode="rtl">EN</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Switcher Area End -->
+
+    <!-- Scroll Smoother -->
+    <div class="has-smooth" id="has_smooth"></div>
+
+    <!-- Go Top Button -->
+    <button id="scroll_top" class="scroll-top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Header area start -->
+    <div class="experience"></div>
+    <header class="header__area-3">
+      <div class="header__inner-3">
+        <div class="header__logo-2">
+          <div class="navigation__logo">
+            <div class="navigation__logo-logomark">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="28" height="28" rx="6" fill="#F3EF6A" />
+                <path
+                  d="M13.0788 5.18059C13.4229 4.36611 14.5771 4.36611 14.9212 5.18059L17.1088 10.3591C17.2101 10.599 17.401 10.7899 17.6409 10.8912L22.8194 13.0788C23.6339 13.4229 23.6339 14.5771 22.8194 14.9212L17.6409 17.1088C17.401 17.2101 17.2101 17.401 17.1088 17.6409L14.9212 22.8194C14.5771 23.6339 13.4229 23.6339 13.0788 22.8194L10.8912 17.6409C10.7899 17.401 10.599 17.2101 10.3591 17.1088L5.18059 14.9212C4.36611 14.5771 4.36611 13.4229 5.18059 13.0788L10.3591 10.8912C10.599 10.7899 10.7899 10.599 10.8912 10.3591L13.0788 5.18059Z"
+                  fill="black"
+                />
+              </svg>
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="0.5"
+                  y="0.5"
+                  width="27"
+                  height="27"
+                  rx="5.5"
+                  stroke="#93D5E1"
+                  stroke-linejoin="round"
+                  stroke-dasharray="2 2"
+                />
+              </svg>
+            </div>
+            <h1 class="navigation__logo-title">GTHINK GROUP</h1>
+          </div>
+          <!--
+                <a href="index.html" class="logo-dark"><img src="assets/imgs/logo/logo-blac.png" alt="Site Logo" height="50px" width="210px"></a>
+                <a href="index.html" class="logo-light"><img src="assets/imgs/logo/site-logo-white-.png" alt="Site Logo" height="50px" width="220px"></a>
+                -->
+        </div>
+        <div class="header__nav-2">
+          <ul class="main-menu-3 menu-anim">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="subsidiaries.html">SUBSIDIARIES</a></li>
+            <li><a href="industry-sector.html">INDUSTRY AND SECTOR</a></li>
+            <li><a href="solutions.html">SOLUTIONS</a></li>
+            <li><a href="products-services.html">PRODUCTS AND SERVICES</a></li>
+            <li><a href="team.html">TEAM</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+        <div class="header__nav-icon-3">
+          <button class="search-icon" id="search_icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <button class="search-icon" id="search_close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <button id="open_offcanvas">
+            <img src="assets/imgs/icon/menu-black.png" alt="Menubar Icon" />
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="header__search">
+      <form action="#">
+        <input type="text" name="s" id="s" placeholder="Search.." />
+      </form>
+    </div>
+    <!-- Header area end -->
+
+    <!-- Offcanvas area start -->
+    <div class="offcanvas__area">
+      <div class="offcanvas__body">
+        <div class="offcanvas__left">
+          <div class="offcanvas__logo">
+            <div class="navigation__logo">
+              <div class="navigation__logo-logomark">
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 28 28"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="28" height="28" rx="6" fill="#F3EF6A" />
+                  <path
+                    d="M13.0788 5.18059C13.4229 4.36611 14.5771 4.36611 14.9212 5.18059L17.1088 10.3591C17.2101 10.599 17.401 10.7899 17.6409 10.8912L22.8194 13.0788C23.6339 13.4229 23.6339 14.5771 22.8194 14.9212L17.6409 17.1088C17.401 17.2101 17.2101 17.401 17.1088 17.6409L14.9212 22.8194C14.5771 23.6339 13.4229 23.6339 13.0788 22.8194L10.8912 17.6409C10.7899 17.401 10.599 17.2101 10.3591 17.1088L5.18059 14.9212C4.36611 14.5771 4.36611 13.4229 5.18059 13.0788L10.3591 10.8912C10.599 10.7899 10.7899 10.599 10.8912 10.3591L13.0788 5.18059Z"
+                    fill="black"
+                  />
+                </svg>
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 28 28"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="27"
+                    height="27"
+                    rx="5.5"
+                    stroke="#93D5E1"
+                    stroke-linejoin="round"
+                    stroke-dasharray="2 2"
+                  />
+                </svg>
+              </div>
+              <h1 class="navigation__logo-title" style="color: white">
+                GTHINK GROUP
+              </h1>
+            </div>
+          </div>
+          <div class="offcanvas__social">
+            <h3 class="social-title">Follow Us</h3>
+            <ul>
+              <li><a href="#">Dribbble</a></li>
+              <li><a href="#">Behance</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">YouTube</a></li>
+            </ul>
+          </div>
+          <div class="offcanvas__links">
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">contact</a></li>
+              <li><a href="service.html">service</a></li>
+              <li><a href="ifteam.html">Team</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="offcanvas__mid">
+          <div class="offcanvas__menu-wrapper">
+            <nav class="offcanvas__menu">
+              <ul class="menu-anim">
+                <li>
+                  <a href="index.html">home</a>
+                </li>
+                <li>
+                  <a href="about.html">about us</a>
+                </li>
+                <li>
+                  <a href="subsidiaries.html">subsidiaries</a>
+                </li>
+                <li>
+                  <a href="industry-sector.html">industry and sector</a>
+                </li>
+                <li>
+                  <a href="solutions.html">solutions</a>
+                </li>
+                <li>
+                  <a href="products-services.html">products and services</a>
+                </li>
+                <li>
+                  <a href="team.html">team</a>
+                </li>
+                <li>
+                  <a href="contact.html">contact</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="offcanvas__right">
+          <div class="offcanvas__search">
+            <form action="#">
+              <input type="text" name="search" placeholder="Search keyword" />
+              <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+          </div>
+          <div class="offcanvas__contact">
+            <h3>Get in touch</h3>
+            <ul>
+              <li><a href="tel:02094980547">+(20) - 100 000 000</a></li>
+              <li><a href="info@gthinkgroup.com"> info@gthinkgroup.com</a></li>
+              <li>Egypt , Kafr el-Sheikh 94301</li>
+            </ul>
+          </div>
+          <img src="assets/imgs/shape/11.png" alt="shape" class="shape-1" />
+          <img src="assets/imgs/shape/12.png" alt="shape" class="shape-2" />
+        </div>
+        <div class="offcanvas__close">
+          <button type="button" id="close_offcanvas">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Offcanvas area end -->
+
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <main>
+          <!-- Hero area start -->
+          <section class="hero-custom-section-grogate" style="background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%); position: relative; overflow: visible; padding: 180px 0 120px; min-height: 90vh; display: flex; align-items: center;">
+            <!-- Background Pattern -->
+            <div class="hero-pattern-grogate" style="z-index: 1;"></div>
+            
+            <!-- Decorative Elements -->
+            <div class="hero-decorative-circle-grogate-1"></div>
+            <div class="hero-decorative-circle-grogate-2"></div>
+            
+            <div class="container hero-content-wrapper-grogate" style="position: relative; z-index: 10; overflow: visible;">
+              <div class="row align-items-center">
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12">
+                  <div class="hero-badge-wrapper-grogate" style="margin-bottom: 30px; opacity: 1 !important; visibility: visible !important;">
+                    <span class="hero-badge-grogate" style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 24px; background: linear-gradient(135deg, rgba(201, 243, 29, 0.12) 0%, rgba(147, 213, 225, 0.12) 100%); border: 1px solid rgba(201, 243, 29, 0.3); border-radius: 50px; color: #1a1a1a; font-size: 14px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; box-shadow: 0 4px 20px rgba(201, 243, 29, 0.1);">
+                      <span style="width: 8px; height: 8px; background: #c9f31d; border-radius: 50%; display: inline-block; animation: pulse 2s ease-in-out infinite;"></span>
+                      Construction • Logistics • Cleaning
+                    </span>
+                  </div>
+                  
+                  <h1 class="hero-custom-title-grogate" style="font-size: 72px; font-weight: 800; line-height: 1.1; color: #1a1a1a !important; margin-bottom: 30px; letter-spacing: -2px; opacity: 1 !important; visibility: visible !important;">
+                    GROGATE <span style="background: linear-gradient(135deg, #c9f31d 0%, #93d5e1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Company</span> Limited
+                  </h1>
+                  
+                  <p class="hero-custom-text-grogate" style="font-size: 22px; line-height: 1.8; color: #555555 !important; margin-bottom: 45px; max-width: 580px; opacity: 1 !important; visibility: visible !important;">
+                    Delivering comprehensive infrastructure solutions, efficient logistics services, and professional cleaning services. 
+                    We build, move, and maintain with excellence and precision.
+                  </p>
+                  
+                  <div class="hero-buttons-grogate" style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 70px; opacity: 1 !important; visibility: visible !important;">
+                    <a href="contact.html" class="wc-btn-light btn-hover btn-item hero-btn-primary-grogate" style="padding: 18px 42px; font-size: 16px; font-weight: 600; border-radius: 50px; box-shadow: 0 8px 30px rgba(201, 243, 29, 0.25); transition: all 0.3s ease; opacity: 1 !important; visibility: visible !important;">
+                      <span></span>Get Started
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#services" class="hero-btn-secondary-grogate" style="padding: 18px 42px; font-size: 16px; font-weight: 600; color: #1a1a1a !important; border: 2px solid rgba(26, 26, 26, 0.15); border-radius: 50px; text-decoration: none; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); opacity: 1 !important; visibility: visible !important;">
+                      Our Services
+                      <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                  </div>
+
+                  <!-- Stats -->
+                  <div class="hero-stats-grogate" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding-top: 50px; border-top: 1px solid rgba(26, 26, 26, 0.08); opacity: 1 !important; visibility: visible !important;">
+                    <div class="hero-stat-item-grogate">
+                      <h3 class="hero-stat-number-grogate" style="font-size: 52px; font-weight: 800; background: linear-gradient(135deg, #c9f31d 0%, #93d5e1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; line-height: 1; opacity: 1 !important; visibility: visible !important;">300+</h3>
+                      <p style="font-size: 13px; color: #666666 !important; text-transform: uppercase; letter-spacing: 1.2px; font-weight: 500;">Projects Completed</p>
+                    </div>
+                    <div class="hero-stat-item-grogate">
+                      <h3 class="hero-stat-number-grogate" style="font-size: 52px; font-weight: 800; background: linear-gradient(135deg, #93d5e1 0%, #c9f31d 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; line-height: 1; opacity: 1 !important; visibility: visible !important;">150+</h3>
+                      <p style="font-size: 13px; color: #666666 !important; text-transform: uppercase; letter-spacing: 1.2px; font-weight: 500;">Happy Clients</p>
+                    </div>
+                    <div class="hero-stat-item-grogate">
+                      <h3 class="hero-stat-number-grogate" style="font-size: 52px; font-weight: 800; background: linear-gradient(135deg, #c9f31d 0%, #93d5e1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; line-height: 1; opacity: 1 !important; visibility: visible !important;">8+</h3>
+                      <p style="font-size: 13px; color: #666666 !important; text-transform: uppercase; letter-spacing: 1.2px; font-weight: 500;">Years Experience</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12" style="margin-top: 60px;">
+                  <div class="hero-image-wrapper-grogate" style="position: relative; overflow: visible;">
+                    <!-- Main Image -->
+                    <div class="hero-image-container-grogate" style="position: relative; border-radius: 30px; overflow: hidden; box-shadow: 0 40px 100px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
+                      <img
+                        src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=600&fit=crop"
+                        alt="GROGATE Company - Construction & Logistics"
+                        style="width: 100%; height: 600px; object-fit: cover; display: block; transition: transform 0.5s ease;"
+                      />
+                      <!-- Gradient Overlay -->
+                      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.15) 100%); pointer-events: none;"></div>
+                      <!-- Decorative Border -->
+                      <div style="position: absolute; top: 20px; left: 20px; right: 20px; bottom: 20px; border: 2px solid rgba(201, 243, 29, 0.2); border-radius: 25px; pointer-events: none; opacity: 0.5;"></div>
+                    </div>
+                    
+                    <!-- Floating Cards -->
+                    <div class="hero-floating-card-grogate-1" style="position: absolute; top: -20px; right: 20px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.95) 100%); backdrop-filter: blur(20px); padding: 28px 32px; border-radius: 24px; box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05); border: 1px solid rgba(201, 243, 29, 0.2); max-width: 260px; animation: float 6s ease-in-out infinite; z-index: 5;">
+                      <div style="display: flex; align-items: center; gap: 18px;">
+                        <div style="width: 56px; height: 56px; background: linear-gradient(135deg, #c9f31d 0%, #b8e01a 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(201, 243, 29, 0.3);">
+                          <i class="fa-solid fa-hard-hat" style="color: #1a1a1a; font-size: 26px;"></i>
+                        </div>
+                        <div>
+                          <h4 style="font-size: 19px; font-weight: 700; color: #1a1a1a; margin: 0 0 6px 0; letter-spacing: -0.5px;">Construction</h4>
+                          <p style="font-size: 14px; color: #666; margin: 0; font-weight: 500;">Building Excellence</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="hero-floating-card-grogate-2" style="position: absolute; bottom: -20px; left: 20px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.95) 100%); backdrop-filter: blur(20px); padding: 28px 32px; border-radius: 24px; box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05); border: 1px solid rgba(147, 213, 225, 0.2); max-width: 260px; animation: float 8s ease-in-out infinite reverse; z-index: 5;">
+                      <div style="display: flex; align-items: center; gap: 18px;">
+                        <div style="width: 56px; height: 56px; background: linear-gradient(135deg, #93d5e1 0%, #7bc5d3 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(147, 213, 225, 0.3);">
+                          <i class="fa-solid fa-truck-fast" style="color: #1a1a1a; font-size: 26px;"></i>
+                        </div>
+                        <div>
+                          <h4 style="font-size: 19px; font-weight: 700; color: #1a1a1a; margin: 0 0 6px 0; letter-spacing: -0.5px;">Logistics</h4>
+                          <p style="font-size: 14px; color: #666; margin: 0; font-weight: 500;">Efficient Delivery</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 2;">
+              <a href="#services" style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-decoration: none; color: rgba(26, 26, 26, 0.6); transition: color 0.3s ease;">
+                <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px;">Scroll</span>
+                <div style="width: 2px; height: 40px; background: #c9f31d; opacity: 0.8; animation: scrollDown 2s ease-in-out infinite;"></div>
+              </a>
+            </div>
+          </section>
+
+          <style>
+            /* GROGATE Hero Styles */
+            .hero-pattern-grogate {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              opacity: 0.03;
+              background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.05) 10px, rgba(0,0,0,0.05) 20px);
+              z-index: 1;
+            }
+            
+            .hero-decorative-circle-grogate-1 {
+              position: absolute;
+              top: 10%;
+              right: 5%;
+              width: 300px;
+              height: 300px;
+              background: radial-gradient(circle, rgba(201, 243, 29, 0.08) 0%, transparent 70%);
+              border-radius: 50%;
+              z-index: 1;
+              animation: pulse 4s ease-in-out infinite;
+            }
+            
+            .hero-decorative-circle-grogate-2 {
+              position: absolute;
+              bottom: 15%;
+              left: 3%;
+              width: 200px;
+              height: 200px;
+              background: radial-gradient(circle, rgba(147, 213, 225, 0.08) 0%, transparent 70%);
+              border-radius: 50%;
+              z-index: 1;
+              animation: pulse 5s ease-in-out infinite reverse;
+            }
+            
+            .hero-content-wrapper-grogate {
+              opacity: 1 !important;
+              visibility: visible !important;
+            }
+            
+            .hero-btn-primary-grogate:hover {
+              transform: translateY(-3px);
+              box-shadow: 0 12px 40px rgba(201, 243, 29, 0.35) !important;
+            }
+            
+            .hero-btn-secondary-grogate:hover {
+              transform: translateY(-3px);
+              border-color: rgba(26, 26, 26, 0.3) !important;
+              background: rgba(255, 255, 255, 0.95) !important;
+              box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+            }
+            
+            .hero-image-container-grogate:hover {
+              transform: translateY(-5px);
+            }
+            
+            .hero-image-container-grogate:hover img {
+              transform: scale(1.05);
+            }
+            
+            .hero-floating-card-grogate-1:hover,
+            .hero-floating-card-grogate-2:hover {
+              transform: translateY(-5px) scale(1.02);
+            }
+            
+            .hero-stat-item-grogate {
+              transition: transform 0.3s ease;
+            }
+            
+            .hero-stat-item-grogate:hover {
+              transform: translateY(-5px);
+            }
+            
+            @keyframes pulse {
+              0%, 100% { opacity: 1; transform: scale(1); }
+              50% { opacity: 0.7; transform: scale(1.05); }
+            }
+            
+            @keyframes float {
+              0%, 100% { transform: translateY(0px) rotate(0deg); }
+              50% { transform: translateY(-25px) rotate(3deg); }
+            }
+            
+            @keyframes scrollDown {
+              0%, 100% { opacity: 0.4; transform: translateY(0); }
+              50% { opacity: 1; transform: translateY(12px); }
+            }
+            
+            @media (max-width: 991px) {
+              .hero-custom-section-grogate {
+                padding: 120px 0 80px !important;
+                min-height: auto !important;
+                overflow: visible !important;
+              }
+              .hero-custom-title-grogate {
+                font-size: 48px !important;
+              }
+              .hero-custom-text-grogate {
+                font-size: 18px !important;
+              }
+              .hero-stats-grogate {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+              }
+              .hero-decorative-circle-grogate-1,
+              .hero-decorative-circle-grogate-2 {
+                display: none;
+              }
+              .hero-image-wrapper-grogate {
+                overflow: visible !important;
+              }
+              .hero-floating-card-grogate-1 {
+                position: absolute !important;
+                top: 10px !important;
+                right: 10px !important;
+                max-width: 200px !important;
+                padding: 20px 24px !important;
+              }
+              .hero-floating-card-grogate-2 {
+                position: absolute !important;
+                bottom: 10px !important;
+                left: 10px !important;
+                max-width: 200px !important;
+                padding: 20px 24px !important;
+              }
+            }
+            
+            @media (max-width: 768px) {
+              .hero-floating-card-grogate-1,
+              .hero-floating-card-grogate-2 {
+                position: relative !important;
+                top: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                left: auto !important;
+                margin: 20px 0 !important;
+                max-width: 100% !important;
+              }
+            }
+          </style>
+
+          <!-- About Company area start -->
+          <section class="about__area-3">
+            <div class="container pt-140 pb-110">
+              <div class="row">
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                  <div class="about__img-3" style="position: relative; overflow: hidden; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
+                    <img
+                      src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop"
+                      alt="GROGATE Company - Construction & Logistics"
+                      data-speed="auto"
+                      style="border-radius: 20px; transition: transform 0.3s ease;"
+                    />
+                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(201, 243, 29, 0.1) 0%, rgba(147, 213, 225, 0.1) 100%); pointer-events: none; border-radius: 20px;"></div>
+                  </div>
+                </div>
+
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                  <div class="sec-title-wrapper">
+                    <h2 class="sec-sub-title title-anim" style="color: #c9f31d;">About GROGATE Company</h2>
+                    <h3 class="sec-title title-anim">
+                      Construction, Logistics & Cleaning Services
+                    </h3>
+                  </div>
+                  <div class="sec-text-wrapper">
+                    <div class="sec-text text-anim">
+                      <p style="font-size: 18px; line-height: 1.8; color: #666;">
+                        GROGATE Company Limited specializes in delivering comprehensive construction services, efficient logistics 
+                        and supply chain solutions, and professional cleaning services. As a key subsidiary of GTHINK Group, 
+                        we bring together expertise in infrastructure development, logistics management, and facility maintenance.
+                      </p>
+                      <p class="mt-3" style="font-size: 18px; line-height: 1.8; color: #666;">
+                        Our team of experienced professionals works closely with clients to deliver projects on time, within budget, 
+                        and to the highest quality standards. We are committed to building lasting relationships and creating value 
+                        for our clients through excellence in execution.
+                      </p>
+                      <div class="btn_wrapper mt-4">
+                        <a
+                          class="wc-btn-light btn-hover btn-item"
+                          href="contact.html"
+                          ><span></span> Contact Us
+                          <i class="fa-solid fa-arrow-right"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- About Company area end -->
+
+          <!-- Services List area start -->
+          <section id="services" class="service__area-3 pb-150">
+            <div class="container">
+              <div class="row">
+                <div class="col-xxl-12">
+                  <div class="sec-title-wrapper pt-130 text-anim">
+                    <h2 class="sec-sub-title title-anim" style="color: #c9f31d;">Our Services</h2>
+                    <h3 class="sec-title title-anim">
+                      Construction, Logistics <br />
+                      & Cleaning Services
+                    </h3>
+                    <p style="font-size: 18px; line-height: 1.8; color: #666; max-width: 800px; margin: 20px auto 0;">
+                      GROGATE Company Limited offers a comprehensive range of construction, logistics, and cleaning services 
+                      designed to meet the diverse needs of businesses across various industries.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xx-12">
+                  <div class="service__list-3">
+                    <div class="service__item-3 service_animation" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border-radius: 20px; padding: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                      <h3>
+                        <span class="service__title-3" style="color: #1a1a1a;">Construction <br />Services</span>
+                      </h3>
+                      <div class="service__content-3">
+                        <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 25px;">
+                          Complete construction and infrastructure solutions including project management, 
+                          facility development, and maintenance services for commercial and residential projects.
+                        </p>
+                        <ul class="" style="list-style: none; padding: 0;">
+                          <li style="padding: 10px 0; font-size: 16px; color: #333; border-bottom: 1px solid #eee;">+ Project Management</li>
+                          <li style="padding: 10px 0; font-size: 16px; color: #333; border-bottom: 1px solid #eee;">+ Infrastructure Development</li>
+                          <li style="padding: 10px 0; font-size: 16px; color: #333; border-bottom: 1px solid #eee;">+ Facility Construction</li>
+                          <li style="padding: 10px 0; font-size: 16px; color: #333; border-bottom: 1px solid #eee;">+ Renovation Services</li>
+                          <li style="padding: 10px 0; font-size: 16px; color: #333;">+ Maintenance & Repair</li>
+                        </ul>
+                      </div>
+                      <div class="service__btn-3">
+                        <div class="btn_wrapper">
+                          <a
+                            href="contact.html"
+                            class="wc-btn-black btn-hover btn-item"
+                            ><span></span> Contact Us
+                            <i class="fa-solid fa-arrow-right"></i
+                          ></a>
+                        </div>
+                      </div>
+
+                      <div
+                        class="service__hover-3"
+                        style="
+                          background-image: url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop);
+                          border-radius: 20px;
+                          opacity: 0.1;
+                        "
+                      ></div>
+                    </div>
+
+                    <div class="service__item-3 service_animation" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border-radius: 20px; padding: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                      <h3>
+                        <span class="service__title-3" style="color: #1a1a1a;">Logistics <br />& Supply</span>
+                      </h3>
+                      <div class="service__content-3">
+                        <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 25px;">
+                          End-to-end logistics and supply chain solutions that optimize operations, reduce costs, 
+                          and ensure efficient delivery of goods and services across markets.
+                        </p>
+                        <ul class="" style="list-style: none; padding: 0;">
+                          <li style="padding: 10px 0; font-size: 16px; color: #333; border-bottom: 1px solid #eee;">+ Supply Chain Management</li>
+                          <li style="padding: 10px 0; font-size: 16px; color: #333; border-bottom: 1px solid #eee;">+ Logistics Optimization</li>
+                          <li style="padding: 10px 0; font-size: 16px; color: #333; border-bottom: 1px solid #eee;">+ Distribution Services</li>
+                          <li style="padding: 10px 0; font-size: 16px; color: #333; border-bottom: 1px solid #eee;">+ Warehousing</li>
+                          <li style="padding: 10px 0; font-size: 16px; color: #333;">+ Transportation</li>
+                        </ul>
+                      </div>
+                      <div class="service__btn-3">
+                        <div class="btn_wrapper">
+                          <a
+                            href="contact.html"
+                            class="wc-btn-black btn-hover btn-item"
+                            ><span></span> Contact Us
+                            <i class="fa-solid fa-arrow-right"></i
+                          ></a>
+                        </div>
+                      </div>
+
+                      <div
+                        class="service__hover-3"
+                        style="
+                          background-image: url(https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600&h=400&fit=crop);
+                          border-radius: 20px;
+                          opacity: 0.1;
+                        "
+                      ></div>
+                    </div>
+
+                    <div class="service__item-3 service_animation" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border-radius: 20px; padding: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                      <h3 class="">
+                        <span class="service__title-3" style="color: #1a1a1a;">Cleaning <br />Services</span>
+                      </h3>
+                      <div class="service__content-3">
+                        <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 25px;">
+                          Professional cleaning services for commercial and residential facilities, ensuring 
+                          clean, safe, and healthy environments for your business and employees.
+                        </p>
+                        <ul class="" style="list-style: none; padding: 0;">
+                          <li style="padding: 10px 0; font-size: 16px; color: #333; border-bottom: 1px solid #eee;">+ Commercial Cleaning</li>
+                          <li style="padding: 10px 0; font-size: 16px; color: #333; border-bottom: 1px solid #eee;">+ Residential Cleaning</li>
+                          <li style="padding: 10px 0; font-size: 16px; color: #333; border-bottom: 1px solid #eee;">+ Industrial Cleaning</li>
+                          <li style="padding: 10px 0; font-size: 16px; color: #333; border-bottom: 1px solid #eee;">+ Deep Cleaning Services</li>
+                          <li style="padding: 10px 0; font-size: 16px; color: #333;">+ Maintenance Cleaning</li>
+                        </ul>
+                      </div>
+                      <div class="service__btn-3">
+                        <div class="btn_wrapper">
+                          <a
+                            href="contact.html"
+                            class="wc-btn-black btn-hover btn-item"
+                            ><span></span> Contact Us
+                            <i class="fa-solid fa-arrow-right"></i
+                          ></a>
+                        </div>
+                      </div>
+
+                      <div
+                        class="service__hover-3"
+                        style="
+                          background-image: url(https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=400&fit=crop);
+                          border-radius: 20px;
+                          opacity: 0.1;
+                        "
+                      ></div>
+                    </div>
+
+                    <div class="service3__img-wrap">
+                      <div class="service3__img"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Services List area end -->
+
+          <!-- Benefits area start -->
+          <section class="feature__area-2 pt-130 pb-110">
+            <div class="container">
+              <div class="row">
+                <div class="col-xxl-12">
+                  <div class="sec-title-wrapper text-anim">
+                    <h2 class="sec-sub-title title-anim" style="color: #c9f31d;">Why Choose Us</h2>
+                    <h3 class="sec-title title-anim">
+                      Why GROGATE Company Limited
+                    </h3>
+                    <p class="mt-3" style="font-size: 18px; line-height: 1.8; color: #666; max-width: 800px; margin: 20px auto 0;">
+                      GROGATE Company Limited delivers construction, logistics, and cleaning services that provide measurable value and operational excellence for your business.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container pt-100">
+                <div class="row">
+                  <div class="col-xxl-12">
+                    <div class="feature__list animation__feature2">
+                      <div class="feature__item" style="background: #ffffff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #c9f31d 0%, #93d5e1 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+                          <img src="assets/imgs/feature/icon/1.png" alt="Benefit Icon" style="filter: brightness(0) invert(1);">
+                        </div>
+                        <h3 class="feature__title" style="color: #1a1a1a; margin-bottom: 15px;">Quality Construction</h3>
+                        <p style="font-size: 16px; line-height: 1.8; color: #666;">
+                          Excellence in construction with attention to detail, quality materials, and 
+                          professional workmanship that ensures durable and reliable infrastructure.
+                        </p>
+                      </div>
+                      <div class="feature__item" style="background: #ffffff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #c9f31d 0%, #93d5e1 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+                          <img src="assets/imgs/feature/icon/2.png" alt="Benefit Icon" style="filter: brightness(0) invert(1);">
+                        </div>
+                        <h3 class="feature__title" style="color: #1a1a1a; margin-bottom: 15px;">Efficient Logistics</h3>
+                        <p style="font-size: 16px; line-height: 1.8; color: #666;">
+                          Streamlined logistics and supply chain solutions that optimize operations, 
+                          reduce costs, and ensure timely delivery of goods and services.
+                        </p>
+                      </div>
+                      <div class="feature__item" style="background: #ffffff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #c9f31d 0%, #93d5e1 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+                          <img class="" src="assets/imgs/feature/icon/3.png" alt="Benefit Icon" style="filter: brightness(0) invert(1);">
+                        </div>
+                        <h3 class="feature__title" style="color: #1a1a1a; margin-bottom: 15px;">Professional Cleaning</h3>
+                        <p style="font-size: 16px; line-height: 1.8; color: #666;">
+                          Comprehensive cleaning services that maintain clean, safe, and healthy 
+                          environments for your business operations and employees.
+                        </p>
+                      </div>
+                      <div class="feature__item" style="background: #ffffff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #c9f31d 0%, #93d5e1 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+                          <img src="assets/imgs/feature/icon/4.png" alt="Benefit Icon" style="filter: brightness(0) invert(1);">
+                        </div>
+                        <h3 class="feature__title" style="color: #1a1a1a; margin-bottom: 15px;">Reliable Service</h3>
+                        <p style="font-size: 16px; line-height: 1.8; color: #666;">
+                          Commitment to reliability, punctuality, and customer satisfaction. 
+                          We deliver on our promises and exceed expectations.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Benefits area end -->
+
+          <!-- Process area start -->
+          <section class="about__area-3 pt-130" style="padding-bottom: 200px !important; overflow: visible !important; min-height: auto !important; margin-bottom: 50px !important;">
+            <div class="container" style="overflow: visible !important;">
+              <div class="row" style="overflow: visible !important;">
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12" style="margin-bottom: 60px;">
+                  <div class="sec-title-wrapper text-center">
+                    <h2 class="sec-sub-title title-anim" style="color: #c9f31d;">Our Approach</h2>
+                    <h3 class="sec-title title-anim">
+                      How We Work
+                    </h3>
+                  </div>
+                  <div class="sec-text-wrapper text-center">
+                    <div class="sec-text text-anim" style="max-width: 800px; margin: 0 auto;">
+                      <p style="font-size: 18px; line-height: 1.8; color: #666;">
+                        Our proven methodology ensures successful project delivery from conception to completion. 
+                        We work closely with you at every step to understand your construction, logistics, or cleaning needs 
+                        and deliver solutions that exceed expectations.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12" style="overflow: visible !important;">
+                  <div class="service__list-2 animation__service-2" style="overflow: visible !important; padding-bottom: 50px !important; min-height: auto !important; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                    <div class="service__item-2" style="background: #ffffff; padding: 35px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); margin-bottom: 0; transition: transform 0.3s ease; height: 100%;">
+                      <div>
+                        <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #c9f31d 0%, #93d5e1 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                          <img src="assets/imgs/service/2/1.png" alt="Process Icon" style="filter: brightness(0) invert(1);">
+                        </div>
+                        <h3 class="service__title-2" style="color: #1a1a1a; margin-bottom: 15px;">Discovery & <br />Analysis</h3>
+                        <p style="font-size: 16px; line-height: 1.8; color: #666; margin-bottom: 20px;">
+                          We begin by understanding your business challenges, goals, and requirements through 
+                          comprehensive analysis and consultation.
+                        </p>
+                        <ul style="list-style: none; padding: 0;">
+                          <li style="padding: 8px 0; font-size: 15px; color: #333;">+ Business Analysis</li>
+                          <li style="padding: 8px 0; font-size: 15px; color: #333;">+ Requirements Gathering</li>
+                          <li style="padding: 8px 0; font-size: 15px; color: #333;">+ Strategy Development</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="service__item-2" style="background: #ffffff; padding: 35px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); margin-bottom: 0; transition: transform 0.3s ease; height: 100%;">
+                      <div>
+                        <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #c9f31d 0%, #93d5e1 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                          <img src="assets/imgs/service/2/2.png" alt="Process Icon" style="filter: brightness(0) invert(1);">
+                        </div>
+                        <h3 class="service__title-2" style="color: #1a1a1a; margin-bottom: 15px;">Solution <br />Design</h3>
+                        <p style="font-size: 16px; line-height: 1.8; color: #666; margin-bottom: 20px;">
+                          Our experts design customized solutions that align with your objectives and leverage 
+                          the best practices from all our subsidiaries.
+                        </p>
+                        <ul style="list-style: none; padding: 0;">
+                          <li style="padding: 8px 0; font-size: 15px; color: #333;">+ Custom Design</li>
+                          <li style="padding: 8px 0; font-size: 15px; color: #333;">+ Architecture Planning</li>
+                          <li style="padding: 8px 0; font-size: 15px; color: #333;">+ Resource Allocation</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="service__item-2" style="background: #ffffff; padding: 35px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); margin-bottom: 0; transition: transform 0.3s ease; height: 100%;">
+                      <div>
+                        <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #c9f31d 0%, #93d5e1 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                          <img src="assets/imgs/service/2/3.png" alt="Process Icon" style="filter: brightness(0) invert(1);">
+                        </div>
+                        <h3 class="service__title-2" style="color: #1a1a1a; margin-bottom: 15px;">Implementation <br />& Support</h3>
+                        <p style="font-size: 16px; line-height: 1.8; color: #666; margin-bottom: 20px;">
+                          We execute the solution with precision and provide ongoing support to ensure 
+                          optimal performance and continuous improvement.
+                        </p>
+                        <ul style="list-style: none; padding: 0;">
+                          <li style="padding: 8px 0; font-size: 15px; color: #333;">+ Project Execution</li>
+                          <li style="padding: 8px 0; font-size: 15px; color: #333;">+ Quality Assurance</li>
+                          <li style="padding: 8px 0; font-size: 15px; color: #333;">+ Ongoing Support</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Process area end -->
+
+          <!-- Industries area start -->
+          <section class="service__area-2 pt-130 pb-110">
+            <div class="container">
+              <div class="row">
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                  <div class="sec-text text-anim">
+                    <p>
+                      GTHINK Group serves diverse industries with tailored solutions. Our cross-industry expertise 
+                      enables us to deliver innovative solutions that address unique challenges across sectors.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                  <div class="sec-title-wrapper">
+                    <h2 class="sec-title title-anim">
+                      Industries We Serve
+                    </h2>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row pt-140">
+                <div class="col-xxl-12">
+                  <div class="service__list-2 animation__service-2">
+                    <div class="service__item-2">
+                      <div>
+                        <img src="assets/imgs/service/2/1.png" alt="Industry Icon">
+                        <h3 class="service__title-2">Technology <br />& IT</h3>
+                        <p>
+                          Digital transformation, software solutions, and IT infrastructure for technology companies 
+                          and enterprises seeking innovation.
+                        </p>
+                        <ul>
+                          <li>+ Software Companies</li>
+                          <li>+ IT Services</li>
+                          <li>+ Digital Agencies</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="service__item-2">
+                      <div>
+                        <img src="assets/imgs/service/2/2.png" alt="Industry Icon">
+                        <h3 class="service__title-2">Real Estate <br />& Development</h3>
+                        <p>
+                          Comprehensive construction services, project management, and infrastructure development 
+                          for real estate developers and property management companies.
+                        </p>
+                        <ul>
+                          <li>+ Real Estate Developers</li>
+                          <li>+ Property Management</li>
+                          <li>+ Infrastructure Projects</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="service__item-2">
+                      <div>
+                        <img src="assets/imgs/service/2/3.png" alt="Industry Icon">
+                        <h3 class="service__title-2">Manufacturing <br />& Distribution</h3>
+                        <p>
+                          Supply chain optimization, logistics management, and operational efficiency solutions 
+                          for manufacturing and distribution companies.
+                        </p>
+                        <ul>
+                          <li>+ Manufacturing</li>
+                          <li>+ Distribution</li>
+                          <li>+ E-commerce</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xxl-12">
+                  <div class="service__btn-2 btn_wrapper">
+                    <a href="subsidiaries.html" class="wc-btn-pink btn-hover btn-item"><span></span> Back to <br />Subsidiaries
+                      <i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Industries area end -->
+
+          <!-- CTA area start -->
+          <section class="cta__area-3">
+            <div class="container pt-150 pb-150">
+              <div class="row">
+                <div class="col-xxl-12">
+                  <div class="cta__content-3">
+                    <p class="cta__sub-title-2">
+                      Ready to start your construction or logistics project?
+                    </p>
+                    <h2 class="cta__title-2">
+                      Let's discuss your project needs!
+                    </h2>
+                    <div class="btn_wrapper">
+                      <a
+                        href="contact.html"
+                        class="wc-btn-black btn-hover btn-item"
+                        ><span></span>Contact <br />Us
+                        <i class="fa-solid fa-arrow-right"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- CTA area end -->
+        </main>
+
+        <!-- Footer area start -->
+        <footer class="footer__area-3">
+          <div class="footer__top-3">
+            <div class="footer__top-wrapper-3">
+              <div class="footer__logo-3 pt-120">
+                <div class="navigation__logo">
+                  <div class="navigation__logo-logomark">
+                    <svg
+                      width="28"
+                      height="28"
+                      viewBox="0 0 28 28"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="28" height="28" rx="6" fill="#F3EF6A" />
+                      <path
+                        d="M13.0788 5.18059C13.4229 4.36611 14.5771 4.36611 14.9212 5.18059L17.1088 10.3591C17.2101 10.599 17.401 10.7899 17.6409 10.8912L22.8194 13.0788C23.6339 13.4229 23.6339 14.5771 22.8194 14.9212L17.6409 17.1088C17.401 17.2101 17.2101 17.401 17.1088 17.6409L14.9212 22.8194C14.5771 23.6339 13.4229 23.6339 13.0788 22.8194L10.8912 17.6409C10.7899 17.401 10.599 17.2101 10.3591 17.1088L5.18059 14.9212C4.36611 14.5771 4.36611 13.4229 5.18059 13.0788L10.3591 10.8912C10.599 10.7899 10.7899 10.599 10.8912 10.3591L13.0788 5.18059Z"
+                        fill="black"
+                      />
+                    </svg>
+                    <svg
+                      width="28"
+                      height="28"
+                      viewBox="0 0 28 28"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        x="0.5"
+                        y="0.5"
+                        width="27"
+                        height="27"
+                        rx="5.5"
+                        stroke="#93D5E1"
+                        stroke-linejoin="round"
+                        stroke-dasharray="2 2"
+                      />
+                    </svg>
+                  </div>
+                  <h1 class="navigation__logo-title" style="color: white">
+                    GTHINK GROUP
+                  </h1>
+                </div>
+                <br />
+                <br />
+
+                <!--
+                            <img src="assets/imgs/logo/site-logo-white-2.png" alt="Footer Logo" height="50px" width="220px">
+                            -->
+                <p>
+                  You are now in the process of transforming your business with
+                  cutting-edge technology solutions from GTHINK Group.
+                </p>
+              </div>
+              <div class="footer__social-3">
+                <ul>
+                  <li><a href="#">facebook</a></li>
+                  <li><a href="#">Twitter</a></li>
+                  <li><a href="#">Linkedin</a></li>
+                  <li><a href="#">Instagram</a></li>
+                </ul>
+              </div>
+              <div class="footer__contact-3">
+                <a class="end" href="contact.html">Let’s talk</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer__btm-3">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xxl-4 col-xl-4 col-lg-4">
+                  <div class="footer__copyright-3">
+                    <p>
+                      © 2024 - 2025 | Alrights reserved by
+                      <a href="#" target="_blank">GTHINK Group</a>
+                    </p>
+                  </div>
+                </div>
+                <div class="col-xxl-8 col-xl-8 col-lg-8">
+                  <div class="footer__nav-2">
+                    <ul class="footer-menu-2 menu-anim">
+                      <li><a href="about.html">about us</a></li>
+                      <li><a href="contact.html">contact</a></li>
+                      <li><a href="team.html">Team</a></li>
+                      <li><a href="subsidiaries.html">Subsidiaries</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- Footer area end -->
+      </div>
+    </div>
+
+    <!-- All JS files -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/counter.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <script src="assets/js/ScrollSmoother.min.js"></script>
+    <script src="assets/js/SplitText.min.js"></script>
+    <script src="assets/js/chroma.min.js"></script>
+    <script src="assets/js/mixitup.min.js"></script>
+    <script src="assets/js/vanilla-tilt.js"></script>
+    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
