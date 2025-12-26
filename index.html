@@ -27,6 +27,166 @@
     <link rel="stylesheet" href="assets/css/meanmenu.min.css" />
     <link rel="stylesheet" href="assets/css/master.css" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Core Values Section - Matching Website Design */
+      .service__item-3 .service__title-3 {
+        font-size: 48px;
+        line-height: 1.2;
+        font-weight: 700;
+      }
+      
+      /* Testimonial Images Positioning Fix */
+      .testimonial__area-3 {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .testimonial__slider-3 {
+        position: relative;
+        z-index: 10;
+      }
+      
+      .testimonial__slide-3 {
+        position: relative;
+        z-index: 10;
+      }
+      
+      .testimonial__images-3 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+      }
+      
+      .testimonial3__img {
+        position: absolute;
+        top: 15%;
+        left: 8%;
+        max-width: 200px !important;
+        height: auto !important;
+        border-radius: 50%;
+        object-fit: cover;
+        opacity: 0.5;
+        z-index: 1;
+      }
+      
+      .testimonial3__img-2 {
+        position: absolute;
+        top: 20%;
+        right: 12%;
+        max-width: 180px !important;
+        height: auto !important;
+        border-radius: 50%;
+        object-fit: cover;
+        opacity: 0.5;
+        z-index: 1;
+      }
+      
+      .testimonial3__img-3 {
+        position: absolute;
+        top: 45%;
+        left: 3%;
+        max-width: 160px !important;
+        height: auto !important;
+        border-radius: 50%;
+        object-fit: cover;
+        opacity: 0.5;
+        z-index: 1;
+      }
+      
+      .testimonial3__img-4 {
+        position: absolute;
+        bottom: 15%;
+        left: 10%;
+        max-width: 170px !important;
+        height: auto !important;
+        border-radius: 50%;
+        object-fit: cover;
+        opacity: 0.5;
+        z-index: 1;
+      }
+      
+      .testimonial3__img-5 {
+        position: absolute;
+        top: 48%;
+        right: 5%;
+        max-width: 190px !important;
+        height: auto !important;
+        border-radius: 50%;
+        object-fit: cover;
+        opacity: 0.5;
+        z-index: 1;
+      }
+      
+      .testimonial3__img-6 {
+        position: absolute;
+        bottom: 20%;
+        right: 18%;
+        max-width: 175px !important;
+        height: auto !important;
+        border-radius: 50%;
+        object-fit: cover;
+        opacity: 0.5;
+        z-index: 1;
+      }
+      
+      /* Ensure text content is above images */
+      .testimonial__slide-3 p,
+      .client__name-3,
+      .client__role-3 {
+        position: relative;
+        z-index: 10;
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 1399px) {
+        .testimonial3__img {
+          left: 5%;
+          max-width: 150px !important;
+        }
+        .testimonial3__img-2 {
+          right: 8%;
+          max-width: 140px !important;
+        }
+        .testimonial3__img-3 {
+          left: 2%;
+          max-width: 120px !important;
+        }
+        .testimonial3__img-4 {
+          left: 6%;
+          max-width: 130px !important;
+        }
+        .testimonial3__img-5 {
+          right: 3%;
+          max-width: 140px !important;
+        }
+        .testimonial3__img-6 {
+          right: 12%;
+          max-width: 130px !important;
+        }
+      }
+      
+      @media (max-width: 991px) {
+        .testimonial3__img,
+        .testimonial3__img-2,
+        .testimonial3__img-3,
+        .testimonial3__img-4,
+        .testimonial3__img-5,
+        .testimonial3__img-6 {
+          max-width: 100px !important;
+          opacity: 0.3;
+        }
+      }
+      
+      @media (max-width: 767px) {
+        .testimonial__images-3 {
+          display: none;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -352,7 +512,7 @@
                   </div>
                   <div class="video">
                     <video
-                      src="assets/video/hero-3.mp4"
+                      src="assets/video/h2.mp4"
                       loop
                       muted
                       autoplay
@@ -365,46 +525,123 @@
 
             <div class="hero3-img-ani">
               <img
-                src="assets/imgs/hero/3/1.jpeg"
-                alt="Hero Image"
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=800&fit=crop"
+                alt="GTHINK Group - Innovation and Technology"
                 class="hero3-img"
+                style="max-height: 400px; object-fit: cover; width: 100%; margin-bottom: 10px;   padding-top: 60px;"
               />
             </div>
           </section>
 
-          <!-- Brand area start -->
-          <section class="brand__area">
-            <div class="container pt-140 pb-140">
+          <!-- Core Values area start -->
+          <section class="service__area-3 pt-130 pb-150">
+            <div class="container">
               <div class="row">
                 <div class="col-xxl-12">
-                  <h2 class="brand__title-3 title-anim">
-                    Our work with the world's largest companies
-                  </h2>
-                  <div class="brand__list-3">
-                    <div class="brand__item-2 fade_bottom">
-                      <img src="assets/imgs/brand/1.png" alt="Brand Logo" />
+                  <div class="sec-title-wrapper text-anim">
+                    <h2 class="sec-sub-title title-anim" style="color: #c9f31d;">Our Commitment</h2>
+                    <h3 class="sec-title title-anim">
+                      Core Values That <br />
+                      Drive Excellence
+                    </h3>
+                    <p style="max-width: 800px; margin-top: 20px; font-size: 18px; line-height: 1.8; color: #666;">
+                      At GTHINK Group, we are guided by fundamental principles that shape our approach to business, 
+                      innovation, and client relationships across all our subsidiaries.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row pt-140">
+                <div class="col-xxl-12">
+                  <div class="service__list-3">
+                    <div class="service__item-3 service_animation">
+                      <h3>
+                        <span class="service__title-3">Innovation</span>
+                      </h3>
+                      <div class="service__content-3">
+                        <p>
+                          Pioneering solutions that transform industries and drive technological advancement. 
+                          We embrace cutting-edge thinking and creative problem-solving to deliver breakthrough results.
+                        </p>
+                      </div>
+                      <div class="service__hover-3" style="background-image: url(https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop);"></div>
                     </div>
-                    <div class="brand__item-2 fade_bottom">
-                      <img src="assets/imgs/brand/2.png" alt="Brand Logo" />
+
+                    <div class="service__item-3 service_animation">
+                      <h3>
+                        <span class="service__title-3">Excellence</span>
+                      </h3>
+                      <div class="service__content-3">
+                        <p>
+                          Delivering superior quality and exceeding expectations in every project and service. 
+                          Our commitment to excellence ensures consistent, outstanding results for all our clients.
+                        </p>
+                      </div>
+                      <div class="service__hover-3" style="background-image: url(https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop);"></div>
                     </div>
-                    <div class="brand__item-2 fade_bottom">
-                      <img src="assets/imgs/brand/3.png" alt="Brand Logo" />
+
+                    <div class="service__item-3 service_animation">
+                      <h3>
+                        <span class="service__title-3">Partnership</span>
+                      </h3>
+                      <div class="service__content-3">
+                        <p>
+                          Building lasting relationships based on trust, collaboration, and mutual success. 
+                          We work closely with our clients as strategic partners, not just service providers.
+                        </p>
+                      </div>
+                      <div class="service__hover-3" style="background-image: url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop);"></div>
                     </div>
-                    <div class="brand__item-2 fade_bottom">
-                      <img src="assets/imgs/brand/4.png" alt="Brand Logo" />
+
+                    <div class="service__item-3 service_animation">
+                      <h3>
+                        <span class="service__title-3">Growth</span>
+                      </h3>
+                      <div class="service__content-3">
+                        <p>
+                          Empowering businesses to scale, evolve, and achieve sustainable long-term success. 
+                          Through strategic guidance and innovative solutions, we help organizations reach their full potential.
+                        </p>
+                      </div>
+                      <div class="service__hover-3" style="background-image: url(https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop);"></div>
                     </div>
-                    <div class="brand__item-2 fade_bottom">
-                      <img src="assets/imgs/brand/5.png" alt="Brand Logo" />
+
+                    <div class="service__item-3 service_animation">
+                      <h3>
+                        <span class="service__title-3">Integrity</span>
+                      </h3>
+                      <div class="service__content-3">
+                        <p>
+                          Operating with honesty, transparency, and ethical practices in all our endeavors. 
+                          Integrity is the foundation of everything we do, ensuring trust and reliability in every interaction.
+                        </p>
+                      </div>
+                      <div class="service__hover-3" style="background-image: url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop);"></div>
                     </div>
-                    <div class="brand__item-2 fade_bottom">
-                      <img src="assets/imgs/brand/6.png" alt="Brand Logo" />
+
+                    <div class="service__item-3 service_animation">
+                      <h3>
+                        <span class="service__title-3">Diversity</span>
+                      </h3>
+                      <div class="service__content-3">
+                        <p>
+                          Serving diverse industries with tailored solutions that address unique challenges. 
+                          Our cross-industry expertise enables us to create value across multiple sectors and markets.
+                        </p>
+                      </div>
+                      <div class="service__hover-3" style="background-image: url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop);"></div>
+                    </div>
+
+                    <div class="service3__img-wrap">
+                      <div class="service3__img"></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-          <!-- Brand area end -->
+          <!-- Core Values area end -->
 
           <!-- About area start -->
           <section class="about__area-3">
@@ -413,8 +650,8 @@
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                   <div class="about__img-3">
                     <img
-                      src="assets/imgs/about/3/1.jpg"
-                      alt="About Thumbnail"
+                      src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
+                      alt="GTHINK Group - Team Collaboration"
                       data-speed="auto"
                     />
                   </div>
@@ -615,52 +852,52 @@
                     <div class="swiper-wrapper">
                       <div class="swiper-slide">
                         <div class="portfolio__slide-3">
-                          <a href="service-details.html">
+                          <a href="gthink-company.html">
                             <h3 class="portfolio__title-3">
-                              Cloud<span>Platform </span> 2024
+                              Technology <span>Solutions</span> 2024
                             </h3>
                             <img
-                              src="assets/imgs/portfolio/3/2.jpg"
-                              alt="Portfolio Image"
+                              src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
+                              alt="Technology Solutions"
                             />
                           </a>
                         </div>
                       </div>
                       <div class="swiper-slide">
                         <div class="portfolio__slide-3">
-                          <a href="service-details.html">
+                          <a href="grogate-company.html">
                             <h3 class="portfolio__title-3">
-                              Enterprise <span>Solutions</span> 2024
+                              Construction <span>& Logistics</span> 2024
                             </h3>
                             <img
-                              src="assets/imgs/portfolio/3/1.jpg"
-                              alt="Portfolio Image"
+                              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop"
+                              alt="Construction and Logistics"
                             />
                           </a>
                         </div>
                       </div>
                       <div class="swiper-slide">
                         <div class="portfolio__slide-3">
-                          <a href="service-details.html">
+                          <a href="ulip-gthink.html">
                             <h3 class="portfolio__title-3">
-                              Software <span>Development</span> 2024
+                              Business <span>Trading</span> 2024
                             </h3>
                             <img
-                              src="assets/imgs/portfolio/3/3.jpg"
-                              alt="Portfolio Image"
+                              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+                              alt="Business Trading"
                             />
                           </a>
                         </div>
                       </div>
                       <div class="swiper-slide">
                         <div class="portfolio__slide-3">
-                          <a href="service-details.html">
+                          <a href="solutions.html">
                             <h3 class="portfolio__title-3">
-                              AI <span>Solutions</span> 2024
+                              Business <span>Solutions</span> 2024
                             </h3>
                             <img
-                              src="assets/imgs/portfolio/3/4.jpg"
-                              alt="Portfolio Image"
+                              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+                              alt="Business Solutions"
                             />
                           </a>
                         </div>
@@ -685,8 +922,21 @@
           <!-- Portfolio area end -->
 
           <!-- Testimonial area start -->
-          <section class="testimonial__area-3">
-            <div class="container">
+          <section class="testimonial__area-3" style="position: relative; overflow: hidden;">
+            <div class="container" style="position: relative; z-index: 10;">
+              <div class="row">
+                <div class="col-xxl-12">
+                  <div class="sec-title-wrapper text-center pt-130 pb-80">
+                    <h2 class="sec-sub-title title-anim" style="color: #c9f31d;">Client Feedback</h2>
+                    <h3 class="sec-title title-anim">
+                      Testimonials
+                    </h3>
+                    <p style="max-width: 700px; margin: 20px auto 0; font-size: 18px; line-height: 1.8; color: #666;">
+                      Hear from our clients about their experience working with GTHINK Group and how we've helped transform their businesses.
+                    </p>
+                  </div>
+                </div>
+              </div>
               <div class="row">
                 <div class="col-xxl-12">
                   <div class="swiper testimonial__slider-3">
@@ -748,36 +998,42 @@
                 </div>
               </div>
             </div>
-            <div class="testimonial__images-3 animation_image_zoom">
+            <div class="testimonial__images-3 animation_image_zoom" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;">
               <img
-                src="assets/imgs/testimonial/3/1.jpg"
-                alt="testimonial Image"
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
+                alt="Client Testimonial"
                 class="testimonial3__img"
+                style="max-width: 200px; height: auto; border-radius: 50%; object-fit: cover; opacity: 0.6;"
               />
               <img
-                src="assets/imgs/testimonial/3/2.jpg"
-                alt="testimonial Image"
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
+                alt="Client Testimonial"
                 class="testimonial3__img-2"
+                style="max-width: 180px; height: auto; border-radius: 50%; object-fit: cover; opacity: 0.6;"
               />
               <img
-                src="assets/imgs/testimonial/3/3.jpg"
-                alt="testimonial Image"
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop"
+                alt="Client Testimonial"
                 class="testimonial3__img-3"
+                style="max-width: 160px; height: auto; border-radius: 50%; object-fit: cover; opacity: 0.6;"
               />
               <img
-                src="assets/imgs/testimonial/3/4.jpg"
-                alt="testimonial Image"
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop"
+                alt="Client Testimonial"
                 class="testimonial3__img-4"
+                style="max-width: 170px; height: auto; border-radius: 50%; object-fit: cover; opacity: 0.6;"
               />
               <img
-                src="assets/imgs/testimonial/3/5.jpg"
-                alt="testimonial Image"
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop"
+                alt="Client Testimonial"
                 class="testimonial3__img-5"
+                style="max-width: 190px; height: auto; border-radius: 50%; object-fit: cover; opacity: 0.6;"
               />
               <img
-                src="assets/imgs/testimonial/3/6.jpg"
-                alt="testimonial Image"
+                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop"
+                alt="Client Testimonial"
                 class="testimonial3__img-6"
+                style="max-width: 175px; height: auto; border-radius: 50%; object-fit: cover; opacity: 0.6;"
               />
             </div>
           </section>
@@ -941,6 +1197,7 @@
               <!-- CTA area end -->
             </div>
           </section>
+          <!-- Workflow area end -->
           <!-- Workflow area end -->
 
           <!-- Price area start -->
@@ -1111,16 +1368,17 @@
                         <span><i class="fa-solid fa-check"></i></span>
                       </div>
                       <div class="price__info">
-                        <h2 class="price__type">Yearly</h2>
-                        <h3 class="price__title">14 days free</h3>
+                        <h2 class="price__type">Custom Solutions</h2>
+                        <h3 class="price__title">Tailored to Your Needs</h3>
                         <p>
-                          Subscription fee is $129.99 USD and automatically
-                          renews each year.
+                          We offer flexible pricing plans customized to your specific 
+                          business requirements and project scope. Contact us for a 
+                          personalized quote.
                         </p>
                       </div>
                       <div class="price__amount">
                         <h4 class="best-value">Best Value</h4>
-                        <p>$129<span> .99</span></p>
+                        <p>Contact <br />Us</p>
                       </div>
                     </div>
 
@@ -1129,15 +1387,16 @@
                         <span><i class="fa-solid fa-check"></i></span>
                       </div>
                       <div class="price__info">
-                        <h2 class="price__type">Monthly</h2>
-                        <h3 class="price__title">7 days free</h3>
+                        <h2 class="price__type">Enterprise Plans</h2>
+                        <h3 class="price__title">Scalable Solutions</h3>
                         <p>
-                          Subscription fee is $12.99 USD and automatically
-                          renews each year.
+                          Comprehensive enterprise packages designed to grow with your 
+                          business. Get in touch to discuss your requirements and receive 
+                          a detailed proposal.
                         </p>
                       </div>
                       <div class="price__amount">
-                        <p>$12<span> .99</span></p>
+                        <p>Request <br />Quote</p>
                       </div>
                     </div>
                   </div>
@@ -1145,7 +1404,7 @@
                     <a
                       href="contact.html"
                       class="wc-btn-black btn-hover btn-item"
-                      ><span></span> Try it <br />Free Now
+                      ><span></span> Get <br />Pricing
                       <i class="fa-solid fa-arrow-right"></i
                     ></a>
                   </div>
@@ -1178,32 +1437,31 @@
                 <div class="col-xxl-6 col-xl-6 col-lg-6">
                   <article class="blog__item-3">
                     <div class="blog__img-wrapper-3">
-                      <a href="service.html">
+                      <a href="solutions.html">
                         <div class="img-box">
                           <img
                             class="image-box__item"
-                            src="assets/imgs/blog/3/1.jpg"
-                            alt="Blog Thumbnail"
+                            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+                            alt="Business Innovation Blog"
                           />
                           <img
                             class="image-box__item"
-                            src="assets/imgs/blog/3/1.jpg"
-                            alt="BLog Thumbnail"
+                            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+                            alt="Business Innovation Blog"
                           />
                         </div>
                       </a>
                     </div>
                     <div class="blog__info-3">
                       <h4 class="blog__meta">
-                        <a href="service.html">update </a> . 02 FAR 2024
+                        <a href="solutions.html">update </a> . 02 FEB 2024
                       </h4>
                       <h5>
-                        <a href="service.html" class="blog__title-3"
-                          >Improved AI performance delivers exceptional technology
-                          solutions</a
+                        <a href="solutions.html" class="blog__title-3"
+                          >How GTHINK Group Transforms Businesses Across Industries</a
                         >
                       </h5>
-                      <a href="service.html" class="blog__btn"
+                      <a href="solutions.html" class="blog__btn"
                         >Read More
                         <span><i class="fa-solid fa-arrow-right"></i></span
                       ></a>
@@ -1214,31 +1472,31 @@
                 <div class="col-xxl-6 col-xl-6 col-lg-6">
                   <article class="blog__item-3">
                     <div class="blog__img-wrapper-3">
-                      <a href="service.html">
+                      <a href="gthink-company.html">
                         <div class="img-box">
                           <img
                             class="image-box__item"
-                            src="assets/imgs/blog/3/2.jpg"
-                            alt="Blog Thumbnail"
+                            src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
+                            alt="Technology Solutions Blog"
                           />
                           <img
                             class="image-box__item"
-                            src="assets/imgs/blog/3/2.jpg"
-                            alt="BLog Thumbnail"
+                            src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
+                            alt="Technology Solutions Blog"
                           />
                         </div>
                       </a>
                     </div>
                     <div class="blog__info-3">
                       <h4 class="blog__meta">
-                        <a href="service.html">update </a> . 02 FAR 2024
+                        <a href="gthink-company.html">update </a> . 02 FEB 2024
                       </h4>
                       <h5>
-                        <a href="service.html" class="blog__title-3"
-                          >New Cloud Platform Features Released</a
+                        <a href="gthink-company.html" class="blog__title-3"
+                          >Latest Technology Trends and Solutions for 2024</a
                         >
                       </h5>
-                      <a href="service.html" class="blog__btn"
+                      <a href="gthink-company.html" class="blog__btn"
                         >Read More
                         <span><i class="fa-solid fa-arrow-right"></i></span
                       ></a>
