@@ -28,6 +28,45 @@
     <link rel="stylesheet" href="assets/css/master.css" />
     <link rel="stylesheet" href="style.css" />
     <style>
+      /* Color Scheme - Deep Blue/Navy Primary, Electric Green Accent */
+      :root {
+        --primary-color: #1e3a8a;
+        --accent-color: #00ff88;
+      }
+      
+      .sec-sub-title[style*="#c9f31d"],
+      .sec-sub-title[style*="color: #00ff88"] {
+        color: #00ff88 !important;
+      }
+      
+      .wc-btn-light:hover {
+        border-color: #00ff88 !important;
+      }
+      
+      .wc-btn-light:hover span {
+        background-color: #00ff88 !important;
+      }
+      
+      .wc-btn-black:hover {
+        border-color: #1e3a8a !important;
+      }
+      
+      .wc-btn-black:hover span {
+        background-color: #1e3a8a !important;
+      }
+      
+      a:hover {
+        color: #00ff88 !important;
+      }
+      
+      stroke[stroke="#1e3a8a"] {
+        stroke: #1e3a8a !important;
+      }
+      
+      rect[fill="#00ff88"] {
+        fill: #00ff88 !important;
+      }
+      
       /* Professional Design Enhancements */
       .service__item-3:hover {
         transform: translateY(-10px);
@@ -143,7 +182,7 @@
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <rect width="28" height="28" rx="6" fill="#F3EF6A" />
+                <rect width="28" height="28" rx="6" fill="#00ff88" />
                 <path
                   d="M13.0788 5.18059C13.4229 4.36611 14.5771 4.36611 14.9212 5.18059L17.1088 10.3591C17.2101 10.599 17.401 10.7899 17.6409 10.8912L22.8194 13.0788C23.6339 13.4229 23.6339 14.5771 22.8194 14.9212L17.6409 17.1088C17.401 17.2101 17.2101 17.401 17.1088 17.6409L14.9212 22.8194C14.5771 23.6339 13.4229 23.6339 13.0788 22.8194L10.8912 17.6409C10.7899 17.401 10.599 17.2101 10.3591 17.1088L5.18059 14.9212C4.36611 14.5771 4.36611 13.4229 5.18059 13.0788L10.3591 10.8912C10.599 10.7899 10.7899 10.599 10.8912 10.3591L13.0788 5.18059Z"
                   fill="black"
@@ -162,13 +201,13 @@
                   width="27"
                   height="27"
                   rx="5.5"
-                  stroke="#93D5E1"
+                  stroke="#1e3a8a"
                   stroke-linejoin="round"
                   stroke-dasharray="2 2"
                 />
               </svg>
             </div>
-            <h1 class="navigation__logo-title">GTHINK GROUP</h1>
+            <img src="assets/imgs/logo/glogo.png" alt="GTHINK GROUP" class="navigation__logo-title" style="height: 140px; max-height: 200px; width: auto;" />
           </div>
           <!--
                 <a href="index.html" class="logo-dark"><img src="assets/imgs/logo/logo-blac.png" alt="Site Logo" height="50px" width="210px"></a>
@@ -221,7 +260,7 @@
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <rect width="28" height="28" rx="6" fill="#F3EF6A" />
+                  <rect width="28" height="28" rx="6" fill="#00ff88" />
                   <path
                     d="M13.0788 5.18059C13.4229 4.36611 14.5771 4.36611 14.9212 5.18059L17.1088 10.3591C17.2101 10.599 17.401 10.7899 17.6409 10.8912L22.8194 13.0788C23.6339 13.4229 23.6339 14.5771 22.8194 14.9212L17.6409 17.1088C17.401 17.2101 17.2101 17.401 17.1088 17.6409L14.9212 22.8194C14.5771 23.6339 13.4229 23.6339 13.0788 22.8194L10.8912 17.6409C10.7899 17.401 10.599 17.2101 10.3591 17.1088L5.18059 14.9212C4.36611 14.5771 4.36611 13.4229 5.18059 13.0788L10.3591 10.8912C10.599 10.7899 10.7899 10.599 10.8912 10.3591L13.0788 5.18059Z"
                     fill="black"
@@ -240,15 +279,13 @@
                     width="27"
                     height="27"
                     rx="5.5"
-                    stroke="#93D5E1"
+                    stroke="#1e3a8a"
                     stroke-linejoin="round"
                     stroke-dasharray="2 2"
                   />
                 </svg>
               </div>
-              <h1 class="navigation__logo-title" style="color: white">
-                GTHINK GROUP
-              </h1>
+              <img src="assets/imgs/logo/glogo.png" alt="GTHINK GROUP" class="navigation__logo-title" style="height: 140px; max-height: 200px; width: auto;" />
             </div>
           </div>
           <div class="offcanvas__social">
@@ -350,7 +387,7 @@
                       <span style="width: 8px; height: 8px; background: #c9f31d; border-radius: 50%; display: inline-block; animation: pulse 2s ease-in-out infinite;"></span>
                       Construction • Logistics • Cleaning
                     </span>
-                  </div>
+                    </div>
                   
                   <h1 class="hero-custom-title-grogate" style="font-size: 72px; font-weight: 800; line-height: 1.1; color: #1a1a1a !important; margin-bottom: 30px; letter-spacing: -2px; opacity: 1 !important; visibility: visible !important;">
                     GROGATE <span style="background: linear-gradient(135deg, #c9f31d 0%, #93d5e1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Company</span> Limited
@@ -378,8 +415,8 @@
                       <p style="font-size: 13px; color: #666666 !important; text-transform: uppercase; letter-spacing: 1.2px; font-weight: 500;">Years Experience</p>
                     </div>
                   </div>
-                </div>
-                
+                    </div>
+
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12" style="margin-top: 60px;">
                   <div class="hero-image-wrapper-grogate" style="position: relative; overflow: visible;">
                     <!-- Main Image -->
@@ -400,25 +437,25 @@
                       <div style="display: flex; align-items: center; gap: 18px;">
                         <div style="width: 56px; height: 56px; background: linear-gradient(135deg, #c9f31d 0%, #b8e01a 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(201, 243, 29, 0.3);">
                           <i class="fa-solid fa-hard-hat" style="color: #1a1a1a; font-size: 26px;"></i>
-                        </div>
+                  </div>
                         <div>
                           <h4 style="font-size: 19px; font-weight: 700; color: #1a1a1a; margin: 0 0 6px 0; letter-spacing: -0.5px;">Construction</h4>
                           <p style="font-size: 14px; color: #666; margin: 0; font-weight: 500;">Building Excellence</p>
-                        </div>
-                      </div>
-                    </div>
+                </div>
+              </div>
+            </div>
 
                     <div class="hero-floating-card-grogate-2" style="position: absolute; bottom: -20px; left: 20px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.95) 100%); backdrop-filter: blur(20px); padding: 28px 32px; border-radius: 24px; box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05); border: 1px solid rgba(147, 213, 225, 0.2); max-width: 260px; animation: float 8s ease-in-out infinite reverse; z-index: 5;">
                       <div style="display: flex; align-items: center; gap: 18px;">
                         <div style="width: 56px; height: 56px; background: linear-gradient(135deg, #93d5e1 0%, #7bc5d3 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(147, 213, 225, 0.3);">
                           <i class="fa-solid fa-truck-fast" style="color: #1a1a1a; font-size: 26px;"></i>
-                        </div>
+                  </div>
                         <div>
                           <h4 style="font-size: 19px; font-weight: 700; color: #1a1a1a; margin: 0 0 6px 0; letter-spacing: -0.5px;">Logistics</h4>
                           <p style="font-size: 14px; color: #666; margin: 0; font-weight: 500;">Efficient Delivery</p>
-                        </div>
-                      </div>
-                    </div>
+                  </div>
+                </div>
+              </div>
                   </div>
                 </div>
               </div>
@@ -594,7 +631,7 @@
 
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                   <div class="sec-title-wrapper">
-                    <h2 class="sec-sub-title title-anim" style="color: #c9f31d;">About GROGATE Company</h2>
+                    <h2 class="sec-sub-title title-anim" style="color: #00ff88;">About GROGATE Company</h2>
                     <h3 class="sec-title title-anim">
                       Construction, Logistics & Cleaning Services
                     </h3>
@@ -633,7 +670,7 @@
               <div class="row">
                 <div class="col-xxl-12">
                   <div class="sec-title-wrapper pt-130 text-anim">
-                    <h2 class="sec-sub-title title-anim" style="color: #c9f31d;">Our Services</h2>
+                    <h2 class="sec-sub-title title-anim" style="color: #00ff88;">Our Services</h2>
                     <h3 class="sec-title title-anim">
                       Construction, Logistics <br />
                       & Cleaning Services
@@ -779,7 +816,7 @@
               <div class="row">
                 <div class="col-xxl-12">
                   <div class="sec-title-wrapper text-anim">
-                    <h2 class="sec-sub-title title-anim" style="color: #c9f31d;">Why Choose Us</h2>
+                    <h2 class="sec-sub-title title-anim" style="color: #00ff88;">Why Choose Us</h2>
                     <h3 class="sec-title title-anim">
                       Why GROGATE Company Limited
                     </h3>
@@ -848,7 +885,7 @@
               <div class="row" style="overflow: visible !important;">
                 <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12" style="margin-bottom: 60px;">
                   <div class="sec-title-wrapper text-center">
-                    <h2 class="sec-sub-title title-anim" style="color: #c9f31d;">Our Approach</h2>
+                    <h2 class="sec-sub-title title-anim" style="color: #00ff88;">Our Approach</h2>
                     <h3 class="sec-title title-anim">
                       How We Work
                     </h3>
@@ -1048,7 +1085,7 @@
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <rect width="28" height="28" rx="6" fill="#F3EF6A" />
+                      <rect width="28" height="28" rx="6" fill="#00ff88" />
                       <path
                         d="M13.0788 5.18059C13.4229 4.36611 14.5771 4.36611 14.9212 5.18059L17.1088 10.3591C17.2101 10.599 17.401 10.7899 17.6409 10.8912L22.8194 13.0788C23.6339 13.4229 23.6339 14.5771 22.8194 14.9212L17.6409 17.1088C17.401 17.2101 17.2101 17.401 17.1088 17.6409L14.9212 22.8194C14.5771 23.6339 13.4229 23.6339 13.0788 22.8194L10.8912 17.6409C10.7899 17.401 10.599 17.2101 10.3591 17.1088L5.18059 14.9212C4.36611 14.5771 4.36611 13.4229 5.18059 13.0788L10.3591 10.8912C10.599 10.7899 10.7899 10.599 10.8912 10.3591L13.0788 5.18059Z"
                         fill="black"
@@ -1067,15 +1104,13 @@
                         width="27"
                         height="27"
                         rx="5.5"
-                        stroke="#93D5E1"
+                        stroke="#1e3a8a"
                         stroke-linejoin="round"
                         stroke-dasharray="2 2"
                       />
                     </svg>
                   </div>
-                  <h1 class="navigation__logo-title" style="color: white">
-                    GTHINK GROUP
-                  </h1>
+                  <img src="assets/imgs/logo/glogo.png" alt="GTHINK GROUP" class="navigation__logo-title" style="height: 140px; max-height: 200px; width: auto;" />
                 </div>
                 <br />
                 <br />

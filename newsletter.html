@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Axtra HTML5 Template">
 
-    <title>Contact - GTHINK Group</title>
+    <title>Newsletter - GTHINK Group</title>
 
     <!-- Fav Icon -->
     <link rel="icon" type="image/x-icon" href="assets/imgs/logo/favicon.png">
@@ -149,10 +149,8 @@
             <div class="header__logo">
                 <a href="index.html">
                     <div class="navigation__logo">
-                        <div class="navigation__logo-logomark"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="28" rx="6" fill="#00ff88"/><path d="M13.0788 5.18059C13.4229 4.36611 14.5771 4.36611 14.9212 5.18059L17.1088 10.3591C17.2101 10.599 17.401 10.7899 17.6409 10.8912L22.8194 13.0788C23.6339 13.4229 23.6339 14.5771 22.8194 14.9212L17.6409 17.1088C17.401 17.2101 17.2101 17.401 17.1088 17.6409L14.9212 22.8194C14.5771 23.6339 13.4229 23.6339 13.0788 22.8194L10.8912 17.6409C10.7899 17.401 10.599 17.2101 10.3591 17.1088L5.18059 14.9212C4.36611 14.5771 4.36611 13.4229 5.18059 13.0788L10.3591 10.8912C10.599 10.7899 10.7899 10.599 10.8912 10.3591L13.0788 5.18059Z" fill="black"/></svg>                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="27" height="27" rx="5.5" stroke="#1e3a8a" stroke-linejoin="round" stroke-dasharray="2 2"/></svg></div>
-                        <h1 class="navigation__logo-title" ></h1>
+                        <!-- <img src="assets/imgs/logo/glogo.png" alt="GTHINK GROUP" class="navigation__logo-title" style="height: 140px; max-height: 200px; width: auto;" /> -->
                     </div>
-          
         </a>
             </div>
             <div class="header__nav-icon">
@@ -244,30 +242,31 @@
         <div id="smooth-content">
             <main>
 
-                <!-- Contact area start -->
+                <!-- Newsletter area start -->
                 <section class="contact__area-6">
                     <div class="container g-0 line pt-120 pb-110">
                         <span class="line-3"></span>
                         <div class="row">
                             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                                 <div class="sec-title-wrapper">
-                                    <h2 class="sec-title-2 animation__char_come" style="color: var(--primary);">Let’s get in touch</h2>
+                                    <h2 class="sec-title-2 animation__char_come" style="color: var(--primary);">Subscribe to our newsletter</h2>
                                 </div>
                             </div>
                             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                                 <div class="contact__text">
-                                    <p>Great! We're excited to hear from you and let's start something special togerter. call us for any inquery.</p>
+                                    <p>Stay updated with the latest news, insights, and updates from GTHINK Group. Get exclusive content, industry trends, and company announcements delivered directly to your inbox.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="row contact__btm">
                             <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
                                 <div class="contact__info">
-                                    <h3 class="sub-title-anim-top animation__word_come">Don't be afraid man ! <br>say hello</h3>
+                                    <h3 class="sub-title-anim-top animation__word_come">Why subscribe? <br>Stay informed</h3>
                                     <ul>
-                                        <li><a href="tel:02094980547">+(20) - 100 000 000</a></li>
-                                        <li><a href="info@gthinkgroup.com">info@gthinkgroup.com</a></li>
-                                        <li><span>Egypt , Kafr el-Sheikh 94301<br> Egypt </span></li>
+                                        <li><span>Get the latest updates on our services and solutions</span></li>
+                                        <li><span>Receive exclusive industry insights and trends</span></li>
+                                        <li><span>Be the first to know about new products and services</span></li>
+                                        <li><span>Access special offers and promotions</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -276,29 +275,40 @@
                                     <form action="assets/mail.php" method="POST">
                                         <div class="row g-3">
                                             <div class="col-xxl-6 col-xl-6 col-12">
-                                                <input type="text" name="name" placeholder="Name *">
+                                                <input type="text" name="name" placeholder="Name *" required>
                                             </div>
                                             <div class="col-xxl-6 col-xl-6 col-12">
-                                                <input type="email" name="email" placeholder="Email *">
+                                                <input type="email" name="email" placeholder="Email *" required>
                                             </div>
                                         </div>
                                         <div class="row g-3">
                                             <div class="col-xxl-6 col-xl-6 col-12">
-                                                <input type="tel" name="phone" placeholder="Phone">
+                                                <input type="tel" name="phone" placeholder="Phone (Optional)">
                                             </div>
                                             <div class="col-xxl-6 col-xl-6 col-12">
-                                                <input type="text" name="subject" placeholder="Subject *">
+                                                <select name="interest" class="form-select" style="padding: 15px; border: 1px solid #ddd; border-radius: 0; font-size: 14px;">
+                                                    <option value="">Select Interest Area (Optional)</option>
+                                                    <option value="technology">Technology Solutions</option>
+                                                    <option value="construction">Construction & Logistics</option>
+                                                    <option value="business">Business & Trading</option>
+                                                    <option value="all">All Updates</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="row g-3">
                                             <div class="col-12">
-                                                <textarea name="message" placeholder="Messages *"></textarea>
+                                                <div class="form-check" style="margin-top: 15px;">
+                                                    <input class="form-check-input" type="checkbox" id="privacy" name="privacy" required>
+                                                    <label class="form-check-label" for="privacy" style="font-size: 14px; color: #666;">
+                                                        I agree to receive marketing communications and newsletters from GTHINK Group. I can unsubscribe at any time.
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row g-3">
                                             <div class="col-12">
                                                 <div class="btn_wrapper">
-                                                    <button class="wc-btn-primary btn-hover btn-item"><span></span> Send <br>Messages <i
+                                                    <button type="submit" class="wc-btn-primary btn-hover btn-item"><span></span> Subscribe <br>Now <i
                               class="fa-solid fa-arrow-right"></i></button>
                                                 </div>
                                             </div>
@@ -309,7 +319,7 @@
                         </div>
                     </div>
                 </section>
-                <!-- Contact area end -->
+                <!-- Newsletter area end -->
 
             </main>
 
@@ -378,7 +388,7 @@
                                     </div>
 
                                     <div class="footer__subscribe">
-                                        <form action="#">
+                                        <form action="newsletter.html">
                                             <input type="email" name="email" placeholder="Enter your email">
                                             <button type="submit" class="subs-btn"><i class="fa-solid fa-paper-plane"></i></button>
                                         </form>
@@ -416,3 +426,4 @@
 </body>
 
 </html>
+

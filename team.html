@@ -27,6 +27,351 @@
     <link rel="stylesheet" href="assets/css/meanmenu.min.css" />
     <link rel="stylesheet" href="assets/css/master.css" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Color Scheme - Deep Blue/Navy Primary, Electric Green Accent */
+      :root {
+        --primary-color: #1e3a8a;
+        --accent-color: #00ff88;
+      }
+      
+      .sec-sub-title[style*="#c9f31d"],
+      .sec-sub-title[style*="color: #00ff88"] {
+        color: #00ff88 !important;
+      }
+      
+      .wc-btn-light:hover {
+        border-color: #00ff88 !important;
+      }
+      
+      .wc-btn-light:hover span {
+        background-color: #00ff88 !important;
+      }
+      
+      .wc-btn-black:hover {
+        border-color: #1e3a8a !important;
+      }
+      
+      .wc-btn-black:hover span {
+        background-color: #1e3a8a !important;
+      }
+      
+      a:hover {
+        color: #00ff88 !important;
+      }
+      
+      stroke[stroke="#1e3a8a"] {
+        stroke: #1e3a8a !important;
+      }
+      
+      rect[fill="#00ff88"] {
+        fill: #00ff88 !important;
+      }
+      
+      /* Rounded Team Member Images */
+      .testimonial3__img,
+      .testimonial3__img-2,
+      .testimonial3__img-3,
+      .testimonial3__img-4,
+      .testimonial3__img-5,
+      .testimonial3__img-6 {
+        border-radius: 50% !important;
+        object-fit: cover !important;
+      }
+      
+      /* Artistic Team Member Styling */
+      .team__member-artistic {
+        position: relative;
+        margin-bottom: 80px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        min-height: 400px;
+        overflow: visible;
+      }
+      
+      .team__member-reverse {
+        flex-direction: row-reverse;
+      }
+      
+      .team__member-image-wrapper {
+        position: relative;
+        width: 45%;
+        height: 500px;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(30, 58, 138, 0.2);
+        flex-shrink: 0;
+      }
+      
+      .team__member-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .team__member-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(30, 58, 138, 0) 0%, rgba(30, 58, 138, 0.4) 100%);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+      
+      .team__member-info {
+        flex: 1;
+        position: relative;
+        z-index: 10;
+        padding: 40px;
+        overflow: visible;
+      }
+      
+      .team__member-number {
+        font-size: 120px;
+        font-weight: 800;
+        line-height: 1;
+        color: #f0f4ff;
+        position: absolute;
+        top: -20px;
+        left: -10px;
+        z-index: -1;
+        transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif;
+      }
+      
+      .team__member-reverse .team__member-number {
+        left: auto;
+        right: -10px;
+      }
+      
+      .team__member-name {
+        font-size: 42px;
+        font-weight: 700;
+        color: #1e3a8a;
+        margin-bottom: 12px;
+        line-height: 1.2;
+        position: relative;
+        z-index: 2;
+        transition: color 0.3s ease;
+      }
+      
+      .team__member-role {
+        font-size: 18px;
+        color: #00ff88;
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        z-index: 2;
+      }
+      
+      .team__member-bio {
+        font-size: 16px;
+        color: #666;
+        line-height: 1.7;
+        margin-bottom: 30px;
+        max-width: 90%;
+        position: relative;
+        z-index: 2;
+      }
+      
+      .team__member-social {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 15px;
+        position: relative;
+        z-index: 100;
+        visibility: visible !important;
+        opacity: 1 !important;
+        margin-top: 20px;
+        width: 100%;
+        justify-content: flex-start;
+      }
+      
+      .team__member-social a {
+        width: 45px !important;
+        height: 45px !important;
+        min-width: 45px !important;
+        min-height: 45px !important;
+        border-radius: 50%;
+        background: #f0f4ff !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: #1e3a8a !important;
+        transition: all 0.3s ease;
+        text-decoration: none !important;
+        font-size: 16px;
+        border: 2px solid transparent;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative;
+        z-index: 100;
+        overflow: visible;
+      }
+      
+      .team__member-social a i {
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        font-size: 16px !important;
+        color: inherit !important;
+        line-height: 1 !important;
+      }
+      
+      .team__member-social a i.fa-linkedin,
+      .team__member-social a i.fa-twitter,
+      .team__member-social a i.fa-envelope {
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+      
+      .team__member-social a i[class*="fa-brands"],
+      .team__member-social a i[class*="fa-solid"] {
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        font-family: "Font Awesome 6 Brands", "Font Awesome 6 Free" !important;
+      }
+      
+      /* Hover Effects */
+      .team__member-artistic:hover .team__member-image-wrapper img {
+        transform: scale(1.1);
+      }
+      
+      .team__member-artistic:hover .team__member-overlay {
+        opacity: 1;
+      }
+      
+      .team__member-artistic:hover .team__member-number {
+        color: #00ff88;
+        transform: scale(1.1);
+      }
+      
+      .team__member-artistic:hover .team__member-name {
+        color: #00ff88;
+      }
+      
+      .team__member-social a:hover {
+        background: #00ff88;
+        color: #1e3a8a;
+        border-color: #1e3a8a;
+        transform: translateY(-5px) scale(1.1);
+      }
+      
+      /* Decorative Elements */
+      .team__member-artistic::before {
+        content: '';
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(0, 255, 136, 0.1) 0%, transparent 70%);
+        top: -50px;
+        right: -50px;
+        z-index: 0;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+      
+      .team__member-reverse::before {
+        left: -50px;
+        right: auto;
+      }
+      
+      .team__member-artistic:hover::before {
+        opacity: 1;
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 1199px) {
+        .team__member-image-wrapper {
+          height: 450px;
+        }
+        
+        .team__member-name {
+          font-size: 36px;
+        }
+        
+        .team__member-number {
+          font-size: 100px;
+        }
+      }
+      
+      @media (max-width: 991px) {
+        .team__member-artistic {
+          flex-direction: column !important;
+          margin-bottom: 60px;
+          min-height: auto;
+        }
+        
+        .team__member-image-wrapper {
+          width: 100%;
+          height: 400px;
+        }
+        
+        .team__member-info {
+          padding: 30px 20px;
+          text-align: center;
+        }
+        
+        .team__member-number {
+          position: relative;
+          top: 0;
+          left: 0 !important;
+          right: auto !important;
+          font-size: 80px;
+          display: inline-block;
+          margin-bottom: 20px;
+        }
+        
+        .team__member-name {
+          font-size: 32px;
+        }
+        
+        .team__member-bio {
+          max-width: 100%;
+        }
+      }
+      
+      @media (max-width: 767px) {
+        .team__member-image-wrapper {
+          height: 350px;
+        }
+        
+        .team__member-info {
+          padding: 25px 15px;
+        }
+        
+        .team__member-number {
+          font-size: 60px;
+        }
+        
+        .team__member-name {
+          font-size: 28px;
+        }
+        
+        .team__member-role {
+          font-size: 16px;
+        }
+        
+        .team__member-bio {
+          font-size: 14px;
+        }
+        
+        .team__member-social a {
+          width: 40px;
+          height: 40px;
+          font-size: 14px;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -105,7 +450,7 @@
       <div class="header__inner-3">
         <div class="header__logo-2">
           <div class="navigation__logo">
-            <div class="navigation__logo-logomark">
+            <!-- <div class="navigation__logo-logomark">
               <svg
                 width="28"
                 height="28"
@@ -113,7 +458,7 @@
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <rect width="28" height="28" rx="6" fill="#F3EF6A" />
+                <rect width="28" height="28" rx="6" fill="#00ff88" />
                 <path
                   d="M13.0788 5.18059C13.4229 4.36611 14.5771 4.36611 14.9212 5.18059L17.1088 10.3591C17.2101 10.599 17.401 10.7899 17.6409 10.8912L22.8194 13.0788C23.6339 13.4229 23.6339 14.5771 22.8194 14.9212L17.6409 17.1088C17.401 17.2101 17.2101 17.401 17.1088 17.6409L14.9212 22.8194C14.5771 23.6339 13.4229 23.6339 13.0788 22.8194L10.8912 17.6409C10.7899 17.401 10.599 17.2101 10.3591 17.1088L5.18059 14.9212C4.36611 14.5771 4.36611 13.4229 5.18059 13.0788L10.3591 10.8912C10.599 10.7899 10.7899 10.599 10.8912 10.3591L13.0788 5.18059Z"
                   fill="black"
@@ -132,13 +477,13 @@
                   width="27"
                   height="27"
                   rx="5.5"
-                  stroke="#93D5E1"
+                  stroke="#1e3a8a"
                   stroke-linejoin="round"
                   stroke-dasharray="2 2"
                 />
               </svg>
-            </div>
-            <h1 class="navigation__logo-title">GTHINK GROUP</h1>
+            </div> -->
+            <img src="assets/imgs/logo/glogo.png" alt="GTHINK GROUP" class="navigation__logo-title" style="height: 140px; max-height: 200px; width: auto;" />
           </div>
           <!--
                 <a href="index.html" class="logo-dark"><img src="assets/imgs/logo/logo-blac.png" alt="Site Logo" height="50px" width="210px"></a>
@@ -191,7 +536,7 @@
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <rect width="28" height="28" rx="6" fill="#F3EF6A" />
+                  <rect width="28" height="28" rx="6" fill="#00ff88" />
                   <path
                     d="M13.0788 5.18059C13.4229 4.36611 14.5771 4.36611 14.9212 5.18059L17.1088 10.3591C17.2101 10.599 17.401 10.7899 17.6409 10.8912L22.8194 13.0788C23.6339 13.4229 23.6339 14.5771 22.8194 14.9212L17.6409 17.1088C17.401 17.2101 17.2101 17.401 17.1088 17.6409L14.9212 22.8194C14.5771 23.6339 13.4229 23.6339 13.0788 22.8194L10.8912 17.6409C10.7899 17.401 10.599 17.2101 10.3591 17.1088L5.18059 14.9212C4.36611 14.5771 4.36611 13.4229 5.18059 13.0788L10.3591 10.8912C10.599 10.7899 10.7899 10.599 10.8912 10.3591L13.0788 5.18059Z"
                     fill="black"
@@ -210,15 +555,13 @@
                     width="27"
                     height="27"
                     rx="5.5"
-                    stroke="#93D5E1"
+                    stroke="#1e3a8a"
                     stroke-linejoin="round"
                     stroke-dasharray="2 2"
                   />
                 </svg>
               </div>
-              <h1 class="navigation__logo-title" style="color: white">
-                GTHINK GROUP
-              </h1>
+              <img src="assets/imgs/logo/glogo.png" alt="GTHINK GROUP" class="navigation__logo-title" style="height: 140px; max-height: 200px; width: auto;" />
             </div>
           </div>
           <div class="offcanvas__social">
@@ -311,10 +654,10 @@
                 <div class="col-xxl-12">
                   <div class="hero__inner-3">
                     <div class="sec-title-wrapper">
-                      <h2 class="sec-sub-title" style="color: #c9f31d">
+                      <h2 class="sec-sub-title" style="color: #00ff88">
                         Our Team
                       </h2>
-                      <h3 class="sec-title title-left">Leadership</h3>
+                      <h3 class="sec-title title-left" style=" font-size: 200px;">Leadership</h3>
                       <h3 class="sec-title title-right">Team</h3>
                     </div>
                     <div class="hero__text-3">
@@ -340,7 +683,7 @@
               </div>
             </div>
 
-            <div class="wrapper">
+            <!-- <div class="wrapper">
               <div class="video-info">
                 <div class="video-intro">
                   <input id="video_check" type="checkbox" />
@@ -361,50 +704,18 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <div class="hero3-img-ani">
               <img
-                src="assets/imgs/hero/3/1.jpeg"
-                alt="Hero Image"
+                src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?cs=srgb&dl=pexels-fauxels-3183150.jpg&fm=jpg"
+                alt="Team Hero Image"
+                style="max-height: 400px; object-fit: cover; width: 100%; margin-bottom: 40px; padding-top: 100px;"
                 class="hero3-img"
               />
             </div>
           </section>
 
-          <!-- Brand area start -->
-          <section class="brand__area">
-            <div class="container pt-140 pb-140">
-              <div class="row">
-                <div class="col-xxl-12">
-                  <h2 class="brand__title-3 title-anim">
-                    Our work with the world's largest companies
-                  </h2>
-                  <div class="brand__list-3">
-                    <div class="brand__item-2 fade_bottom">
-                      <img src="assets/imgs/brand/1.png" alt="Brand Logo" />
-                    </div>
-                    <div class="brand__item-2 fade_bottom">
-                      <img src="assets/imgs/brand/2.png" alt="Brand Logo" />
-                    </div>
-                    <div class="brand__item-2 fade_bottom">
-                      <img src="assets/imgs/brand/3.png" alt="Brand Logo" />
-                    </div>
-                    <div class="brand__item-2 fade_bottom">
-                      <img src="assets/imgs/brand/4.png" alt="Brand Logo" />
-                    </div>
-                    <div class="brand__item-2 fade_bottom">
-                      <img src="assets/imgs/brand/5.png" alt="Brand Logo" />
-                    </div>
-                    <div class="brand__item-2 fade_bottom">
-                      <img src="assets/imgs/brand/6.png" alt="Brand Logo" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- Brand area end -->
 
           <!-- Team area start -->
           <section class="about__area-3">
@@ -413,7 +724,7 @@
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                   <div class="about__img-3">
                     <img
-                      src="assets/imgs/about/3/1.jpg"
+                      src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop"
                       alt="Team Image"
                       data-speed="auto"
                     />
@@ -451,12 +762,12 @@
           <!-- Team area end -->
 
           <!-- Team Members area start -->
-          <section class="service__area-3 pb-150">
+          <section class="service__area-3 pb-150" style="background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);">
             <div class="container">
               <div class="row">
                 <div class="col-xxl-12">
                   <div class="sec-title-wrapper pt-130 text-anim">
-                    <h2 class="sec-sub-title title-anim">Leadership</h2>
+                    <h2 class="sec-sub-title title-anim" style="color: #00ff88;">Our Team</h2>
                     <h3 class="sec-title title-anim">
                       Meet Our <br />
                       Leadership Team
@@ -470,119 +781,135 @@
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-xx-12">
-                  <div class="service__list-3">
-                    <div class="service__item-3 service_animation">
-                      <h3>
-                        <a href="#" class="service__title-3"
-                          >Executive <br />Leadership</a
-                        >
-                      </h3>
-                      <div class="service__content-3">
-                        <p>
-                          Our executive leadership team provides strategic direction and vision for GTHINK Group, 
-                          ensuring we deliver value and innovation across all our subsidiaries and business areas.
-                        </p>
-                        <ul class="">
-                          <li>+ Strategic Vision</li>
-                          <li>+ Business Development</li>
-                          <li>+ Corporate Governance</li>
-                        </ul>
-                      </div>
-                      <div class="service__btn-3">
-                        <div class="btn_wrapper">
-                          <a
-                            href="contact.html"
-                            class="wc-btn-black btn-hover btn-item"
-                            ><span></span> Contact
-                            <i class="fa-solid fa-arrow-right"></i
-                          ></a>
-                        </div>
-                      </div>
-
-                      <div
-                        class="service__hover-3"
-                        style="
-                          background-image: url(assets/imgs/service/3/1.jpg);
-                        "
-                      ></div>
+              <div class="row pt-100">
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                  <div class="team__member-artistic">
+                    <div class="team__member-image-wrapper">
+                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop&crop=faces" alt="Ahmed Hassan" />
+                      <div class="team__member-overlay"></div>
                     </div>
-
-                    <div class="service__item-3 service_animation">
-                      <h3>
-                        <a href="#" class="service__title-3"
-                          >Technology <br />Team</a
-                        >
-                      </h3>
-                      <div class="service__content-3">
-                        <p>
-                          Our technology experts drive innovation in software development, cloud services, and 
-                          digital transformation, delivering cutting-edge solutions to our clients.
-                        </p>
-                        <ul class="">
-                          <li>+ Software Engineers</li>
-                          <li>+ Cloud Architects</li>
-                          <li>+ Digital Strategists</li>
-                        </ul>
+                    <div class="team__member-info">
+                      <div class="team__member-number">01</div>
+                      <h3 class="team__member-name">Ahmed Hassan</h3>
+                      <p class="team__member-role">Chief Executive Officer</p>
+                      <p class="team__member-bio">
+                        Strategic leader with 15+ years of experience driving business growth and innovation.
+                      </p>
+                      <div class="team__member-social">
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
                       </div>
-                      <div class="service__btn-3">
-                        <div class="btn_wrapper">
-                          <a
-                            href="contact.html"
-                            class="wc-btn-black btn-hover btn-item"
-                            ><span></span> Contact
-                            <i class="fa-solid fa-arrow-right"></i
-                          ></a>
-                        </div>
-                      </div>
-
-                      <div
-                        class="service__hover-3"
-                        style="
-                          background-image: url(assets/imgs/service/3/2.jpg);
-                        "
-                      ></div>
                     </div>
+                  </div>
+                </div>
 
-                    <div class="service__item-3 service_animation">
-                      <h3 class="">
-                        <a href="#" class="service__title-3"
-                          >Operations <br />Team</a
-                        >
-                      </h3>
-                      <div class="service__content-3">
-                        <p>
-                          Our operations team ensures seamless execution of construction, logistics, and business 
-                          services, maintaining the highest standards of quality and efficiency.
-                        </p>
-                        <ul class="">
-                          <li>+ Project Managers</li>
-                          <li>+ Logistics Specialists</li>
-                          <li>+ Business Consultants</li>
-                        </ul>
-                      </div>
-                      <div class="service__btn-3">
-                        <div class="btn_wrapper">
-                          <a
-                            href="contact.html"
-                            class="wc-btn-black btn-hover btn-item"
-                            ><span></span> Contact
-                            <i class="fa-solid fa-arrow-right"></i
-                          ></a>
-                        </div>
-                      </div>
-
-                      <div
-                        class="service__hover-3"
-                        style="
-                          background-image: url(assets/imgs/service/3/3.jpg);
-                        "
-                      ></div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                  <div class="team__member-artistic team__member-reverse">
+                    <div class="team__member-image-wrapper">
+                      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=800&fit=crop&crop=faces" alt="Sarah Mohamed" />
+                      <div class="team__member-overlay"></div>
                     </div>
+                    <div class="team__member-info">
+                      <div class="team__member-number">02</div>
+                      <h3 class="team__member-name">Sarah Mohamed</h3>
+                      <p class="team__member-role">Chief Technology Officer</p>
+                      <p class="team__member-bio">
+                        Technology visionary specializing in cloud infrastructure, AI solutions, and digital transformation.
+                      </p>
+                      <div class="team__member-social">
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-                    <div class="service3__img-wrap">
-                      <div class="service3__img"></div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                  <div class="team__member-artistic">
+                    <div class="team__member-image-wrapper">
+                      <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=800&fit=crop&crop=faces" alt="Mohamed Ali" />
+                      <div class="team__member-overlay"></div>
+                    </div>
+                    <div class="team__member-info">
+                      <div class="team__member-number">03</div>
+                      <h3 class="team__member-name">Mohamed Ali</h3>
+                      <p class="team__member-role">Chief Operations Officer</p>
+                      <p class="team__member-bio">
+                        Operations expert with extensive experience in construction, logistics, and supply chain management.
+                      </p>
+                      <div class="team__member-social">
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                  <div class="team__member-artistic team__member-reverse">
+                    <div class="team__member-image-wrapper">
+                      <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=800&fit=crop&crop=faces" alt="Omar Ibrahim" />
+                      <div class="team__member-overlay"></div>
+                    </div>
+                    <div class="team__member-info">
+                      <div class="team__member-number">04</div>
+                      <h3 class="team__member-name">Omar Ibrahim</h3>
+                      <p class="team__member-role">Head of Technology</p>
+                      <p class="team__member-bio">
+                        Software architect and development leader with expertise in enterprise solutions and cloud platforms.
+                      </p>
+                      <div class="team__member-social">
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                  <div class="team__member-artistic">
+                    <div class="team__member-image-wrapper">
+                      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=800&fit=crop&crop=faces" alt="Fatima Khaled" />
+                      <div class="team__member-overlay"></div>
+                    </div>
+                    <div class="team__member-info">
+                      <div class="team__member-number">05</div>
+                      <h3 class="team__member-name">Fatima Khaled</h3>
+                      <p class="team__member-role">Head of Construction</p>
+                      <p class="team__member-bio">
+                        Construction management specialist with proven track record in large-scale infrastructure projects.
+                      </p>
+                      <div class="team__member-social">
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                  <div class="team__member-artistic team__member-reverse">
+                    <div class="team__member-image-wrapper">
+                      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=800&fit=crop&crop=faces" alt="Youssef Mahmoud" />
+                      <div class="team__member-overlay"></div>
+                    </div>
+                    <div class="team__member-info">
+                      <div class="team__member-number">06</div>
+                      <h3 class="team__member-name">Youssef Mahmoud</h3>
+                      <p class="team__member-role">Head of Business Development</p>
+                      <p class="team__member-bio">
+                        Business strategist focused on partnerships, market expansion, and commercial growth initiatives.
+                      </p>
+                      <div class="team__member-social">
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -616,7 +943,7 @@
                               Cloud<span>Platform </span> 2024
                             </h3>
                             <img
-                              src="assets/imgs/portfolio/3/2.jpg"
+                              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
                               alt="Portfolio Image"
                             />
                           </a>
@@ -629,7 +956,7 @@
                               Enterprise <span>Solutions</span> 2024
                             </h3>
                             <img
-                              src="assets/imgs/portfolio/3/1.jpg"
+                              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
                               alt="Portfolio Image"
                             />
                           </a>
@@ -642,7 +969,7 @@
                               Software <span>Development</span> 2024
                             </h3>
                             <img
-                              src="assets/imgs/portfolio/3/3.jpg"
+                              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
                               alt="Portfolio Image"
                             />
                           </a>
@@ -655,7 +982,7 @@
                               AI <span>Solutions</span> 2024
                             </h3>
                             <img
-                              src="assets/imgs/portfolio/3/4.jpg"
+                              src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
                               alt="Portfolio Image"
                             />
                           </a>
@@ -681,7 +1008,7 @@
           <!-- Portfolio area end -->
 
           <!-- Testimonial area start -->
-          <section class="testimonial__area-3">
+          <!-- <section class="testimonial__area-3">
             <div class="container">
               <div class="row">
                 <div class="col-xxl-12">
@@ -746,37 +1073,37 @@
             </div>
             <div class="testimonial__images-3 animation_image_zoom">
               <img
-                src="assets/imgs/testimonial/3/1.jpg"
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=faces"
                 alt="testimonial Image"
                 class="testimonial3__img"
               />
               <img
-                src="assets/imgs/testimonial/3/2.jpg"
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop&crop=faces"
                 alt="testimonial Image"
                 class="testimonial3__img-2"
               />
               <img
-                src="assets/imgs/testimonial/3/3.jpg"
+                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop&crop=faces"
                 alt="testimonial Image"
                 class="testimonial3__img-3"
               />
               <img
-                src="assets/imgs/testimonial/3/4.jpg"
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&crop=faces"
                 alt="testimonial Image"
                 class="testimonial3__img-4"
               />
               <img
-                src="assets/imgs/testimonial/3/5.jpg"
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=faces"
                 alt="testimonial Image"
                 class="testimonial3__img-5"
               />
               <img
-                src="assets/imgs/testimonial/3/6.jpg"
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=faces"
                 alt="testimonial Image"
                 class="testimonial3__img-6"
               />
             </div>
-          </section>
+          </section> -->
           <!-- Testimonial area end -->
 
           <!-- Workflow area start -->
@@ -923,9 +1250,9 @@
                         </h2>
                         <div class="btn_wrapper">
                           <a
-                            href="contact.html"
+                            href="newsletter.html"
                             class="wc-btn-black btn-hover btn-item"
-                            ><span></span>Sign <br />UP
+                            ><span></span>Subscribe to <br />our newsletter
                             <i class="fa-solid fa-arrow-right"></i
                           ></a>
                         </div>
@@ -1107,16 +1434,16 @@
                         <span><i class="fa-solid fa-check"></i></span>
                       </div>
                       <div class="price__info">
-                        <h2 class="price__type">Yearly</h2>
-                        <h3 class="price__title">14 days free</h3>
+                        <h2 class="price__type">Custom Solutions</h2>
+                        <h3 class="price__title">Tailored to Your Needs</h3>
                         <p>
-                          Subscription fee is $129.99 USD and automatically
-                          renews each year.
+                          We offer customized pricing based on your specific requirements 
+                          and project scope. Contact us for a personalized quote.
                         </p>
                       </div>
                       <div class="price__amount">
                         <h4 class="best-value">Best Value</h4>
-                        <p>$129<span> .99</span></p>
+                        <p>Contact <br />Us</p>
                       </div>
                     </div>
 
@@ -1125,15 +1452,15 @@
                         <span><i class="fa-solid fa-check"></i></span>
                       </div>
                       <div class="price__info">
-                        <h2 class="price__type">Monthly</h2>
-                        <h3 class="price__title">7 days free</h3>
+                        <h2 class="price__type">Enterprise Plans</h2>
+                        <h3 class="price__title">Flexible Options</h3>
                         <p>
-                          Subscription fee is $12.99 USD and automatically
-                          renews each year.
+                          Enterprise solutions with flexible pricing structures 
+                          designed to scale with your business needs.
                         </p>
                       </div>
                       <div class="price__amount">
-                        <p>$12<span> .99</span></p>
+                        <p>Request <br />Quote</p>
                       </div>
                     </div>
                   </div>
@@ -1141,7 +1468,7 @@
                     <a
                       href="contact.html"
                       class="wc-btn-black btn-hover btn-item"
-                      ><span></span> Try it <br />Free Now
+                      ><span></span> Get <br />Quote
                       <i class="fa-solid fa-arrow-right"></i
                     ></a>
                   </div>
@@ -1178,12 +1505,12 @@
                         <div class="img-box">
                           <img
                             class="image-box__item"
-                            src="assets/imgs/blog/3/1.jpg"
+                            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
                             alt="Blog Thumbnail"
                           />
                           <img
                             class="image-box__item"
-                            src="assets/imgs/blog/3/1.jpg"
+                            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
                             alt="BLog Thumbnail"
                           />
                         </div>
@@ -1214,12 +1541,12 @@
                         <div class="img-box">
                           <img
                             class="image-box__item"
-                            src="assets/imgs/blog/3/2.jpg"
+                            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
                             alt="Blog Thumbnail"
                           />
                           <img
                             class="image-box__item"
-                            src="assets/imgs/blog/3/2.jpg"
+                            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
                             alt="BLog Thumbnail"
                           />
                         </div>
@@ -1261,7 +1588,7 @@
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <rect width="28" height="28" rx="6" fill="#F3EF6A" />
+                      <rect width="28" height="28" rx="6" fill="#00ff88" />
                       <path
                         d="M13.0788 5.18059C13.4229 4.36611 14.5771 4.36611 14.9212 5.18059L17.1088 10.3591C17.2101 10.599 17.401 10.7899 17.6409 10.8912L22.8194 13.0788C23.6339 13.4229 23.6339 14.5771 22.8194 14.9212L17.6409 17.1088C17.401 17.2101 17.2101 17.401 17.1088 17.6409L14.9212 22.8194C14.5771 23.6339 13.4229 23.6339 13.0788 22.8194L10.8912 17.6409C10.7899 17.401 10.599 17.2101 10.3591 17.1088L5.18059 14.9212C4.36611 14.5771 4.36611 13.4229 5.18059 13.0788L10.3591 10.8912C10.599 10.7899 10.7899 10.599 10.8912 10.3591L13.0788 5.18059Z"
                         fill="black"
@@ -1280,15 +1607,13 @@
                         width="27"
                         height="27"
                         rx="5.5"
-                        stroke="#93D5E1"
+                        stroke="#1e3a8a"
                         stroke-linejoin="round"
                         stroke-dasharray="2 2"
                       />
                     </svg>
                   </div>
-                  <h1 class="navigation__logo-title" style="color: white">
-                    GTHINK GROUP
-                  </h1>
+                  <img src="assets/imgs/logo/glogo.png" alt="GTHINK GROUP" class="navigation__logo-title" style="height: 140px; max-height: 200px; width: auto;" />
                 </div>
                 <br />
                 <br />
