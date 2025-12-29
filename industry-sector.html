@@ -26,6 +26,348 @@
     <link rel="stylesheet" href="assets/css/master.css">
     <link rel="stylesheet" href="style.css">
     <style>
+            /* Navigation Menu - Keep all items on one line and centered */
+      .header__inner-3,
+      .header__inner-2 {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        position: relative;
+      }
+      
+      .header__nav-2 {
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        flex: 0 0 auto !important;
+        width: auto !important;
+        z-index: 10;
+        padding-left: 20px;
+      }
+      
+      .main-menu-3,
+      .main-menu {
+        white-space: nowrap;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: center;
+        align-items: center;
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 5px;
+      }
+      
+      .main-menu-3 > li,
+      .main-menu > li {
+        padding: 0 25px !important;
+        margin: 0 !important;
+        flex-shrink: 0;
+        position: relative;
+      }
+      
+      .main-menu-3 > li > a,
+      .main-menu > li > a {
+        font-size: 15px !important;
+        padding: 30px 0 25px 0 !important;
+        white-space: nowrap;
+        position: relative;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        color: #ffffff !important;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+        display: block;
+      }
+      
+      /* Ensure navigation text is visible on dark headers */
+      .header__area-2 .main-menu > li > a,
+      .header__area-2 .main-menu-3 > li > a {
+        color: #ffffff !important;
+      }
+      
+      .header__area-2 .main-menu > li > a:hover,
+      .header__area-2 .main-menu-3 > li > a:hover {
+        color: #00ff88 !important;
+      }
+      
+      /* Active/Selected nav item underline */
+      .main-menu-3 > li > a.active,
+      .main-menu > li > a.active {
+        color: #1e3a8a;
+        font-weight: 600;
+        padding-bottom: 25px !important;
+      }
+      
+      .main-menu-3 > li > a.active::before,
+      .main-menu > li > a.active::before {
+        content: '';
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: #1e3a8a;
+      }
+      
+      .main-menu-3 > li > a:hover,
+      .main-menu > li > a:hover {
+        color: #1e3a8a;
+        transform: translateY(-2px);
+      }
+      
+      /* Better spacing and visual hierarchy */
+      .main-menu-3 > li:not(:last-child)::after,
+      .main-menu > li:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 20px;
+        background: rgba(0, 0, 0, 0.1);
+        z-index: 1;
+      }
+      
+      .main-menu-3 > li.has-dropdown:not(:last-child)::after,
+      .main-menu > li.has-dropdown:not(:last-child)::after {
+        display: block;
+      }
+      
+      /* Subsidiaries dropdown menu */
+      .main-menu-3 > li.has-dropdown,
+      .main-menu > li.has-dropdown {
+        position: relative;
+      }
+      
+      .main-menu-3 > li.has-dropdown > a,
+      .main-menu > li.has-dropdown > a {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      
+      .main-menu-3 > li.has-dropdown > a::after,
+      .main-menu > li.has-dropdown > a::after {
+        content: '\f107';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        font-size: 12px;
+        transition: transform 0.3s ease;
+        display: inline-block;
+        line-height: 1;
+        vertical-align: middle;
+      }
+      
+      .main-menu-3 > li.has-dropdown:hover > a::after,
+      .main-menu-3 > li.has-dropdown.active > a::after,
+      .main-menu > li.has-dropdown:hover > a::after,
+      .main-menu > li.has-dropdown.active > a::after {
+        transform: rotate(180deg);
+      }
+      
+      .subsidiaries-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #ffffff;
+        min-width: 250px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        border-radius: 12px;
+        padding: 15px 0;
+        margin-top: 10px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+        border: 1px solid rgba(30, 58, 138, 0.1);
+      }
+      
+      .main-menu-3 > li.has-dropdown:hover .subsidiaries-dropdown,
+      .main-menu-3 > li.has-dropdown.active .subsidiaries-dropdown,
+      .main-menu > li.has-dropdown:hover .subsidiaries-dropdown,
+      .main-menu > li.has-dropdown.active .subsidiaries-dropdown {
+        opacity: 1;
+        visibility: visible;
+        margin-top: 5px;
+      }
+      
+      .subsidiaries-dropdown li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .subsidiaries-dropdown li a {
+        display: block;
+        padding: 12px 25px;
+        color: #1a1a1a;
+        text-decoration: none;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        border-bottom: none !important;
+      }
+      
+      .subsidiaries-dropdown li a:hover {
+        background: linear-gradient(90deg, rgba(30, 58, 138, 0.05) 0%, transparent 100%);
+        color: #1e3a8a;
+        padding-left: 30px;
+      }
+      
+      .subsidiaries-dropdown li:last-child a {
+        border-bottom: none;
+      }
+      
+      @media (min-width: 1200px) and (max-width: 1399px) {
+        .main-menu-3 > li,
+        .main-menu > li {
+          padding: 0 20px !important;
+        }
+        
+        .main-menu-3 > li > a,
+        .main-menu > li > a {
+          font-size: 14px !important;
+          padding: 28px 0 !important;
+        }
+      }
+      
+      @media (min-width: 992px) and (max-width: 1199px) {
+        .main-menu-3 > li,
+        .main-menu > li {
+          padding: 0 18px !important;
+        }
+        
+        .main-menu-3 > li > a,
+        .main-menu > li > a {
+          font-size: 13px !important;
+          padding: 27px 0 !important;
+        }
+      }
+      
+      @media (min-width: 768px) and (max-width: 991px) {
+        .main-menu-3 > li,
+        .main-menu > li {
+          padding: 0 15px !important;
+        }
+        
+        .main-menu-3 > li > a,
+        .main-menu > li > a {
+          font-size: 12px !important;
+          padding: 25px 0 !important;
+        }
+      }
+      
+      @media (max-width: 991px) {
+        .subsidiaries-dropdown {
+          left: 0;
+          transform: translateX(0);
+          min-width: 200px;
+        }
+      }
+      
+      @media (max-width: 767px) {
+        .main-menu-3 > li.has-dropdown > a::after,
+        .main-menu > li.has-dropdown > a::after {
+          display: none;
+        }
+        
+        .subsidiaries-dropdown {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          box-shadow: none;
+          border: none;
+          padding: 0;
+          margin: 0;
+          background: transparent;
+        }
+        
+        .subsidiaries-dropdown li a {
+          padding: 10px 15px;
+          font-size: 13px;
+        }
+      }
+      
+      .header__logo-2 {
+        flex: 0 0 auto;
+      }
+      
+      .header__nav-icon-3,
+      .header__nav-icon-2 {
+        flex: 0 0 auto;
+        margin-left: auto;
+      }
+      
+      .header__nav-2 {
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        flex: 0 0 auto !important;
+        width: auto !important;
+        z-index: 10;
+      }
+      
+      .main-menu-3,
+      .main-menu {
+        white-space: nowrap;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: center;
+        align-items: center;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      .main-menu-3 > li,
+      .main-menu > li {
+        padding: 0 20px !important;
+        margin: 0 !important;
+        flex-shrink: 0;
+      }
+      
+      .main-menu-3 > li > a,
+      .main-menu > li > a {
+        font-size: 14px !important;
+        padding: 27px 0 !important;
+        white-space: nowrap;
+      }
+      
+      @media (min-width: 1200px) and (max-width: 1399px) {
+        .main-menu-3 > li,
+        .main-menu > li {
+          padding: 0 15px !important;
+        }
+        
+        .main-menu-3 > li > a,
+        .main-menu > li > a {
+          font-size: 13px !important;
+        }
+      }
+      
+      @media (min-width: 992px) and (max-width: 1199px) {
+        .main-menu-3 > li,
+        .main-menu > li {
+          padding: 0 12px !important;
+        }
+        
+        .main-menu-3 > li > a,
+        .main-menu > li > a {
+          font-size: 12px !important;
+        }
+      }
+      
+      .header__logo-2 {
+        flex: 0 0 auto;
+      }
+      
+      .header__nav-icon-3,
+      .header__nav-icon-2 {
+        flex: 0 0 auto;
+        margin-left: auto;
+      }
+      
       /* Color Scheme - Deep Blue/Navy Primary, Electric Green Accent */
       :root {
         --primary-color: #1e3a8a;
@@ -141,21 +483,27 @@
             <div class="header__logo-2">
                 <div class="navigation__logo">
                     <!-- <div class="navigation__logo-logomark"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="28" rx="6" fill="#00ff88"/><path d="M13.0788 5.18059C13.4229 4.36611 14.5771 4.36611 14.9212 5.18059L17.1088 10.3591C17.2101 10.599 17.401 10.7899 17.6409 10.8912L22.8194 13.0788C23.6339 13.4229 23.6339 14.5771 22.8194 14.9212L17.6409 17.1088C17.401 17.2101 17.2101 17.401 17.1088 17.6409L14.9212 22.8194C14.5771 23.6339 13.4229 23.6339 13.0788 22.8194L10.8912 17.6409C10.7899 17.401 10.599 17.2101 10.3591 17.1088L5.18059 14.9212C4.36611 14.5771 4.36611 13.4229 5.18059 13.0788L10.3591 10.8912C10.599 10.7899 10.7899 10.599 10.8912 10.3591L13.0788 5.18059Z" fill="black"/></svg>                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="27" height="27" rx="5.5" stroke="#1e3a8a" stroke-linejoin="round" stroke-dasharray="2 2"/></svg></div> -->
-                        <a href="index.html"><img src="assets/imgs/logo/glogo.png" alt="GTHINK GROUP" class="navigation__logo-title" style="height: 140px; max-height: 200px; width: auto;" /></a>
+                        <a href="index.html"><img src="assets/imgs/logo/glogo1.png" alt="GTHINK GROUP" class="navigation__logo-title" style="height: 140px; max-height: 200px; width: auto;" /></a>
                 </div>
             </div>
-            <div class="header__nav-2">
-                <ul class="main-menu menu-anim">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="about.html">ABOUT US</a></li>
-                    <li><a href="subsidiaries.html">SUBSIDIARIES</a></li>
-                    <li><a href="industry-sector.html">INDUSTRY AND SECTOR</a></li>
-                    <li><a href="solutions.html">SOLUTIONS</a></li>
-                    <li><a href="products-services.html">PRODUCTS AND SERVICES</a></li>
-                    <li><a href="team.html">TEAM</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
-                </ul>
-            </div>
+                    <div class="header__nav-2" style="padding-left: 20px;">
+          <ul class="main-menu menu-anim">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li class="has-dropdown">
+              <a href="#">SUBSIDIARIES</a>
+              <ul class="subsidiaries-dropdown">
+                <li><a href="gthink-company.html">GTHINK Company</a></li>
+                <li><a href="grogate-company.html">GROGATE Company</a></li>
+                <li><a href="ulip-gthink.html">ULIP GTHINK</a></li>
+                <li><a href="subsidiaries.html" style="border-top: 1px solid rgba(0,0,0,0.1); margin-top: 5px; padding-top: 15px;">View All</a></li>
+              </ul>
+            </li>
+            <li><a href="industry-sector.html">INDUSTRY AND SECTOR</a></li>
+            <li><a href="team.html">TEAM</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
             <div class="header__nav-icon-2">
                 <button class="menu-icon-2" id="open_offcanvas"><img src="assets/imgs/icon/menu-white.png"
             alt="Menubar Icon"></button>
@@ -171,7 +519,7 @@
                 <div class="offcanvas__logo">
                     <div class="navigation__logo" >
                         <div class="navigation__logo-logomark"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="28" rx="6" fill="#00ff88"/><path d="M13.0788 5.18059C13.4229 4.36611 14.5771 4.36611 14.9212 5.18059L17.1088 10.3591C17.2101 10.599 17.401 10.7899 17.6409 10.8912L22.8194 13.0788C23.6339 13.4229 23.6339 14.5771 22.8194 14.9212L17.6409 17.1088C17.401 17.2101 17.2101 17.401 17.1088 17.6409L14.9212 22.8194C14.5771 23.6339 13.4229 23.6339 13.0788 22.8194L10.8912 17.6409C10.7899 17.401 10.599 17.2101 10.3591 17.1088L5.18059 14.9212C4.36611 14.5771 4.36611 13.4229 5.18059 13.0788L10.3591 10.8912C10.599 10.7899 10.7899 10.599 10.8912 10.3591L13.0788 5.18059Z" fill="black"/></svg>                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="27" height="27" rx="5.5" stroke="#1e3a8a" stroke-linejoin="round" stroke-dasharray="2 2"/></svg></div>
-                        <a href="index.html"><img src="assets/imgs/logo/glogo.png" alt="GTHINK GROUP" class="navigation__logo-title" style="height: 140px; max-height: 200px; width: auto;" /></a>
+                        <a href="index.html"><img src="assets/imgs/logo/glogo1.png" alt="GTHINK GROUP" class="navigation__logo-title" style="height: 140px; max-height: 200px; width: auto;" /></a>
                     </div>
                 </div>
                 <div class="offcanvas__social">
@@ -189,7 +537,6 @@
                     <ul>
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">contact</a></li>
-                        <li><a href="products-services.html">products and services</a></li>
                         <li><a href="team.html">Team</a></li>
                     </ul>
                 </div>
@@ -202,8 +549,6 @@
                             <li><a href="about.html">about us</a></li>
                             <li><a href="subsidiaries.html">subsidiaries</a></li>
                             <li><a href="industry-sector.html">industry and sector</a></li>
-                            <li><a href="solutions.html">solutions</a></li>
-                            <li><a href="products-services.html">products and services</a></li>
                             <li><a href="team.html">team</a></li>
                             <li><a href="contact.html">contact</a></li>
                         </ul>
@@ -276,23 +621,23 @@
                                     <div class="feature__list animation__feature2">
                                         <div class="feature__item">
                                             <img src="assets/imgs/feature/icon/1.png" alt="Technology Icon">
-                                            <h3 class="feature__title">Technology & Telecom</h3>
+                                            <h3 class="feature__title">Technology</h3>
                                             <p>We provide cutting-edge technology solutions, software development, telecommunications infrastructure, and digital transformation services to help businesses thrive in the digital age.</p>
                                         </div>
                                         <div class="feature__item">
                                             <img src="assets/imgs/feature/icon/2.png" alt="Construction Icon">
-                                            <h3 class="feature__title">Construction & Real Estate</h3>
-                                            <p>Our construction and real estate services include infrastructure development, project management, and facility solutions that build the foundations for growth.</p>
+                                            <h3 class="feature__title">Construction</h3>
+                                            <p>Our construction services include infrastructure development, project management, and facility solutions that build the foundations for growth and development.</p>
                                         </div>
                                         <div class="feature__item">
                                             <img class="" src="assets/imgs/feature/icon/3.png" alt="Logistics Icon">
-                                            <h3 class="feature__title">Logistics & Supply Chain</h3>
+                                            <h3 class="feature__title">Logistics and Supply</h3>
                                             <p>We deliver efficient logistics and supply chain management solutions, ensuring seamless operations and optimized distribution networks for businesses.</p>
                                         </div>
                                         <div class="feature__item">
                                             <img src="assets/imgs/feature/icon/4.png" alt="Business Icon">
-                                            <h3 class="feature__title">Business & Trading</h3>
-                                            <p>Our business and trading services facilitate international commerce, business development, and strategic partnerships across global markets.</p>
+                                            <h3 class="feature__title">General and Business Service</h3>
+                                            <p>Our general business services facilitate commerce, business development, strategic partnerships, and comprehensive business solutions across global markets.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -308,7 +653,7 @@
                         <div class="row">
                             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                                 <div class="sec-text text-anim">
-                                    <p>GTHINK Group serves clients across multiple sectors, from technology and telecommunications to construction, logistics, and international trade. Our diverse expertise enables us to deliver comprehensive solutions tailored to each industry's unique needs.</p>
+                                    <p>GTHINK Group serves clients across four key industries: Technology, Construction, Logistics and Supply, and General and Business Service. Our diverse expertise enables us to deliver comprehensive solutions tailored to each industry's unique needs.</p>
                                 </div>
                             </div>
                             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
@@ -324,25 +669,27 @@
                                     <div class="service__item-2">
                                         <div>
                                             <img src="assets/imgs/service/2/1.png" alt="Service Icon">
-                                            <h3 class="service__title-2">Technology <br>Sector</h3>
-                                            <p>Software development, cloud services, AI solutions, and digital transformation for technology companies.
+                                            <h3 class="service__title-2">Technology</h3>
+                                            <p>Software development, cloud services, AI solutions, telecommunications, and digital transformation services for businesses.
                                             </p>
                                             <ul>
                                                 <li>+ Software Development</li>
                                                 <li>+ Cloud Infrastructure</li>
-                                                <li>+ AI & Machine Learning</li>
+                                                <li>+ Telecommunications</li>
+                                                <li>+ Digital Transformation</li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="service__item-2">
                                         <div>
                                             <img src="assets/imgs/service/2/2.png" alt="Service Icon">
-                                            <h3 class="service__title-2 ">Construction <br>Sector</h3>
-                                            <p>Infrastructure development, project management, and construction services for real estate and infrastructure projects.
+                                            <h3 class="service__title-2">Construction</h3>
+                                            <p>Infrastructure development, project management, and construction services for building and infrastructure projects.
                                             </p>
                                             <ul>
                                                 <li>+ Infrastructure Development</li>
                                                 <li>+ Project Management</li>
+                                                <li>+ Building Construction</li>
                                                 <li>+ Facility Solutions</li>
                                             </ul>
                                         </div>
@@ -350,13 +697,28 @@
                                     <div class="service__item-2">
                                         <div>
                                             <img src="assets/imgs/service/2/3.png" alt="Service Icon">
-                                            <h3 class="service__title-2">Logistics <br>Sector</h3>
-                                            <p>Supply chain management, logistics optimization, and distribution services for businesses requiring efficient operations.
+                                            <h3 class="service__title-2">Logistics and Supply</h3>
+                                            <p>Supply chain management, logistics optimization, distribution services, and supply chain solutions for efficient operations.
                                             </p>
                                             <ul>
                                                 <li>+ Supply Chain Management</li>
                                                 <li>+ Logistics Optimization</li>
                                                 <li>+ Distribution Services</li>
+                                                <li>+ Supply Solutions</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="service__item-2">
+                                        <div>
+                                            <img src="assets/imgs/feature/icon/4.png" alt="Service Icon">
+                                            <h3 class="service__title-2">General and Business Service</h3>
+                                            <p>Comprehensive business services including consulting, trading, business development, and strategic partnerships.
+                                            </p>
+                                            <ul>
+                                                <li>+ Business Consulting</li>
+                                                <li>+ Trading Services</li>
+                                                <li>+ Business Development</li>
+                                                <li>+ Strategic Partnerships</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -390,7 +752,7 @@
             </main>
 
             <!-- Footer area start -->
-            <footer class="footer__area-2 pt-130">
+            <footer class="footer__area-2 pt-130" >
                 <div class="container">
                     <div class="footer__top-2 text-anim">
                         <div class="row">
@@ -467,7 +829,57 @@
     <script src="assets/js/jquery.meanmenu.min.js"></script>
     <script src="assets/js/main.js"></script>
 
-</body>
+    <script>
+      // Mark active navigation item
+      (function() {
+        const currentPath = window.location.pathname;
+        const currentPage = currentPath.split('/').pop() || 'index.html';
+        
+        const navLinks = document.querySelectorAll('.main-menu-3 > li > a, .main-menu > li > a');
+        navLinks.forEach(link => {
+          const linkPath = link.getAttribute('href');
+          if (linkPath === currentPage || 
+              (currentPage === '' && linkPath === 'index.html') ||
+              (currentPage.includes('gthink-company') && linkPath === 'gthink-company.html') ||
+              (currentPage.includes('grogate-company') && linkPath === 'grogate-company.html') ||
+              (currentPage.includes('ulip-gthink') && linkPath === 'ulip-gthink.html')) {
+            link.classList.add('active');
+          }
+        });
+        
+        // Also mark subsidiaries dropdown as active if on any subsidiary page
+        if (currentPage.includes('gthink-company') || 
+            currentPage.includes('grogate-company') || 
+            currentPage.includes('ulip-gthink') ||
+            currentPage.includes('subsidiaries.html')) {
+          const subsidiariesLink = document.querySelector('.main-menu-3 > li.has-dropdown > a, .main-menu > li.has-dropdown > a');
+          if (subsidiariesLink) {
+            subsidiariesLink.classList.add('active');
+            const dropdownParent = document.querySelector('.main-menu-3 > li.has-dropdown, .main-menu > li.has-dropdown');
+            if (dropdownParent) {
+              dropdownParent.classList.add('active');
+            }
+          }
+        }
+        
+        // Mobile dropdown toggle on click
+        const subsidiariesDropdown = document.querySelector('.main-menu-3 > li.has-dropdown, .main-menu > li.has-dropdown');
+        if (subsidiariesDropdown) {
+          const dropdownLink = subsidiariesDropdown.querySelector('> a');
+          const dropdown = subsidiariesDropdown.querySelector('.subsidiaries-dropdown');
+          
+          if (dropdownLink && dropdown) {
+            dropdownLink.addEventListener('click', function(e) {
+              if (window.innerWidth <= 991) {
+                e.preventDefault();
+                subsidiariesDropdown.classList.toggle('active');
+              }
+            });
+          }
+        }
+      })();
+    </script>
+  </body>
 
 </html>
 

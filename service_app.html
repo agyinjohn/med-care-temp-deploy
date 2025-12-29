@@ -26,6 +26,269 @@
     <link rel="stylesheet" href="assets/css/master.css">
     <link rel="stylesheet" href="style.css">
     <style>
+      /* Navigation Menu - Keep all items on one line and centered */
+      .header__inner-3,
+      .header__inner-2 {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        position: relative;
+      }
+      
+      .header__nav-2 {
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        flex: 0 0 auto !important;
+        width: auto !important;
+        z-index: 10;
+        padding-left: 20px;
+      }
+      
+      .main-menu-3,
+      .main-menu {
+        white-space: nowrap;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: center;
+        align-items: center;
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 5px;
+      }
+      
+      .main-menu-3 > li,
+      .main-menu > li {
+        padding: 0 25px !important;
+        margin: 0 !important;
+        flex-shrink: 0;
+        position: relative;
+      }
+      
+      .main-menu-3 > li > a,
+      .main-menu > li > a {
+        font-size: 15px !important;
+        padding: 30px 0 25px 0 !important;
+        white-space: nowrap;
+        position: relative;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        color: #1a1a1a;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+        display: block;
+      }
+      
+      /* Active/Selected nav item underline */
+      .main-menu-3 > li > a.active,
+      .main-menu > li > a.active {
+        color: #1e3a8a;
+        font-weight: 600;
+        padding-bottom: 25px !important;
+      }
+      
+      .main-menu-3 > li > a.active::before,
+      .main-menu > li > a.active::before {
+        content: '';
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: #1e3a8a;
+      }
+      
+      .main-menu-3 > li > a:hover,
+      .main-menu > li > a:hover {
+        color: #1e3a8a;
+        transform: translateY(-2px);
+      }
+      
+      /* Better spacing and visual hierarchy */
+      .main-menu-3 > li:not(:last-child)::after,
+      .main-menu > li:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 20px;
+        background: rgba(0, 0, 0, 0.1);
+        z-index: 1;
+      }
+      
+      .main-menu-3 > li.has-dropdown:not(:last-child)::after,
+      .main-menu > li.has-dropdown:not(:last-child)::after {
+        display: block;
+      }
+      
+      /* Subsidiaries dropdown menu */
+      .main-menu-3 > li.has-dropdown,
+      .main-menu > li.has-dropdown {
+        position: relative;
+      }
+      
+      .main-menu-3 > li.has-dropdown > a,
+      .main-menu > li.has-dropdown > a {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      
+      .main-menu-3 > li.has-dropdown > a::after,
+      .main-menu > li.has-dropdown > a::after {
+        content: '\f107';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        font-size: 12px;
+        transition: transform 0.3s ease;
+        display: inline-block;
+        line-height: 1;
+        vertical-align: middle;
+      }
+      
+      .main-menu-3 > li.has-dropdown:hover > a::after,
+      .main-menu-3 > li.has-dropdown.active > a::after,
+      .main-menu > li.has-dropdown:hover > a::after,
+      .main-menu > li.has-dropdown.active > a::after {
+        transform: rotate(180deg);
+      }
+      
+      .subsidiaries-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #ffffff;
+        min-width: 250px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        border-radius: 12px;
+        padding: 15px 0;
+        margin-top: 10px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+        border: 1px solid rgba(30, 58, 138, 0.1);
+      }
+      
+      .main-menu-3 > li.has-dropdown:hover .subsidiaries-dropdown,
+      .main-menu-3 > li.has-dropdown.active .subsidiaries-dropdown,
+      .main-menu > li.has-dropdown:hover .subsidiaries-dropdown,
+      .main-menu > li.has-dropdown.active .subsidiaries-dropdown {
+        opacity: 1;
+        visibility: visible;
+        margin-top: 5px;
+      }
+      
+      .subsidiaries-dropdown li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .subsidiaries-dropdown li a {
+        display: block;
+        padding: 12px 25px;
+        color: #1a1a1a;
+        text-decoration: none;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        border-bottom: none !important;
+      }
+      
+      .subsidiaries-dropdown li a:hover {
+        background: linear-gradient(90deg, rgba(30, 58, 138, 0.05) 0%, transparent 100%);
+        color: #1e3a8a;
+        padding-left: 30px;
+      }
+      
+      .subsidiaries-dropdown li:last-child a {
+        border-bottom: none;
+      }
+      
+      @media (min-width: 1200px) and (max-width: 1399px) {
+        .main-menu-3 > li,
+        .main-menu > li {
+          padding: 0 20px !important;
+        }
+        
+        .main-menu-3 > li > a,
+        .main-menu > li > a {
+          font-size: 14px !important;
+          padding: 28px 0 !important;
+        }
+      }
+      
+      @media (min-width: 992px) and (max-width: 1199px) {
+        .main-menu-3 > li,
+        .main-menu > li {
+          padding: 0 18px !important;
+        }
+        
+        .main-menu-3 > li > a,
+        .main-menu > li > a {
+          font-size: 13px !important;
+          padding: 27px 0 !important;
+        }
+      }
+      
+      @media (min-width: 768px) and (max-width: 991px) {
+        .main-menu-3 > li,
+        .main-menu > li {
+          padding: 0 15px !important;
+        }
+        
+        .main-menu-3 > li > a,
+        .main-menu > li > a {
+          font-size: 12px !important;
+          padding: 25px 0 !important;
+        }
+      }
+      
+      @media (max-width: 991px) {
+        .subsidiaries-dropdown {
+          left: 0;
+          transform: translateX(0);
+          min-width: 200px;
+        }
+      }
+      
+      @media (max-width: 767px) {
+        .main-menu-3 > li.has-dropdown > a::after,
+        .main-menu > li.has-dropdown > a::after {
+          display: none;
+        }
+        
+        .subsidiaries-dropdown {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          box-shadow: none;
+          border: none;
+          padding: 0;
+          margin: 0;
+          background: transparent;
+        }
+        
+        .subsidiaries-dropdown li a {
+          padding: 10px 15px;
+          font-size: 13px;
+        }
+      }
+      
+      .header__logo-2 {
+        flex: 0 0 auto;
+      }
+      
+      .header__nav-icon-3,
+      .header__nav-icon-2 {
+        flex: 0 0 auto;
+        margin-left: auto;
+      }
+      
       /* Color Scheme - Deep Blue/Navy Primary, Electric Green Accent */
       :root {
         --primary-color: #1e3a8a;
@@ -684,6 +947,56 @@
     <script src="assets/js/main.js"></script>
 
 
-</body>
+    <script>
+      // Mark active navigation item
+      (function() {
+        const currentPath = window.location.pathname;
+        const currentPage = currentPath.split('/').pop() || 'index.html';
+        
+        const navLinks = document.querySelectorAll('.main-menu-3 > li > a, .main-menu > li > a');
+        navLinks.forEach(link => {
+          const linkPath = link.getAttribute('href');
+          if (linkPath === currentPage || 
+              (currentPage === '' && linkPath === 'index.html') ||
+              (currentPage.includes('gthink-company') && linkPath === 'gthink-company.html') ||
+              (currentPage.includes('grogate-company') && linkPath === 'grogate-company.html') ||
+              (currentPage.includes('ulip-gthink') && linkPath === 'ulip-gthink.html')) {
+            link.classList.add('active');
+          }
+        });
+        
+        // Also mark subsidiaries dropdown as active if on any subsidiary page
+        if (currentPage.includes('gthink-company') || 
+            currentPage.includes('grogate-company') || 
+            currentPage.includes('ulip-gthink') ||
+            currentPage.includes('subsidiaries.html')) {
+          const subsidiariesLink = document.querySelector('.main-menu-3 > li.has-dropdown > a, .main-menu > li.has-dropdown > a');
+          if (subsidiariesLink) {
+            subsidiariesLink.classList.add('active');
+            const dropdownParent = document.querySelector('.main-menu-3 > li.has-dropdown, .main-menu > li.has-dropdown');
+            if (dropdownParent) {
+              dropdownParent.classList.add('active');
+            }
+          }
+        }
+        
+        // Mobile dropdown toggle on click
+        const subsidiariesDropdown = document.querySelector('.main-menu-3 > li.has-dropdown, .main-menu > li.has-dropdown');
+        if (subsidiariesDropdown) {
+          const dropdownLink = subsidiariesDropdown.querySelector('> a');
+          const dropdown = subsidiariesDropdown.querySelector('.subsidiaries-dropdown');
+          
+          if (dropdownLink && dropdown) {
+            dropdownLink.addEventListener('click', function(e) {
+              if (window.innerWidth <= 991) {
+                e.preventDefault();
+                subsidiariesDropdown.classList.toggle('active');
+              }
+            });
+          }
+        }
+      })();
+    </script>
+  </body>
 
 </html>

@@ -28,6 +28,329 @@
     <link rel="stylesheet" href="assets/css/master.css" />
     <link rel="stylesheet" href="style.css" />
     <style>
+            /* Navigation Menu - Keep all items on one line and centered */
+      .header__inner-3,
+      .header__inner-2 {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        position: relative;
+      }
+      
+      .header__nav-2 {
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        flex: 0 0 auto !important;
+        width: auto !important;
+        z-index: 10;
+        padding-left: 20px;
+      }
+      
+      .main-menu-3,
+      .main-menu {
+        white-space: nowrap;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: center;
+        align-items: center;
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 5px;
+      }
+      
+      .main-menu-3 > li,
+      .main-menu > li {
+        padding: 0 25px !important;
+        margin: 0 !important;
+        flex-shrink: 0;
+        position: relative;
+      }
+      
+      .main-menu-3 > li > a,
+      .main-menu > li > a {
+        font-size: 15px !important;
+        padding: 30px 0 25px 0 !important;
+        white-space: nowrap;
+        position: relative;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        color: #1a1a1a;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+        display: block;
+      }
+      
+      /* Active/Selected nav item underline */
+      .main-menu-3 > li > a.active,
+      .main-menu > li > a.active {
+        color: #1e3a8a;
+        font-weight: 600;
+        padding-bottom: 25px !important;
+      }
+      
+      .main-menu-3 > li > a.active::before,
+      .main-menu > li > a.active::before {
+        content: '';
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: #1e3a8a;
+      }
+      
+      .main-menu-3 > li > a:hover,
+      .main-menu > li > a:hover {
+        color: #1e3a8a;
+        transform: translateY(-2px);
+      }
+      
+      /* Better spacing and visual hierarchy */
+      .main-menu-3 > li:not(:last-child)::after,
+      .main-menu > li:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 20px;
+        background: rgba(0, 0, 0, 0.1);
+        z-index: 1;
+      }
+      
+      .main-menu-3 > li.has-dropdown:not(:last-child)::after,
+      .main-menu > li.has-dropdown:not(:last-child)::after {
+        display: block;
+      }
+      
+      /* Subsidiaries dropdown menu */
+      .main-menu-3 > li.has-dropdown,
+      .main-menu > li.has-dropdown {
+        position: relative;
+      }
+      
+      .main-menu-3 > li.has-dropdown > a,
+      .main-menu > li.has-dropdown > a {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      
+      .main-menu-3 > li.has-dropdown > a::after,
+      .main-menu > li.has-dropdown > a::after {
+        content: '\f107';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        font-size: 12px;
+        transition: transform 0.3s ease;
+        display: inline-block;
+        line-height: 1;
+        vertical-align: middle;
+      }
+      
+      .main-menu-3 > li.has-dropdown:hover > a::after,
+      .main-menu-3 > li.has-dropdown.active > a::after,
+      .main-menu > li.has-dropdown:hover > a::after,
+      .main-menu > li.has-dropdown.active > a::after {
+        transform: rotate(180deg);
+      }
+      
+      .subsidiaries-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #ffffff;
+        min-width: 250px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        border-radius: 12px;
+        padding: 15px 0;
+        margin-top: 10px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+        border: 1px solid rgba(30, 58, 138, 0.1);
+      }
+      
+      .main-menu-3 > li.has-dropdown:hover .subsidiaries-dropdown,
+      .main-menu-3 > li.has-dropdown.active .subsidiaries-dropdown,
+      .main-menu > li.has-dropdown:hover .subsidiaries-dropdown,
+      .main-menu > li.has-dropdown.active .subsidiaries-dropdown {
+        opacity: 1;
+        visibility: visible;
+        margin-top: 5px;
+      }
+      
+      .subsidiaries-dropdown li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .subsidiaries-dropdown li a {
+        display: block;
+        padding: 12px 25px;
+        color: #1a1a1a;
+        text-decoration: none;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        border-bottom: none !important;
+      }
+      
+      .subsidiaries-dropdown li a:hover {
+        background: linear-gradient(90deg, rgba(30, 58, 138, 0.05) 0%, transparent 100%);
+        color: #1e3a8a;
+        padding-left: 30px;
+      }
+      
+      .subsidiaries-dropdown li:last-child a {
+        border-bottom: none;
+      }
+      
+      @media (min-width: 1200px) and (max-width: 1399px) {
+        .main-menu-3 > li,
+        .main-menu > li {
+          padding: 0 20px !important;
+        }
+        
+        .main-menu-3 > li > a,
+        .main-menu > li > a {
+          font-size: 14px !important;
+          padding: 28px 0 !important;
+        }
+      }
+      
+      @media (min-width: 992px) and (max-width: 1199px) {
+        .main-menu-3 > li,
+        .main-menu > li {
+          padding: 0 18px !important;
+        }
+        
+        .main-menu-3 > li > a,
+        .main-menu > li > a {
+          font-size: 13px !important;
+          padding: 27px 0 !important;
+        }
+      }
+      
+      @media (min-width: 768px) and (max-width: 991px) {
+        .main-menu-3 > li,
+        .main-menu > li {
+          padding: 0 15px !important;
+        }
+        
+        .main-menu-3 > li > a,
+        .main-menu > li > a {
+          font-size: 12px !important;
+          padding: 25px 0 !important;
+        }
+      }
+      
+      @media (max-width: 991px) {
+        .subsidiaries-dropdown {
+          left: 0;
+          transform: translateX(0);
+          min-width: 200px;
+        }
+      }
+      
+      @media (max-width: 767px) {
+        .main-menu-3 > li.has-dropdown > a::after,
+        .main-menu > li.has-dropdown > a::after {
+          display: none;
+        }
+        
+        .subsidiaries-dropdown {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          box-shadow: none;
+          border: none;
+          padding: 0;
+          margin: 0;
+          background: transparent;
+        }
+        
+        .subsidiaries-dropdown li a {
+          padding: 10px 15px;
+          font-size: 13px;
+        }
+      }
+      
+      .header__logo-2 {
+        flex: 0 0 auto;
+      }
+      
+      .header__nav-icon-3,
+      .header__nav-icon-2 {
+        flex: 0 0 auto;
+        margin-left: auto;
+      }
+      
+      .header__nav-2 {
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        flex: 0 0 auto !important;
+        width: auto !important;
+        z-index: 10;
+      }
+      
+      .main-menu-3 {
+        white-space: nowrap;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: center;
+        align-items: center;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      .main-menu-3 > li {
+        padding: 0 20px !important;
+        margin: 0 !important;
+        flex-shrink: 0;
+      }
+      
+      .main-menu-3 > li > a {
+        font-size: 14px !important;
+        padding: 27px 0 !important;
+        white-space: nowrap;
+      }
+      
+      @media (min-width: 1200px) and (max-width: 1399px) {
+        .main-menu-3 > li {
+          padding: 0 15px !important;
+        }
+        
+        .main-menu-3 > li > a {
+          font-size: 13px !important;
+        }
+      }
+      
+      @media (min-width: 992px) and (max-width: 1199px) {
+        .main-menu-3 > li {
+          padding: 0 12px !important;
+        }
+        
+        .main-menu-3 > li > a {
+          font-size: 12px !important;
+        }
+      }
+      
+      .header__logo-2 {
+        flex: 0 0 auto;
+      }
+      
+      .header__nav-icon-3 {
+        flex: 0 0 auto;
+        margin-left: auto;
+      }
+      
       /* Color Scheme - Deep Blue/Navy Primary, Electric Green Accent */
       :root {
         --primary-color: #1e3a8a;
@@ -169,39 +492,7 @@
       <div class="header__inner-3">
         <div class="header__logo-2">
           <div class="navigation__logo">
-            <div class="navigation__logo-logomark">
-              <svg
-                width="28"
-                height="28"
-                viewBox="0 0 28 28"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="28" height="28" rx="6" fill="#00ff88" />
-                <path
-                  d="M13.0788 5.18059C13.4229 4.36611 14.5771 4.36611 14.9212 5.18059L17.1088 10.3591C17.2101 10.599 17.401 10.7899 17.6409 10.8912L22.8194 13.0788C23.6339 13.4229 23.6339 14.5771 22.8194 14.9212L17.6409 17.1088C17.401 17.2101 17.2101 17.401 17.1088 17.6409L14.9212 22.8194C14.5771 23.6339 13.4229 23.6339 13.0788 22.8194L10.8912 17.6409C10.7899 17.401 10.599 17.2101 10.3591 17.1088L5.18059 14.9212C4.36611 14.5771 4.36611 13.4229 5.18059 13.0788L10.3591 10.8912C10.599 10.7899 10.7899 10.599 10.8912 10.3591L13.0788 5.18059Z"
-                  fill="black"
-                />
-              </svg>
-              <svg
-                width="28"
-                height="28"
-                viewBox="0 0 28 28"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="0.5"
-                  y="0.5"
-                  width="27"
-                  height="27"
-                  rx="5.5"
-                  stroke="#1e3a8a"
-                  stroke-linejoin="round"
-                  stroke-dasharray="2 2"
-                />
-              </svg>
-            </div>
+           
             <img src="assets/imgs/logo/glogo.png" alt="GTHINK GROUP" class="navigation__logo-title" style="height: 140px; max-height: 200px; width: auto;" />
           </div>
           <!--
@@ -209,16 +500,15 @@
                 <a href="index.html" class="logo-light"><img src="assets/imgs/logo/site-logo-white-.png" alt="Site Logo" height="50px" width="220px"></a>
                 -->
         </div>
-        <div class="header__nav-2">
+                <div class="header__nav-2" style="padding-left: 20px;">
+                  <!-- <img src="assets/imgs/logo/glogo.png" alt="GTHINK GROUP" class="navigation__logo-title" style="height: 140px; max-height: 200px; width: auto;" /> -->
           <ul class="main-menu-3 menu-anim">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT US</a></li>
-            <li><a href="subsidiaries.html">SUBSIDIARIES</a></li>
-            <li><a href="industry-sector.html">INDUSTRY AND SECTOR</a></li>
-            <li><a href="solutions.html">SOLUTIONS</a></li>
-            <li><a href="products-services.html">PRODUCTS AND SERVICES</a></li>
-            <li><a href="team.html">TEAM</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#services">SERVICES</a></li>
+            <li><a href="#benefits">BENEFITS</a></li>
+            <li><a href="#process">PROCESS</a></li>
+            <li><a href="#industries">INDUSTRIES</a></li>
+            <li><a href="#contact">CONTACT</a></li>
           </ul>
         </div>
         <div class="header__nav-icon-3">
@@ -308,28 +598,22 @@
             <nav class="offcanvas__menu">
               <ul class="menu-anim">
                 <li>
-                  <a href="index.html">home</a>
+                  <a href="#about">about</a>
                 </li>
                 <li>
-                  <a href="about.html">about us</a>
+                  <a href="#services">services</a>
                 </li>
                 <li>
-                  <a href="subsidiaries.html">subsidiaries</a>
+                  <a href="#benefits">benefits</a>
                 </li>
                 <li>
-                  <a href="industry-sector.html">industry and sector</a>
+                  <a href="#process">process</a>
                 </li>
                 <li>
-                  <a href="solutions.html">solutions</a>
+                  <a href="#industries">industries</a>
                 </li>
                 <li>
-                  <a href="products-services.html">products and services</a>
-                </li>
-                <li>
-                  <a href="team.html">team</a>
-                </li>
-                <li>
-                  <a href="contact.html">contact</a>
+                  <a href="#contact">contact</a>
                 </li>
               </ul>
             </nav>
@@ -686,7 +970,7 @@
           <!-- Hero area end -->
 
           <!-- About Company area start -->
-          <section class="about__area-3">
+          <section id="about" class="about__area-3">
             <div class="container pt-140 pb-110">
               <div class="row">
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
@@ -882,7 +1166,7 @@
           <!-- Solutions List area end -->
 
           <!-- Benefits area start -->
-          <section class="feature__area-2 pt-130 pb-110">
+          <section id="benefits" class="feature__area-2 pt-130 pb-110">
             <div class="container">
               <div class="row">
                 <div class="col-xxl-12">
@@ -951,7 +1235,7 @@
           <!-- Benefits area end -->
 
           <!-- Process area start -->
-          <section class="about__area-3 pt-130" style="padding-bottom: 200px !important; overflow: visible !important; min-height: auto !important; margin-bottom: 50px !important;">
+          <section id="process" class="about__area-3 pt-130" style="padding-bottom: 200px !important; overflow: visible !important; min-height: auto !important; margin-bottom: 50px !important;">
             <div class="container" style="overflow: visible !important;">
               <div class="row" style="overflow: visible !important;">
                 <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12" style="margin-bottom: 60px;">
@@ -1032,7 +1316,7 @@
           <!-- Process area end -->
 
           <!-- Industries area start -->
-          <section class="service__area-2" style="padding-top: 180px !important; padding-bottom: 110px;">
+          <section id="industries" class="service__area-2" style="padding-top: 180px !important; padding-bottom: 110px;">
             <div class="container">
               <div class="row">
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
@@ -1121,7 +1405,7 @@
           <!-- Industries area end -->
 
           <!-- CTA area start -->
-          <section class="cta__area-3">
+          <section id="contact" class="cta__area-3">
             <div class="container pt-150 pb-150">
               <div class="row">
                 <div class="col-xxl-12">
@@ -1258,5 +1542,92 @@
     <script src="assets/js/vanilla-tilt.js"></script>
     <script src="assets/js/jquery.meanmenu.min.js"></script>
     <script src="assets/js/main.js"></script>
+      <script>
+      // Smooth scrolling and active navigation for page sections
+      (function() {
+        // Logo click - scroll to top
+        const logoLink = document.querySelector('.header__logo-2 a');
+        if (logoLink) {
+          logoLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+          });
+        }
+        
+        // Smooth scroll to sections
+        const navLinks = document.querySelectorAll('.main-menu-3 > li > a, .offcanvas__menu a');
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href && href.startsWith('#')) {
+            link.addEventListener('click', function(e) {
+              e.preventDefault();
+              const targetId = href.substring(1);
+              const targetSection = document.getElementById(targetId);
+              if (targetSection) {
+                const headerOffset = 100;
+                const elementPosition = targetSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth'
+                });
+                
+                // Close offcanvas if open
+                const offcanvas = document.querySelector('.offcanvas__area');
+                if (offcanvas && offcanvas.classList.contains('offcanvas-opened')) {
+                  document.getElementById('close_offcanvas').click();
+                }
+              }
+            });
+          }
+        });
+        
+        // Mark active navigation item based on scroll position
+        function updateActiveNav() {
+          const sections = ['about', 'services', 'benefits', 'process', 'industries', 'contact'];
+          const scrollPosition = window.pageYOffset + 150;
+          
+          sections.forEach(sectionId => {
+            const section = document.getElementById(sectionId);
+            if (section) {
+              const sectionTop = section.offsetTop;
+              const sectionHeight = section.offsetHeight;
+              const navLink = document.querySelector(`.main-menu-3 > li > a[href="#${sectionId}"], .offcanvas__menu a[href="#${sectionId}"]`);
+              
+              if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                // Remove active from all links
+                document.querySelectorAll('.main-menu-3 > li > a, .offcanvas__menu a').forEach(link => {
+                  link.classList.remove('active');
+                });
+                // Add active to current section link
+                if (navLink) {
+                  navLink.classList.add('active');
+                }
+              }
+            }
+          });
+          
+          // If at top of page, mark first section as active
+          if (window.pageYOffset < 200) {
+            document.querySelectorAll('.main-menu-3 > li > a, .offcanvas__menu a').forEach(link => {
+              link.classList.remove('active');
+            });
+            const firstLink = document.querySelector('.main-menu-3 > li:first-child > a, .offcanvas__menu li:first-child a');
+            if (firstLink) {
+              firstLink.classList.add('active');
+            }
+          }
+        }
+        
+        // Update on scroll
+        window.addEventListener('scroll', updateActiveNav);
+        // Update on page load
+        updateActiveNav();
+      })();
+    </script>
   </body>
 </html>
