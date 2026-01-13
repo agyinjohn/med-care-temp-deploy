@@ -1,1037 +1,1003 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Axtra HTML5 Template" />
 
-    <title>Products and Services - GTHINK Group</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Axtra HTML5 Template" />
 
-    <!-- Fav Icon -->
-    <link rel="icon" type="image/x-icon" href="assets/imgs/logo/favicon.png" />
+  <title>Products and Services - GTHINK Group</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Fav Icon -->
+  <link rel="icon" type="image/x-icon" href="assets/imgs/logo/favicon.png" />
 
-    <!-- All CSS files -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/all.min.css" />
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="assets/css/progressbar.css" />
-    <link rel="stylesheet" href="assets/css/meanmenu.min.css" />
-    <link rel="stylesheet" href="assets/css/master.css" />
-    <link rel="stylesheet" href="style.css" />
-    <style>
-      /* Navigation Menu - Keep all items on one line and centered */
-      .header__inner-3,
-      .header__inner-2 {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        position: relative;
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- All CSS files -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/progressbar.css" />
+  <link rel="stylesheet" href="assets/css/meanmenu.min.css" />
+  <link rel="stylesheet" href="assets/css/master.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Navigation Menu - Keep all items on one line and centered */
+    .header__inner-3,
+    .header__inner-2 {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      position: relative;
+    }
+
+    .header__nav-2 {
+      position: absolute !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      flex: 0 0 auto !important;
+      width: auto !important;
+      z-index: 10;
+      padding-left: 20px;
+    }
+
+    .main-menu-3,
+    .main-menu {
+      white-space: nowrap;
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      justify-content: center;
+      align-items: center;
+      margin: 0 !important;
+      padding: 0 !important;
+      gap: 5px;
+    }
+
+    .main-menu-3>li,
+    .main-menu>li {
+      padding: 0 25px !important;
+      margin: 0 !important;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .main-menu-3>li>a,
+    .main-menu>li>a {
+      font-size: 15px !important;
+      padding: 30px 0 25px 0 !important;
+      white-space: nowrap;
+      position: relative;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      color: #1a1a1a;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      display: block;
+    }
+
+    /* Active/Selected nav item underline */
+    .main-menu-3>li>a.active,
+    .main-menu>li>a.active {
+      color: #1e3a8a;
+      font-weight: 600;
+      padding-bottom: 25px !important;
+    }
+
+    .main-menu-3>li>a.active::before,
+    .main-menu>li>a.active::before {
+      content: '';
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: #1e3a8a;
+    }
+
+    .main-menu-3>li>a:hover,
+    .main-menu>li>a:hover {
+      color: #1e3a8a;
+      transform: translateY(-2px);
+    }
+
+    /* Better spacing and visual hierarchy */
+    .main-menu-3>li:not(:last-child)::after,
+    .main-menu>li:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 20px;
+      background: rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+
+    .main-menu-3>li.has-dropdown:not(:last-child)::after,
+    .main-menu>li.has-dropdown:not(:last-child)::after {
+      display: block;
+    }
+
+    /* Subsidiaries dropdown menu */
+    .main-menu-3>li.has-dropdown,
+    .main-menu>li.has-dropdown {
+      position: relative;
+    }
+
+    .main-menu-3>li.has-dropdown>a,
+    .main-menu>li.has-dropdown>a {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .main-menu-3>li.has-dropdown>a::after,
+    .main-menu>li.has-dropdown>a::after {
+      content: '\f107';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      font-size: 12px;
+      transition: transform 0.3s ease;
+      display: inline-block;
+      line-height: 1;
+      vertical-align: middle;
+    }
+
+    .main-menu-3>li.has-dropdown:hover>a::after,
+    .main-menu-3>li.has-dropdown.active>a::after,
+    .main-menu>li.has-dropdown:hover>a::after,
+    .main-menu>li.has-dropdown.active>a::after {
+      transform: rotate(180deg);
+    }
+
+    .subsidiaries-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffffff;
+      min-width: 250px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+      padding: 15px 0;
+      margin-top: 10px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      border: 1px solid rgba(30, 58, 138, 0.1);
+    }
+
+    .main-menu-3>li.has-dropdown:hover .subsidiaries-dropdown,
+    .main-menu-3>li.has-dropdown.active .subsidiaries-dropdown,
+    .main-menu>li.has-dropdown:hover .subsidiaries-dropdown,
+    .main-menu>li.has-dropdown.active .subsidiaries-dropdown {
+      opacity: 1;
+      visibility: visible;
+      margin-top: 5px;
+    }
+
+    .subsidiaries-dropdown li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .subsidiaries-dropdown li a {
+      display: block;
+      padding: 12px 25px;
+      color: #1a1a1a;
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      border-bottom: none !important;
+    }
+
+    .subsidiaries-dropdown li a:hover {
+      background: linear-gradient(90deg, rgba(30, 58, 138, 0.05) 0%, transparent 100%);
+      color: #1e3a8a;
+      padding-left: 30px;
+    }
+
+    .subsidiaries-dropdown li:last-child a {
+      border-bottom: none;
+    }
+
+    @media (min-width: 1200px) and (max-width: 1399px) {
+
+      .main-menu-3>li,
+      .main-menu>li {
+        padding: 0 20px !important;
       }
-      
-      .header__nav-2 {
-        position: absolute !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        flex: 0 0 auto !important;
-        width: auto !important;
-        z-index: 10;
-        padding-left: 20px;
+
+      .main-menu-3>li>a,
+      .main-menu>li>a {
+        font-size: 14px !important;
+        padding: 28px 0 !important;
       }
-      
-      .main-menu-3,
-      .main-menu {
-        white-space: nowrap;
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        justify-content: center;
-        align-items: center;
-        margin: 0 !important;
-        padding: 0 !important;
-        gap: 5px;
+    }
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+
+      .main-menu-3>li,
+      .main-menu>li {
+        padding: 0 18px !important;
       }
-      
-      .main-menu-3 > li,
-      .main-menu > li {
-        padding: 0 25px !important;
-        margin: 0 !important;
-        flex-shrink: 0;
-        position: relative;
+
+      .main-menu-3>li>a,
+      .main-menu>li>a {
+        font-size: 13px !important;
+        padding: 27px 0 !important;
       }
-      
-      .main-menu-3 > li > a,
-      .main-menu > li > a {
-        font-size: 15px !important;
-        padding: 30px 0 25px 0 !important;
-        white-space: nowrap;
-        position: relative;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        color: #1a1a1a;
-        font-weight: 500;
-        letter-spacing: 0.3px;
-        display: block;
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+
+      .main-menu-3>li,
+      .main-menu>li {
+        padding: 0 15px !important;
       }
-      
-      /* Active/Selected nav item underline */
-      .main-menu-3 > li > a.active,
-      .main-menu > li > a.active {
-        color: #1e3a8a;
-        font-weight: 600;
-        padding-bottom: 25px !important;
+
+      .main-menu-3>li>a,
+      .main-menu>li>a {
+        font-size: 12px !important;
+        padding: 25px 0 !important;
       }
-      
-      .main-menu-3 > li > a.active::before,
-      .main-menu > li > a.active::before {
-        content: '';
-        position: absolute;
-        bottom: 20px;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: #1e3a8a;
-      }
-      
-      .main-menu-3 > li > a:hover,
-      .main-menu > li > a:hover {
-        color: #1e3a8a;
-        transform: translateY(-2px);
-      }
-      
-      /* Better spacing and visual hierarchy */
-      .main-menu-3 > li:not(:last-child)::after,
-      .main-menu > li:not(:last-child)::after {
-        content: '';
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 1px;
-        height: 20px;
-        background: rgba(0, 0, 0, 0.1);
-        z-index: 1;
-      }
-      
-      .main-menu-3 > li.has-dropdown:not(:last-child)::after,
-      .main-menu > li.has-dropdown:not(:last-child)::after {
-        display: block;
-      }
-      
-      /* Subsidiaries dropdown menu */
-      .main-menu-3 > li.has-dropdown,
-      .main-menu > li.has-dropdown {
-        position: relative;
-      }
-      
-      .main-menu-3 > li.has-dropdown > a,
-      .main-menu > li.has-dropdown > a {
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-      }
-      
-      .main-menu-3 > li.has-dropdown > a::after,
-      .main-menu > li.has-dropdown > a::after {
-        content: '\f107';
-        font-family: 'Font Awesome 6 Free';
-        font-weight: 900;
-        font-size: 12px;
-        transition: transform 0.3s ease;
-        display: inline-block;
-        line-height: 1;
-        vertical-align: middle;
-      }
-      
-      .main-menu-3 > li.has-dropdown:hover > a::after,
-      .main-menu-3 > li.has-dropdown.active > a::after,
-      .main-menu > li.has-dropdown:hover > a::after,
-      .main-menu > li.has-dropdown.active > a::after {
-        transform: rotate(180deg);
-      }
-      
+    }
+
+    @media (max-width: 991px) {
       .subsidiaries-dropdown {
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #ffffff;
-        min-width: 250px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-        border-radius: 12px;
-        padding: 15px 0;
-        margin-top: 10px;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 1000;
-        border: 1px solid rgba(30, 58, 138, 0.1);
+        left: 0;
+        transform: translateX(0);
+        min-width: 200px;
       }
-      
-      .main-menu-3 > li.has-dropdown:hover .subsidiaries-dropdown,
-      .main-menu-3 > li.has-dropdown.active .subsidiaries-dropdown,
-      .main-menu > li.has-dropdown:hover .subsidiaries-dropdown,
-      .main-menu > li.has-dropdown.active .subsidiaries-dropdown {
+    }
+
+    @media (max-width: 767px) {
+
+      .main-menu-3>li.has-dropdown>a::after,
+      .main-menu>li.has-dropdown>a::after {
+        display: none;
+      }
+
+      .subsidiaries-dropdown {
+        position: static;
         opacity: 1;
         visibility: visible;
-        margin-top: 5px;
-      }
-      
-      .subsidiaries-dropdown li {
-        list-style: none;
-        margin: 0;
+        box-shadow: none;
+        border: none;
         padding: 0;
+        margin: 0;
+        background: transparent;
       }
-      
+
       .subsidiaries-dropdown li a {
-        display: block;
-        padding: 12px 25px;
-        color: #1a1a1a;
-        text-decoration: none;
-        font-size: 14px;
-        transition: all 0.3s ease;
-        border-bottom: none !important;
+        padding: 10px 15px;
+        font-size: 13px;
       }
-      
-      .subsidiaries-dropdown li a:hover {
-        background: linear-gradient(90deg, rgba(30, 58, 138, 0.05) 0%, transparent 100%);
-        color: #1e3a8a;
-        padding-left: 30px;
-      }
-      
-      .subsidiaries-dropdown li:last-child a {
-        border-bottom: none;
-      }
-      
-      @media (min-width: 1200px) and (max-width: 1399px) {
-        .main-menu-3 > li,
-        .main-menu > li {
-          padding: 0 20px !important;
-        }
-        
-        .main-menu-3 > li > a,
-        .main-menu > li > a {
-          font-size: 14px !important;
-          padding: 28px 0 !important;
-        }
-      }
-      
-      @media (min-width: 992px) and (max-width: 1199px) {
-        .main-menu-3 > li,
-        .main-menu > li {
-          padding: 0 18px !important;
-        }
-        
-        .main-menu-3 > li > a,
-        .main-menu > li > a {
-          font-size: 13px !important;
-          padding: 27px 0 !important;
-        }
-      }
-      
-      @media (min-width: 768px) and (max-width: 991px) {
-        .main-menu-3 > li,
-        .main-menu > li {
-          padding: 0 15px !important;
-        }
-        
-        .main-menu-3 > li > a,
-        .main-menu > li > a {
-          font-size: 12px !important;
-          padding: 25px 0 !important;
-        }
-      }
-      
-      @media (max-width: 991px) {
-        .subsidiaries-dropdown {
-          left: 0;
-          transform: translateX(0);
-          min-width: 200px;
-        }
-      }
-      
-      @media (max-width: 767px) {
-        .main-menu-3 > li.has-dropdown > a::after,
-        .main-menu > li.has-dropdown > a::after {
-          display: none;
-        }
-        
-        .subsidiaries-dropdown {
-          position: static;
-          opacity: 1;
-          visibility: visible;
-          box-shadow: none;
-          border: none;
-          padding: 0;
-          margin: 0;
-          background: transparent;
-        }
-        
-        .subsidiaries-dropdown li a {
-          padding: 10px 15px;
-          font-size: 13px;
-        }
-      }
-      
-      .header__logo-2 {
-        flex: 0 0 auto;
-      }
-      
-      .header__nav-icon-3,
-      .header__nav-icon-2 {
-        flex: 0 0 auto;
-        margin-left: auto;
-      }
-      
-      /* Color Scheme - Deep Blue/Navy Primary, Electric Green Accent */
-      :root {
-        --primary-color: #1e3a8a;
-        --accent-color: #00ff88;
-      }
-      
-      .sec-sub-title[style*="#c9f31d"],
-      .sec-sub-title[style*="color: #00ff88"] {
-        color: #00ff88 !important;
-      }
-      
-      .wc-btn-light:hover {
-        border-color: #00ff88 !important;
-      }
-      
-      .wc-btn-light:hover span {
-        background-color: #00ff88 !important;
-      }
-      
-      .wc-btn-black:hover {
-        border-color: #1e3a8a !important;
-      }
-      
-      .wc-btn-black:hover span {
-        background-color: #1e3a8a !important;
-      }
-      
-      a:hover {
-        color: #00ff88 !important;
-      }
-      
-      stroke[stroke="#1e3a8a"] {
-        stroke: #1e3a8a !important;
-      }
-      
-      rect[fill="#00ff88"] {
-        fill: #00ff88 !important;
-      }
-      
-      /* Clean Professional Design for Products & Services Page */
-      .service__item-3 {
-        transition: all 0.3s ease;
-      }
-      
-      .service__item-3:hover {
-        transform: translateY(-5px);
-      }
-      
-      @media (max-width: 991px) {
-        .hero__area-3 .sec-title {
-          font-size: 60px !important;
-        }
-      }
-    </style>
-  </head>
+    }
 
-  <body>
-    <!-- Cursor Animation -->
-    <div class="cursor1"></div>
-    <div class="cursor2"></div>
+    .header__logo-2 {
+      flex: 0 0 auto;
+    }
 
-    <!-- Preloader -->
-    <div class="preloader">
-      <div class="loading">
-        <div class="bar bar1"></div>
-        <div class="bar bar2"></div>
-        <div class="bar bar3"></div>
-        <div class="bar bar4"></div>
-        <div class="bar bar5"></div>
-        <div class="bar bar6"></div>
-        <div class="bar bar7"></div>
-        <div class="bar bar8"></div>
-      </div>
+    .header__nav-icon-3,
+    .header__nav-icon-2 {
+      flex: 0 0 auto;
+      margin-left: auto;
+    }
+
+    /* Color Scheme - Deep Blue/Navy Primary, Electric Green Accent */
+    :root {
+      --primary-color: #1e3a8a;
+      --accent-color: #00ff88;
+    }
+
+    .sec-sub-title[style*="#c9f31d"],
+    .sec-sub-title[style*="color: #00ff88"] {
+      color: #00ff88 !important;
+    }
+
+    .wc-btn-light:hover {
+      border-color: #00ff88 !important;
+    }
+
+    .wc-btn-light:hover span {
+      background-color: #00ff88 !important;
+    }
+
+    .wc-btn-black:hover {
+      border-color: #1e3a8a !important;
+    }
+
+    .wc-btn-black:hover span {
+      background-color: #1e3a8a !important;
+    }
+
+    a:hover {
+      color: #00ff88 !important;
+    }
+
+    stroke[stroke="#1e3a8a"] {
+      stroke: #1e3a8a !important;
+    }
+
+    rect[fill="#00ff88"] {
+      fill: #00ff88 !important;
+    }
+
+    /* Clean Professional Design for Products & Services Page */
+    .service__item-3 {
+      transition: all 0.3s ease;
+    }
+
+    .service__item-3:hover {
+      transform: translateY(-5px);
+    }
+
+    @media (max-width: 991px) {
+      .hero__area-3 .sec-title {
+        font-size: 60px !important;
+      }
+    }
+
+    /* ============================================
+         COMPREHENSIVE RESPONSIVE STYLES
+         ============================================ */
+
+    @media (max-width: 767px) {
+
+      .navigation__logo-title,
+      .header__logo-2 img {
+        height: 80px !important;
+        max-height: 100px !important;
+      }
+
+      .header__nav-2 {
+        display: none !important;
+      }
+
+      .hero__area-3 {
+        padding: 60px 0 40px !important;
+      }
+
+      .hero__area-3 .sec-title {
+        font-size: 32px !important;
+      }
+
+      .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+      }
+
+      .pt-130,
+      .pt-140,
+      .pt-150 {
+        padding-top: 50px !important;
+      }
+
+      .pb-110,
+      .pb-120,
+      .pb-130,
+      .pb-140,
+      .pb-150 {
+        padding-bottom: 50px !important;
+      }
+
+      .btn_wrapper {
+        width: 100% !important;
+      }
+
+      img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .navigation__logo-title {
+        height: 60px !important;
+        max-height: 80px !important;
+      }
+
+      .hero__area-3 .sec-title {
+        font-size: 24px !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Cursor Animation -->
+  <div class="cursor1"></div>
+  <div class="cursor2"></div>
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loading">
+      <div class="bar bar1"></div>
+      <div class="bar bar2"></div>
+      <div class="bar bar3"></div>
+      <div class="bar bar4"></div>
+      <div class="bar bar5"></div>
+      <div class="bar bar6"></div>
+      <div class="bar bar7"></div>
+      <div class="bar bar8"></div>
+    </div>
+  </div>
+
+  <!-- Switcher Area Start -->
+  <div class="switcher__area">
+    <div class="switcher__icon">
+      <button id="switcher_open"><i class="fa-solid fa-gear"></i></button>
+      <button id="switcher_close"><i class="fa-solid fa-xmark"></i></button>
     </div>
 
-    <!-- Switcher Area Start -->
-    <div class="switcher__area">
-      <div class="switcher__icon">
-        <button id="switcher_open"><i class="fa-solid fa-gear"></i></button>
-        <button id="switcher_close"><i class="fa-solid fa-xmark"></i></button>
+    <div class="switcher__items">
+      <div class="switcher__item">
+        <div class="switch__title-wrap">
+          <h2 class="switcher__title">Cursor</h2>
+        </div>
+        <div class="switcher__btn">
+          <select name="cursor-style" id="cursor_style">
+            <option value="1">default</option>
+            <option selected value="2">animated</option>
+          </select>
+        </div>
       </div>
 
-      <div class="switcher__items">
-        <div class="switcher__item">
-          <div class="switch__title-wrap">
-            <h2 class="switcher__title">Cursor</h2>
-          </div>
-          <div class="switcher__btn">
-            <select name="cursor-style" id="cursor_style">
-              <option value="1">default</option>
-              <option selected value="2">animated</option>
-            </select>
-          </div>
+      <div class="switcher__item">
+        <div class="switch__title-wrap">
+          <h2 class="switcher__title">mode</h2>
         </div>
-
-        <div class="switcher__item">
-          <div class="switch__title-wrap">
-            <h2 class="switcher__title">mode</h2>
-          </div>
-          <div class="switcher__btn mode-type wc-col-2">
-            <button class="active" data-mode="light">light</button>
-            <button data-mode="dark">dark</button>
-          </div>
+        <div class="switcher__btn mode-type wc-col-2">
+          <button class="active" data-mode="light">light</button>
+          <button data-mode="dark">dark</button>
         </div>
+      </div>
 
-        <div class="switcher__item">
-          <div class="switch__title-wrap">
-            <h2 class="switcher__title">Language Support</h2>
-          </div>
-          <div class="switcher__btn lang_dir wc-col-2">
-            <button class="active" data-mode="ltr">AR</button>
-            <button data-mode="rtl">EN</button>
-          </div>
+      <div class="switcher__item">
+        <div class="switch__title-wrap">
+          <h2 class="switcher__title">Language Support</h2>
+        </div>
+        <div class="switcher__btn lang_dir wc-col-2">
+          <button class="active" data-mode="ltr">AR</button>
+          <button data-mode="rtl">EN</button>
         </div>
       </div>
     </div>
-    <!-- Switcher Area End -->
+  </div>
+  <!-- Switcher Area End -->
 
-    <!-- Scroll Smoother -->
-    <div class="has-smooth" id="has_smooth"></div>
+  <!-- Scroll Smoother -->
+  <div class="has-smooth" id="has_smooth"></div>
 
-    <!-- Go Top Button -->
-    <button id="scroll_top" class="scroll-top">
-      <i class="fa-solid fa-arrow-up"></i>
-    </button>
+  <!-- Go Top Button -->
+  <button id="scroll_top" class="scroll-top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
-    <!-- Header area start -->
-    <div class="experience"></div>
-    <header class="header__area-3">
-      <div class="header__inner-3">
-        <div class="header__logo-2">
-          <div class="navigation__logo">
-            <div class="navigation__logo-logomark">
-              <svg
-                width="28"
-                height="28"
-                viewBox="0 0 28 28"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="28" height="28" rx="6" fill="#00ff88" />
-                <path
-                  d="M13.0788 5.18059C13.4229 4.36611 14.5771 4.36611 14.9212 5.18059L17.1088 10.3591C17.2101 10.599 17.401 10.7899 17.6409 10.8912L22.8194 13.0788C23.6339 13.4229 23.6339 14.5771 22.8194 14.9212L17.6409 17.1088C17.401 17.2101 17.2101 17.401 17.1088 17.6409L14.9212 22.8194C14.5771 23.6339 13.4229 23.6339 13.0788 22.8194L10.8912 17.6409C10.7899 17.401 10.599 17.2101 10.3591 17.1088L5.18059 14.9212C4.36611 14.5771 4.36611 13.4229 5.18059 13.0788L10.3591 10.8912C10.599 10.7899 10.7899 10.599 10.8912 10.3591L13.0788 5.18059Z"
-                  fill="black"
-                />
-              </svg>
-              <svg
-                width="28"
-                height="28"
-                viewBox="0 0 28 28"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="0.5"
-                  y="0.5"
-                  width="27"
-                  height="27"
-                  rx="5.5"
-                  stroke="#1e3a8a"
-                  stroke-linejoin="round"
-                  stroke-dasharray="2 2"
-                />
-              </svg>
-            </div>
-            <img src="assets/imgs/logo/glogo.png" alt="GTHINK GROUP" class="navigation__logo-title" style="height: 140px; max-height: 200px; width: auto;" />
+  <!-- Header area start -->
+  <div class="experience"></div>
+  <header class="header__area-3">
+    <div class="header__inner-3">
+      <div class="header__logo-2">
+        <div class="navigation__logo">
+          <div class="navigation__logo-logomark">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="28" height="28" rx="6" fill="#00ff88" />
+              <path
+                d="M13.0788 5.18059C13.4229 4.36611 14.5771 4.36611 14.9212 5.18059L17.1088 10.3591C17.2101 10.599 17.401 10.7899 17.6409 10.8912L22.8194 13.0788C23.6339 13.4229 23.6339 14.5771 22.8194 14.9212L17.6409 17.1088C17.401 17.2101 17.2101 17.401 17.1088 17.6409L14.9212 22.8194C14.5771 23.6339 13.4229 23.6339 13.0788 22.8194L10.8912 17.6409C10.7899 17.401 10.599 17.2101 10.3591 17.1088L5.18059 14.9212C4.36611 14.5771 4.36611 13.4229 5.18059 13.0788L10.3591 10.8912C10.599 10.7899 10.7899 10.599 10.8912 10.3591L13.0788 5.18059Z"
+                fill="black" />
+            </svg>
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.5" y="0.5" width="27" height="27" rx="5.5" stroke="#1e3a8a" stroke-linejoin="round"
+                stroke-dasharray="2 2" />
+            </svg>
           </div>
-          <!--
+          <img src="assets/imgs/logo/glogo.png" alt="GTHINK GROUP" class="navigation__logo-title"
+            style="height: 140px; max-height: 200px; width: auto;" />
+        </div>
+        <!--
                 <a href="index.html" class="logo-dark"><img src="assets/imgs/logo/logo-blac.png" alt="Site Logo" height="50px" width="210px"></a>
                 <a href="index.html" class="logo-light"><img src="assets/imgs/logo/site-logo-white-.png" alt="Site Logo" height="50px" width="220px"></a>
                 -->
+      </div>
+      <div class="header__nav-2" style="padding-left: 20px;">
+        <ul class="main-menu-3 menu-anim">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT US</a></li>
+          <li class="has-dropdown">
+            <a href="#">SUBSIDIARY COMPANIES</a>
+            <ul class="subsidiaries-dropdown">
+              <li><a href="gthink-company.html">GTHINK Company</a></li>
+              <li><a href="grogate-company.html">GROGATE Company</a></li>
+              <li><a href="ulip-gthink.html">ULIP GTHINK</a></li>
+              <li><a href="subsidiaries.html"
+                  style="border-top: 1px solid rgba(0,0,0,0.1); margin-top: 5px; padding-top: 15px;">View All</a></li>
+            </ul>
+          </li>
+          <li><a href="industry-sector.html">INDUSTRIES AND SECTORS</a></li>
+          <li><a href="team.html">TEAM</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+      <div class="header__nav-icon-3">
+        <button class="search-icon" id="search_icon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <button class="search-icon" id="search_close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <button id="open_offcanvas">
+          <img src="assets/imgs/icon/menu-black.png" alt="Menubar Icon" />
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="header__search">
+    <form action="#">
+      <input type="text" name="s" id="s" placeholder="Search.." />
+    </form>
+  </div>
+  <!-- Header area end -->
+
+  <!-- Offcanvas area start -->
+  <div class="offcanvas__area">
+    <div class="offcanvas__body">
+      <div class="offcanvas__left">
+        <div class="offcanvas__logo">
+          <div class="navigation__logo">
+            <div class="navigation__logo-logomark">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="28" height="28" rx="6" fill="#00ff88" />
+                <path
+                  d="M13.0788 5.18059C13.4229 4.36611 14.5771 4.36611 14.9212 5.18059L17.1088 10.3591C17.2101 10.599 17.401 10.7899 17.6409 10.8912L22.8194 13.0788C23.6339 13.4229 23.6339 14.5771 22.8194 14.9212L17.6409 17.1088C17.401 17.2101 17.2101 17.401 17.1088 17.6409L14.9212 22.8194C14.5771 23.6339 13.4229 23.6339 13.0788 22.8194L10.8912 17.6409C10.7899 17.401 10.599 17.2101 10.3591 17.1088L5.18059 14.9212C4.36611 14.5771 4.36611 13.4229 5.18059 13.0788L10.3591 10.8912C10.599 10.7899 10.7899 10.599 10.8912 10.3591L13.0788 5.18059Z"
+                  fill="black" />
+              </svg>
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="27" height="27" rx="5.5" stroke="#1e3a8a" stroke-linejoin="round"
+                  stroke-dasharray="2 2" />
+              </svg>
+            </div>
+            <img src="assets/imgs/logo/glogo.png" alt="GTHINK GROUP" class="navigation__logo-title"
+              style="height: 140px; max-height: 200px; width: auto;" />
+          </div>
         </div>
-                <div class="header__nav-2" style="padding-left: 20px;">
-          <ul class="main-menu-3 menu-anim">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT US</a></li>
-            <li class="has-dropdown">
-              <a href="#">SUBSIDIARIES</a>
-              <ul class="subsidiaries-dropdown">
-                <li><a href="gthink-company.html">GTHINK Company</a></li>
-                <li><a href="grogate-company.html">GROGATE Company</a></li>
-                <li><a href="ulip-gthink.html">ULIP GTHINK</a></li>
-                <li><a href="subsidiaries.html" style="border-top: 1px solid rgba(0,0,0,0.1); margin-top: 5px; padding-top: 15px;">View All</a></li>
-              </ul>
-            </li>
-            <li><a href="industry-sector.html">INDUSTRY AND SECTOR</a></li>
-            <li><a href="team.html">TEAM</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
+        <div class="offcanvas__social">
+          <h3 class="social-title">Follow Us</h3>
+          <ul>
+            <li><a href="#">Dribbble</a></li>
+            <li><a href="#">Behance</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">YouTube</a></li>
           </ul>
         </div>
-        <div class="header__nav-icon-3">
-          <button class="search-icon" id="search_icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-          <button class="search-icon" id="search_close">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-          <button id="open_offcanvas">
-            <img src="assets/imgs/icon/menu-black.png" alt="Menubar Icon" />
-          </button>
+        <div class="offcanvas__links">
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">contact</a></li>
+            <li><a href="service.html">service</a></li>
+            <li><a href="ifteam.html">Team</a></li>
+          </ul>
         </div>
       </div>
-    </header>
-    <div class="header__search">
-      <form action="#">
-        <input type="text" name="s" id="s" placeholder="Search.." />
-      </form>
-    </div>
-    <!-- Header area end -->
-
-    <!-- Offcanvas area start -->
-    <div class="offcanvas__area">
-      <div class="offcanvas__body">
-        <div class="offcanvas__left">
-          <div class="offcanvas__logo">
-            <div class="navigation__logo">
-              <div class="navigation__logo-logomark">
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 28 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect width="28" height="28" rx="6" fill="#00ff88" />
-                  <path
-                    d="M13.0788 5.18059C13.4229 4.36611 14.5771 4.36611 14.9212 5.18059L17.1088 10.3591C17.2101 10.599 17.401 10.7899 17.6409 10.8912L22.8194 13.0788C23.6339 13.4229 23.6339 14.5771 22.8194 14.9212L17.6409 17.1088C17.401 17.2101 17.2101 17.401 17.1088 17.6409L14.9212 22.8194C14.5771 23.6339 13.4229 23.6339 13.0788 22.8194L10.8912 17.6409C10.7899 17.401 10.599 17.2101 10.3591 17.1088L5.18059 14.9212C4.36611 14.5771 4.36611 13.4229 5.18059 13.0788L10.3591 10.8912C10.599 10.7899 10.7899 10.599 10.8912 10.3591L13.0788 5.18059Z"
-                    fill="black"
-                  />
-                </svg>
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 28 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="0.5"
-                    y="0.5"
-                    width="27"
-                    height="27"
-                    rx="5.5"
-                    stroke="#1e3a8a"
-                    stroke-linejoin="round"
-                    stroke-dasharray="2 2"
-                  />
-                </svg>
-              </div>
-              <img src="assets/imgs/logo/glogo.png" alt="GTHINK GROUP" class="navigation__logo-title" style="height: 140px; max-height: 200px; width: auto;" />
-            </div>
-          </div>
-          <div class="offcanvas__social">
-            <h3 class="social-title">Follow Us</h3>
-            <ul>
-              <li><a href="#">Dribbble</a></li>
-              <li><a href="#">Behance</a></li>
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">YouTube</a></li>
+      <div class="offcanvas__mid">
+        <div class="offcanvas__menu-wrapper">
+          <nav class="offcanvas__menu">
+            <ul class="menu-anim">
+              <li>
+                <a href="index.html">home</a>
+              </li>
+              <li>
+                <a href="about.html">about us</a>
+              </li>
+              <li>
+                <a href="subsidiaries.html">subsidiary companies</a>
+              </li>
+              <li>
+                <a href="industry-sector.html">industries and sectors</a>
+              </li>
+              <li>
+                <a href="team.html">team</a>
+              </li>
+              <li>
+                <a href="contact.html">contact</a>
+              </li>
             </ul>
-          </div>
-          <div class="offcanvas__links">
-            <ul>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">contact</a></li>
-              <li><a href="service.html">service</a></li>
-              <li><a href="ifteam.html">Team</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="offcanvas__mid">
-          <div class="offcanvas__menu-wrapper">
-            <nav class="offcanvas__menu">
-              <ul class="menu-anim">
-                <li>
-                  <a href="index.html">home</a>
-                </li>
-                <li>
-                  <a href="about.html">about us</a>
-                </li>
-                <li>
-                  <a href="subsidiaries.html">subsidiaries</a>
-                </li>
-                <li>
-                  <a href="industry-sector.html">industry and sector</a>
-                </li>
-                <li>
-                  <a href="team.html">team</a>
-                </li>
-                <li>
-                  <a href="contact.html">contact</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <div class="offcanvas__right">
-          <div class="offcanvas__search">
-            <form action="#">
-              <input type="text" name="search" placeholder="Search keyword" />
-              <button><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-          </div>
-          <div class="offcanvas__contact">
-            <h3>Get in touch</h3>
-            <ul>
-              <li><a href="tel:02094980547">+(20) - 100 000 000</a></li>
-              <li><a href="info@gthinkgroup.com"> info@gthinkgroup.com</a></li>
-              <li>Egypt , Kafr el-Sheikh 94301</li>
-            </ul>
-          </div>
-          <img src="assets/imgs/shape/11.png" alt="shape" class="shape-1" />
-          <img src="assets/imgs/shape/12.png" alt="shape" class="shape-2" />
-        </div>
-        <div class="offcanvas__close">
-          <button type="button" id="close_offcanvas">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
+          </nav>
         </div>
       </div>
+      <div class="offcanvas__right">
+        <div class="offcanvas__search">
+          <form action="#">
+            <input type="text" name="search" placeholder="Search keyword" />
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+        <div class="offcanvas__contact">
+          <h3>Get in touch</h3>
+          <ul>
+            <li><a href="tel:02094980547">+(20) - 100 000 000</a></li>
+            <li><a href="info@gthinkgroup.com"> info@gthinkgroup.com</a></li>
+            <li>Egypt , Kafr el-Sheikh 94301</li>
+          </ul>
+        </div>
+        <img src="assets/imgs/shape/11.png" alt="shape" class="shape-1" />
+        <img src="assets/imgs/shape/12.png" alt="shape" class="shape-2" />
+      </div>
+      <div class="offcanvas__close">
+        <button type="button" id="close_offcanvas">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
     </div>
-    <!-- Offcanvas area end -->
+  </div>
+  <!-- Offcanvas area end -->
 
-    <div id="smooth-wrapper">
-      <div id="smooth-content">
-        <main>
-          <!-- Hero area start -->
-          <section class="hero__area-3">
-            <div class="container">
-              <div class="row">
-                <div class="col-xxl-12">
-                  <div class="hero__inner-3">
-                    <div class="sec-title-wrapper">
-                      <h2 class="sec-sub-title" style="color: #00ff88">
-                        Products & Services
-                      </h2>
-                      <h3 class="sec-title title-left" style="  font-size: 180px;">Products</h3>
-                      <h3 class="sec-title title-right" style=" font-size: 180px;">Services</h3>
-                    </div>
-                    <div class="hero__text-3">
-                      <p class="hero__text-animation">
-                        GTHINK Group offers a comprehensive portfolio of products and services across technology, construction, 
-                        logistics, and business consulting. Explore our offerings and discover how we can help transform your business 
-                        operations and drive sustainable growth.
-                      </p>
-                    </div>
-
-                    <div class="scroll-down">
-                      <span>
-                        <button>
-                          <img
-                            src="assets/imgs/icon/arrow-down-sm.png"
-                            alt="arrow icon"
-                          />
-                        </button>
-                      </span>
-                    </div>
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <main>
+        <!-- Hero area start -->
+        <section class="hero__area-3">
+          <div class="container">
+            <div class="row">
+              <div class="col-xxl-12">
+                <div class="hero__inner-3">
+                  <div class="sec-title-wrapper">
+                    <h2 class="sec-sub-title" style="color: #00ff88">
+                      Products & Services
+                    </h2>
+                    <h3 class="sec-title title-left" style="  font-size: 180px;">Products</h3>
+                    <h3 class="sec-title title-right" style=" font-size: 180px;">Services</h3>
                   </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="hero3-img-ani">
-              <img
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop"
-                alt="Products and Services"
-                class="hero3-img"
-                style="max-height: 500px; object-fit: cover; width: 100%; padding-top: 100px;"
-              />
-            </div>
-          </section>
-
-
-          <!-- Solutions List area start -->
-          <section class="service__area-3 pb-150">
-            <div class="container">
-              <div class="row">
-                <div class="col-xxl-12">
-                  <div class="sec-title-wrapper pt-130 text-anim">
-                    <h2 class="sec-sub-title title-anim">Products & Services</h2>
-                    <h3 class="sec-title title-anim">
-                      Our Complete <br />
-                      Offerings
-                    </h3>
-                    <p>
-                      GTHINK Group provides a comprehensive range of products and services through our subsidiaries. 
-                      From technology solutions and software products to construction services, logistics operations, 
-                      and business consulting, we deliver value across all aspects of your business.
+                  <div class="hero__text-3">
+                    <p class="hero__text-animation">
+                      GTHINK Group offers a comprehensive portfolio of products and services across technology,
+                      construction,
+                      logistics, and business consulting. Explore our offerings and discover how we can help transform
+                      your business
+                      operations and drive sustainable growth.
                     </p>
                   </div>
+
+                  <div class="scroll-down">
+                    <span>
+                      <button>
+                        <img src="assets/imgs/icon/arrow-down-sm.png" alt="arrow icon" />
+                      </button>
+                    </span>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
 
-              <div class="row">
-                <div class="col-xx-12">
-                  <div class="service__list-3">
-                    <div class="service__item-3 service_animation">
-                      <h3>
-                        <a href="gthink-company.html" class="service__title-3"
-                          >Technology <br />Solutions</a
-                        >
-                      </h3>
-                      <div class="service__content-3">
-                        <p>
-                          Digital transformation, software development, cloud infrastructure, and telecommunications 
-                          solutions that modernize your business operations and drive innovation.
-                        </p>
-                        <ul class="">
-                          <li>+ Digital Transformation</li>
-                          <li>+ Software Development</li>
-                          <li>+ Cloud Infrastructure</li>
-                        </ul>
-                      </div>
-                      <div class="service__btn-3">
-                        <div class="btn_wrapper">
-                          <a
-                            href="gthink-company.html"
-                            class="wc-btn-black btn-hover btn-item"
-                            ><span></span> Learn More
-                            <i class="fa-solid fa-arrow-right"></i
-                          ></a>
-                        </div>
-                      </div>
+          <div class="hero3-img-ani">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop"
+              alt="Products and Services" class="hero3-img"
+              style="max-height: 500px; object-fit: cover; width: 100%; padding-top: 100px;" />
+          </div>
+        </section>
 
-                      <div
-                        class="service__hover-3"
-                        style="
+
+        <!-- Solutions List area start -->
+        <section class="service__area-3 pb-150">
+          <div class="container">
+            <div class="row">
+              <div class="col-xxl-12">
+                <div class="sec-title-wrapper pt-130 text-anim">
+                  <h2 class="sec-sub-title title-anim">Products & Services</h2>
+                  <h3 class="sec-title title-anim">
+                    Our Complete <br />
+                    Offerings
+                  </h3>
+                  <p>
+                    GTHINK Group provides a comprehensive range of products and services through our subsidiaries.
+                    From technology solutions and software products to construction services, logistics operations,
+                    and business consulting, we deliver value across all aspects of your business.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xx-12">
+                <div class="service__list-3">
+                  <div class="service__item-3 service_animation">
+                    <h3>
+                      <a href="gthink-company.html" class="service__title-3">Technology <br />Solutions</a>
+                    </h3>
+                    <div class="service__content-3">
+                      <p>
+                        Digital transformation, software development, cloud infrastructure, and telecommunications
+                        solutions that modernize your business operations and drive innovation.
+                      </p>
+                      <ul class="">
+                        <li>+ Digital Transformation</li>
+                        <li>+ Software Development</li>
+                        <li>+ Cloud Infrastructure</li>
+                      </ul>
+                    </div>
+                    <div class="service__btn-3">
+                      <div class="btn_wrapper">
+                        <a href="gthink-company.html" class="wc-btn-black btn-hover btn-item"><span></span> Learn More
+                          <i class="fa-solid fa-arrow-right"></i></a>
+                      </div>
+                    </div>
+
+                    <div class="service__hover-3" style="
                           background-image: url(https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop);
-                        "
-                      ></div>
+                        "></div>
+                  </div>
+
+                  <div class="service__item-3 service_animation">
+                    <h3>
+                      <a href="grogate-company.html" class="service__title-3">Construction <br />Solutions</a>
+                    </h3>
+                    <div class="service__content-3">
+                      <p>
+                        Complete construction and infrastructure solutions including project management,
+                        facility development, and maintenance services for commercial and residential projects.
+                      </p>
+                      <ul class="">
+                        <li>+ Project Management</li>
+                        <li>+ Infrastructure Development</li>
+                        <li>+ Facility Services</li>
+                      </ul>
+                    </div>
+                    <div class="service__btn-3">
+                      <div class="btn_wrapper">
+                        <a href="grogate-company.html" class="wc-btn-black btn-hover btn-item"><span></span> Learn More
+                          <i class="fa-solid fa-arrow-right"></i></a>
+                      </div>
                     </div>
 
-                    <div class="service__item-3 service_animation">
-                      <h3>
-                        <a href="grogate-company.html" class="service__title-3"
-                          >Construction <br />Solutions</a
-                        >
-                      </h3>
-                      <div class="service__content-3">
-                        <p>
-                          Complete construction and infrastructure solutions including project management, 
-                          facility development, and maintenance services for commercial and residential projects.
-                        </p>
-                        <ul class="">
-                          <li>+ Project Management</li>
-                          <li>+ Infrastructure Development</li>
-                          <li>+ Facility Services</li>
-                        </ul>
-                      </div>
-                      <div class="service__btn-3">
-                        <div class="btn_wrapper">
-                          <a
-                            href="grogate-company.html"
-                            class="wc-btn-black btn-hover btn-item"
-                            ><span></span> Learn More
-                            <i class="fa-solid fa-arrow-right"></i
-                          ></a>
-                        </div>
-                      </div>
-
-                      <div
-                        class="service__hover-3"
-                        style="
+                    <div class="service__hover-3" style="
                           background-image: url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop);
-                        "
-                      ></div>
+                        "></div>
+                  </div>
+
+                  <div class="service__item-3 service_animation">
+                    <h3 class="">
+                      <a href="grogate-company.html" class="service__title-3">Logistics <br />Solutions</a>
+                    </h3>
+                    <div class="service__content-3">
+                      <p>
+                        End-to-end logistics and supply chain solutions that optimize operations, reduce costs,
+                        and ensure efficient delivery of goods and services across markets.
+                      </p>
+                      <ul class="">
+                        <li>+ Supply Chain Management</li>
+                        <li>+ Logistics Optimization</li>
+                        <li>+ Distribution Services</li>
+                      </ul>
+                    </div>
+                    <div class="service__btn-3">
+                      <div class="btn_wrapper">
+                        <a href="grogate-company.html" class="wc-btn-black btn-hover btn-item"><span></span> Learn More
+                          <i class="fa-solid fa-arrow-right"></i></a>
+                      </div>
                     </div>
 
-                    <div class="service__item-3 service_animation">
-                      <h3 class="">
-                        <a href="grogate-company.html" class="service__title-3"
-                          >Logistics <br />Solutions</a
-                        >
-                      </h3>
-                      <div class="service__content-3">
-                        <p>
-                          End-to-end logistics and supply chain solutions that optimize operations, reduce costs, 
-                          and ensure efficient delivery of goods and services across markets.
-                        </p>
-                        <ul class="">
-                          <li>+ Supply Chain Management</li>
-                          <li>+ Logistics Optimization</li>
-                          <li>+ Distribution Services</li>
-                        </ul>
-                      </div>
-                      <div class="service__btn-3">
-                        <div class="btn_wrapper">
-                          <a
-                            href="grogate-company.html"
-                            class="wc-btn-black btn-hover btn-item"
-                            ><span></span> Learn More
-                            <i class="fa-solid fa-arrow-right"></i
-                          ></a>
-                        </div>
-                      </div>
-
-                      <div
-                        class="service__hover-3"
-                        style="
+                    <div class="service__hover-3" style="
                           background-image: url(https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600&h=400&fit=crop);
-                        "
-                      ></div>
+                        "></div>
+                  </div>
+
+                  <div class="service__item-3 service_animation">
+                    <h3 class="">
+                      <a href="ulip-gthink.html" class="service__title-3">Business <br />Consulting</a>
+                    </h3>
+                    <div class="service__content-3">
+                      <p>
+                        Strategic business consulting and trading services that help you expand into new markets,
+                        optimize operations, and build strategic partnerships for sustainable growth.
+                      </p>
+                      <ul class="">
+                        <li>+ Strategic Consulting</li>
+                        <li>+ Market Expansion</li>
+                        <li>+ Partnership Development</li>
+                      </ul>
+                    </div>
+                    <div class="service__btn-3">
+                      <div class="btn_wrapper">
+                        <a href="ulip-gthink.html" class="wc-btn-black btn-hover btn-item"><span></span> Learn More
+                          <i class="fa-solid fa-arrow-right"></i></a>
+                      </div>
                     </div>
 
-                    <div class="service__item-3 service_animation">
-                      <h3 class="">
-                        <a href="ulip-gthink.html" class="service__title-3"
-                          >Business <br />Consulting</a
-                        >
-                      </h3>
-                      <div class="service__content-3">
-                        <p>
-                          Strategic business consulting and trading services that help you expand into new markets, 
-                          optimize operations, and build strategic partnerships for sustainable growth.
-                        </p>
-                        <ul class="">
-                          <li>+ Strategic Consulting</li>
-                          <li>+ Market Expansion</li>
-                          <li>+ Partnership Development</li>
-                        </ul>
-                      </div>
-                      <div class="service__btn-3">
-                        <div class="btn_wrapper">
-                          <a
-                            href="ulip-gthink.html"
-                            class="wc-btn-black btn-hover btn-item"
-                            ><span></span> Learn More
-                            <i class="fa-solid fa-arrow-right"></i
-                          ></a>
-                        </div>
-                      </div>
-
-                      <div
-                        class="service__hover-3"
-                        style="
+                    <div class="service__hover-3" style="
                           background-image: url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop);
-                        "
-                      ></div>
-                    </div>
+                        "></div>
+                  </div>
 
-                    <div class="service3__img-wrap">
-                      <div class="service3__img"></div>
-                    </div>
+                  <div class="service3__img-wrap">
+                    <div class="service3__img"></div>
                   </div>
                 </div>
               </div>
             </div>
-          </section>
-          <!-- Products and Services area end -->
+          </div>
+        </section>
+        <!-- Products and Services area end -->
 
 
 
-              <!-- CTA area start -->
-          <section class="cta__area-3">
-                <div class="container pt-150 pb-150">
-                  <div class="row">
-                    <div class="col-xxl-12">
-                      <div class="cta__content-3">
-                        <p class="cta__sub-title-2">
-                      Ready to explore our products and services?
-                        </p>
-                        <h2 class="cta__title-2">
-                      Let's discuss your business needs!
-                        </h2>
-                        <div class="btn_wrapper">
-                          <a
-                            href="contact.html"
-                            class="wc-btn-black btn-hover btn-item"
-                        ><span></span>Contact <br />Us
-                            <i class="fa-solid fa-arrow-right"></i
-                          ></a>
-                        </div>
-                      </div>
-                    </div>
+        <!-- CTA area start -->
+        <section class="cta__area-3">
+          <div class="container pt-150 pb-150">
+            <div class="row">
+              <div class="col-xxl-12">
+                <div class="cta__content-3">
+                  <p class="cta__sub-title-2">
+                    Ready to explore our products and services?
+                  </p>
+                  <h2 class="cta__title-2">
+                    Let's discuss your business needs!
+                  </h2>
+                  <div class="btn_wrapper">
+                    <a href="contact.html" class="wc-btn-black btn-hover btn-item"><span></span>Contact <br />Us
+                      <i class="fa-solid fa-arrow-right"></i></a>
                   </div>
-            </div>
-          </section>
-          <!-- CTA area end -->
-        </main>
-
-        <!-- Footer area start -->
-        <footer class="footer__area-3">
-          <div class="footer__top-3">
-            <div class="footer__top-wrapper-3">
-              <div class="footer__logo-3 pt-120">
-                <div class="navigation__logo">
-                  <div class="navigation__logo-logomark">
-                    <svg
-                      width="28"
-                      height="28"
-                      viewBox="0 0 28 28"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect width="28" height="28" rx="6" fill="#00ff88" />
-                      <path
-                        d="M13.0788 5.18059C13.4229 4.36611 14.5771 4.36611 14.9212 5.18059L17.1088 10.3591C17.2101 10.599 17.401 10.7899 17.6409 10.8912L22.8194 13.0788C23.6339 13.4229 23.6339 14.5771 22.8194 14.9212L17.6409 17.1088C17.401 17.2101 17.2101 17.401 17.1088 17.6409L14.9212 22.8194C14.5771 23.6339 13.4229 23.6339 13.0788 22.8194L10.8912 17.6409C10.7899 17.401 10.599 17.2101 10.3591 17.1088L5.18059 14.9212C4.36611 14.5771 4.36611 13.4229 5.18059 13.0788L10.3591 10.8912C10.599 10.7899 10.7899 10.599 10.8912 10.3591L13.0788 5.18059Z"
-                        fill="black"
-                      />
-                    </svg>
-                    <svg
-                      width="28"
-                      height="28"
-                      viewBox="0 0 28 28"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        x="0.5"
-                        y="0.5"
-                        width="27"
-                        height="27"
-                        rx="5.5"
-                        stroke="#1e3a8a"
-                        stroke-linejoin="round"
-                        stroke-dasharray="2 2"
-                      />
-                    </svg>
-                  </div>
-                  <img src="assets/imgs/logo/glogo.png" alt="GTHINK GROUP" class="navigation__logo-title" style="height: 140px; max-height: 200px; width: auto;" />
                 </div>
-                <br />
-                <br />
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- CTA area end -->
+      </main>
 
-                <!--
+      <!-- Footer area start -->
+      <footer class="footer__area-3">
+        <div class="footer__top-3">
+          <div class="footer__top-wrapper-3">
+            <div class="footer__logo-3 pt-120">
+              <div class="navigation__logo">
+                <div class="navigation__logo-logomark">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="28" height="28" rx="6" fill="#00ff88" />
+                    <path
+                      d="M13.0788 5.18059C13.4229 4.36611 14.5771 4.36611 14.9212 5.18059L17.1088 10.3591C17.2101 10.599 17.401 10.7899 17.6409 10.8912L22.8194 13.0788C23.6339 13.4229 23.6339 14.5771 22.8194 14.9212L17.6409 17.1088C17.401 17.2101 17.2101 17.401 17.1088 17.6409L14.9212 22.8194C14.5771 23.6339 13.4229 23.6339 13.0788 22.8194L10.8912 17.6409C10.7899 17.401 10.599 17.2101 10.3591 17.1088L5.18059 14.9212C4.36611 14.5771 4.36611 13.4229 5.18059 13.0788L10.3591 10.8912C10.599 10.7899 10.7899 10.599 10.8912 10.3591L13.0788 5.18059Z"
+                      fill="black" />
+                  </svg>
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.5" y="0.5" width="27" height="27" rx="5.5" stroke="#1e3a8a" stroke-linejoin="round"
+                      stroke-dasharray="2 2" />
+                  </svg>
+                </div>
+                <img src="assets/imgs/logo/glogo.png" alt="GTHINK GROUP" class="navigation__logo-title"
+                  style="height: 140px; max-height: 200px; width: auto;" />
+              </div>
+              <br />
+              <br />
+
+              <!--
                             <img src="assets/imgs/logo/site-logo-white-2.png" alt="Footer Logo" height="50px" width="220px">
                             -->
-                <p>
-                  You are now in the process of transforming your business with
-                  cutting-edge technology solutions from GTHINK Group.
-                </p>
-              </div>
-              <div class="footer__social-3">
-                <ul>
-                  <li><a href="#">facebook</a></li>
-                  <li><a href="#">Twitter</a></li>
-                  <li><a href="#">Linkedin</a></li>
-                  <li><a href="#">Instagram</a></li>
-                </ul>
-              </div>
-              <div class="footer__contact-3">
-                <a class="end" href="contact.html">Let’s talk</a>
-              </div>
+              <p>
+                You are now in the process of transforming your business with
+                cutting-edge technology solutions from GTHINK Group.
+              </p>
+            </div>
+            <div class="footer__social-3">
+              <ul>
+                <li><a href="#">facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Linkedin</a></li>
+                <li><a href="#">Instagram</a></li>
+              </ul>
+            </div>
+            <div class="footer__contact-3">
+              <a class="end" href="contact.html">Let’s talk</a>
             </div>
           </div>
+        </div>
 
-          <div class="footer__btm-3">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-xxl-4 col-xl-4 col-lg-4">
-                  <div class="footer__copyright-3">
-                    <p>
-                      © 2024 - 2025 | Alrights reserved by
-                      <a href="#" target="_blank">GTHINK Group</a>
-                    </p>
-                  </div>
+        <div class="footer__btm-3">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xxl-4 col-xl-4 col-lg-4">
+                <div class="footer__copyright-3">
+                  <p>
+                    © 2024 - 2025 | Alrights reserved by
+                    <a href="#" target="_blank">GTHINK Group</a>
+                  </p>
                 </div>
-                <div class="col-xxl-8 col-xl-8 col-lg-8">
-                  <div class="footer__nav-2">
-                    <ul class="footer-menu-2 menu-anim">
-                      <li><a href="about.html">about us</a></li>
-                      <li><a href="contact.html">contact</a></li>
-                      <li><a href="team.html">Team</a></li>
-                      <li><a href="subsidiaries.html">Subsidiaries</a></li>
-                    </ul>
-                  </div>
+              </div>
+              <div class="col-xxl-8 col-xl-8 col-lg-8">
+                <div class="footer__nav-2">
+                  <ul class="footer-menu-2 menu-anim">
+                    <li><a href="about.html">about us</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="subsidiaries.html">Subsidiaries</a></li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
-        </footer>
-        <!-- Footer area end -->
-      </div>
+        </div>
+      </footer>
+      <!-- Footer area end -->
     </div>
+  </div>
 
-    <!-- All JS files -->
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="assets/js/counter.js"></script>
-    <script src="assets/js/gsap.min.js"></script>
-    <script src="assets/js/ScrollTrigger.min.js"></script>
-    <script src="assets/js/ScrollToPlugin.min.js"></script>
-    <script src="assets/js/ScrollSmoother.min.js"></script>
-    <script src="assets/js/SplitText.min.js"></script>
-    <script src="assets/js/chroma.min.js"></script>
-    <script src="assets/js/mixitup.min.js"></script>
-    <script src="assets/js/vanilla-tilt.js"></script>
-    <script src="assets/js/jquery.meanmenu.min.js"></script>
-    <script src="assets/js/main.js"></script>
-      <script>
-      // Mark active navigation item
-      (function() {
-        const currentPath = window.location.pathname;
-        const currentPage = currentPath.split('/').pop() || 'index.html';
-        
-        const navLinks = document.querySelectorAll('.main-menu-3 > li > a, .main-menu > li > a');
-        navLinks.forEach(link => {
-          const linkPath = link.getAttribute('href');
-          if (linkPath === currentPage || 
-              (currentPage === '' && linkPath === 'index.html') ||
-              (currentPage.includes('gthink-company') && linkPath === 'gthink-company.html') ||
-              (currentPage.includes('grogate-company') && linkPath === 'grogate-company.html') ||
-              (currentPage.includes('ulip-gthink') && linkPath === 'ulip-gthink.html')) {
-            link.classList.add('active');
+  <!-- All JS files -->
+  <script src="assets/js/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/swiper-bundle.min.js"></script>
+  <script src="assets/js/counter.js"></script>
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/ScrollTrigger.min.js"></script>
+  <script src="assets/js/ScrollToPlugin.min.js"></script>
+  <script src="assets/js/ScrollSmoother.min.js"></script>
+  <script src="assets/js/SplitText.min.js"></script>
+  <script src="assets/js/chroma.min.js"></script>
+  <script src="assets/js/mixitup.min.js"></script>
+  <script src="assets/js/vanilla-tilt.js"></script>
+  <script src="assets/js/jquery.meanmenu.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Mark active navigation item
+    (function () {
+      const currentPath = window.location.pathname;
+      const currentPage = currentPath.split('/').pop() || 'index.html';
+
+      const navLinks = document.querySelectorAll('.main-menu-3 > li > a, .main-menu > li > a');
+      navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href');
+        if (linkPath === currentPage ||
+          (currentPage === '' && linkPath === 'index.html') ||
+          (currentPage.includes('gthink-company') && linkPath === 'gthink-company.html') ||
+          (currentPage.includes('grogate-company') && linkPath === 'grogate-company.html') ||
+          (currentPage.includes('ulip-gthink') && linkPath === 'ulip-gthink.html')) {
+          link.classList.add('active');
+        }
+      });
+
+      // Also mark subsidiaries dropdown as active if on any subsidiary page
+      if (currentPage.includes('gthink-company') ||
+        currentPage.includes('grogate-company') ||
+        currentPage.includes('ulip-gthink') ||
+        currentPage.includes('subsidiaries.html')) {
+        const subsidiariesLink = document.querySelector('.main-menu-3 > li.has-dropdown > a, .main-menu > li.has-dropdown > a');
+        if (subsidiariesLink) {
+          subsidiariesLink.classList.add('active');
+          const dropdownParent = document.querySelector('.main-menu-3 > li.has-dropdown, .main-menu > li.has-dropdown');
+          if (dropdownParent) {
+            dropdownParent.classList.add('active');
           }
-        });
-        
-        // Also mark subsidiaries dropdown as active if on any subsidiary page
-        if (currentPage.includes('gthink-company') || 
-            currentPage.includes('grogate-company') || 
-            currentPage.includes('ulip-gthink') ||
-            currentPage.includes('subsidiaries.html')) {
-          const subsidiariesLink = document.querySelector('.main-menu-3 > li.has-dropdown > a, .main-menu > li.has-dropdown > a');
-          if (subsidiariesLink) {
-            subsidiariesLink.classList.add('active');
-            const dropdownParent = document.querySelector('.main-menu-3 > li.has-dropdown, .main-menu > li.has-dropdown');
-            if (dropdownParent) {
-              dropdownParent.classList.add('active');
+        }
+      }
+
+      // Mobile dropdown toggle on click
+      const subsidiariesDropdown = document.querySelector('.main-menu-3 > li.has-dropdown, .main-menu > li.has-dropdown');
+      if (subsidiariesDropdown) {
+        const dropdownLink = subsidiariesDropdown.querySelector('> a');
+        const dropdown = subsidiariesDropdown.querySelector('.subsidiaries-dropdown');
+
+        if (dropdownLink && dropdown) {
+          dropdownLink.addEventListener('click', function (e) {
+            if (window.innerWidth <= 991) {
+              e.preventDefault();
+              subsidiariesDropdown.classList.toggle('active');
             }
-          }
+          });
         }
-        
-        // Mobile dropdown toggle on click
-        const subsidiariesDropdown = document.querySelector('.main-menu-3 > li.has-dropdown, .main-menu > li.has-dropdown');
-        if (subsidiariesDropdown) {
-          const dropdownLink = subsidiariesDropdown.querySelector('> a');
-          const dropdown = subsidiariesDropdown.querySelector('.subsidiaries-dropdown');
-          
-          if (dropdownLink && dropdown) {
-            dropdownLink.addEventListener('click', function(e) {
-              if (window.innerWidth <= 991) {
-                e.preventDefault();
-                subsidiariesDropdown.classList.toggle('active');
-              }
-            });
-          }
-        }
-      })();
-    </script>
-  </body>
+      }
+    })();
+  </script>
+</body>
+
 </html>

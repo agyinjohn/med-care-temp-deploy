@@ -64,3 +64,8 @@ Feel free to fork the repository and submit pull requests for any improvements o
 ---
 
 
+<!-- Industry 
+Technology
+Construction
+Logistics and Supply
+General and business service -->
