@@ -630,12 +630,40 @@
         <div class="offcanvas__menu-wrapper">
           <nav class="offcanvas__menu">
             <ul class="menu-anim">
-              <li><a href="index.html">home</a></li>
-              <li><a href="about.html">about us</a></li>
-              <li><a href="subsidiaries.html">subsidiary companies</a></li>
-              <li><a href="industry-sector.html">industries and sectors</a></li>
-              <li><a href="team.html">team</a></li>
-              <li><a href="contact.html">contact</a></li>
+              <li>
+                <a href="index.html">home</a>
+              </li>
+              <li>
+                <a href="about.html">about us</a>
+              </li>
+              <li class="has-dropdown" id="subsidiaries-dropdown-item">
+                <a href="javascript:void(0);" class="dropdown-toggle"
+                  onclick="toggleSubsidiariesDropdown(event); return false;">subsidiary companies
+                  <i class="fa-solid fa-plus dropdown-icon"
+                    onclick="event.stopPropagation(); toggleSubsidiariesDropdown(event); return false;"
+                    style="cursor: pointer; pointer-events: auto;"></i>
+                  <i class="fa-solid fa-minus dropdown-icon"
+                    style="display: none; cursor: pointer; pointer-events: auto;"
+                    onclick="event.stopPropagation(); toggleSubsidiariesDropdown(event); return false;"></i>
+                </a>
+                <ul class="subsidiaries-dropdown-offcanvas" id="subsidiaries-dropdown-list">
+                  <li><a href="gthink-company.html">GTHINK Company</a></li>
+                  <li><a href="grogate-company.html">GROGATE Company</a></li>
+                  <li><a href="ulip-gthink.html">ULIP GTHINK</a></li>
+                  <li><a href="subsidiaries.html"
+                      style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 5px; padding-top: 15px;">View
+                      All</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="industry-sector.html">industries and sectors</a>
+              </li>
+              <li>
+                <a href="team.html">team</a>
+              </li>
+              <li>
+                <a href="contact.html">contact</a>
+              </li>
             </ul>
           </nav>
         </div>

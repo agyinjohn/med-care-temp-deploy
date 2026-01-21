@@ -4399,7 +4399,8 @@
             // handle clicks on the link itself for mobile generated menus
             if (toggleLink) {
                 const parentLi = toggleLink.closest('li.has-dropdown');
-                if (parentLi && window.innerWidth <= 991) {
+                if (parentLi) {
+                    // Toggle on click for all screen sizes (keeps hover intact)
                     e.preventDefault();
                     e.stopPropagation();
                     toggleDropdownForLi(parentLi);

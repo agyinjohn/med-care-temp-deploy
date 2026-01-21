@@ -84,7 +84,7 @@
     /* Active/Selected nav item underline */
     .main-menu-3>li>a.active,
     .main-menu>li>a.active {
-      color: #1e3a8a;
+      color: var(--primary-color) !important;
       font-weight: 600;
       padding-bottom: 25px !important;
     }
@@ -102,7 +102,7 @@
 
     .main-menu-3>li>a:hover,
     .main-menu>li>a:hover {
-      color: #1e3a8a;
+      color: var(--primary-color) !important;
       transform: translateY(-2px);
     }
 
@@ -355,43 +355,72 @@
       margin-left: auto;
     }
 
-    /* Color Scheme - Deep Blue/Navy Primary, Electric Green Accent */
+    /* Color Scheme - Deep Blue/Navy Primary, Electric Green Accent, neutrals */
     :root {
-      --primary-color: #1e3a8a;
+      --primary-color: #0f2b5e;
+      /* deep navy */
       --accent-color: #00ff88;
+      /* electric green */
+      --accent-gold: #F9D371;
+      /* optional gold */
+      --neutral-00: #ffffff;
+      --neutral-01: #f6f7fb;
+      --muted-color: #666666;
     }
 
-    .sec-sub-title[style*="#c9f31d"],
-    .sec-sub-title[style*="color: #00ff88"] {
-      color: #00ff88 !important;
+    /* Replace specific hard-coded color uses with variables for the team section */
+    .team__member-name {
+      color: var(--primary-color) !important;
     }
 
-    .wc-btn-light:hover {
-      border-color: #00ff88 !important;
+    .team__member-role {
+      color: var(--accent-color) !important;
     }
 
-    .wc-btn-light:hover span {
-      background-color: #00ff88 !important;
+    /* decorative large number neutral color — keep subtle on white backgrounds */
+    .team__member-number {
+      color: rgba(15, 43, 94, 0.06) !important;
+      /* subtle tint of primary to keep contrast */
     }
 
-    .wc-btn-black:hover {
-      border-color: #1e3a8a !important;
+    /* Hover states use the accent color */
+    .team__member-artistic:hover .team__member-number {
+      color: var(--accent-color) !important;
     }
 
-    .wc-btn-black:hover span {
-      background-color: #1e3a8a !important;
+    .team__member-artistic:hover .team__member-name {
+      color: var(--accent-color) !important;
     }
 
-    a:hover {
-      color: #00ff88 !important;
+    /* Social icon neutral background and primary-colored icon */
+    .team__member-social a {
+      background: var(--neutral-01) !important;
+      color: var(--primary-color) !important;
+      border-color: transparent !important;
     }
 
-    stroke[stroke="#1e3a8a"] {
-      stroke: #1e3a8a !important;
+    .team__member-social a:hover {
+      background: var(--accent-color) !important;
+      color: var(--primary-color) !important;
+      border-color: var(--primary-color) !important;
+      transform: translateY(-5px) scale(1.05) !important;
     }
 
-    rect[fill="#00ff88"] {
-      fill: #00ff88 !important;
+    /* Hero accent adjustments referencing variables */
+    .hero__area-3 .sec-sub-title {
+      color: var(--accent-color) !important;
+    }
+
+    /* Subsidiary badge if present on team entries */
+    .subsidiary-badge {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%) !important;
+      color: var(--neutral-00) !important;
+    }
+
+    /* Muted text */
+    .team__member-bio,
+    .team__member-bio p {
+      color: var(--muted-color) !important;
     }
 
     /* Rounded Team Member Images */
@@ -460,7 +489,6 @@
       font-size: 120px;
       font-weight: 800;
       line-height: 1;
-      color: #f0f4ff;
       position: absolute;
       top: -20px;
       left: -10px;
@@ -477,7 +505,6 @@
     .team__member-name {
       font-size: 42px;
       font-weight: 700;
-      color: #1e3a8a;
       margin-bottom: 12px;
       line-height: 1.2;
       position: relative;
@@ -487,7 +514,6 @@
 
     .team__member-role {
       font-size: 18px;
-      color: #00ff88;
       font-weight: 600;
       margin-bottom: 20px;
       text-transform: uppercase;
@@ -498,7 +524,6 @@
 
     .team__member-bio {
       font-size: 16px;
-      color: #666;
       line-height: 1.7;
       margin-bottom: 30px;
       max-width: 90%;
@@ -525,13 +550,10 @@
       min-width: 45px !important;
       min-height: 45px !important;
       border-radius: 50%;
-      background: #f0f4ff !important;
       display: flex !important;
       flex-direction: row !important;
       align-items: center !important;
       justify-content: center !important;
-      color: #1e3a8a !important;
-      transition: all 0.3s ease;
       text-decoration: none !important;
       font-size: 16px;
       border: 2px solid transparent;
@@ -547,7 +569,6 @@
       visibility: visible !important;
       opacity: 1 !important;
       font-size: 16px !important;
-      color: inherit !important;
       line-height: 1 !important;
     }
 
@@ -576,19 +597,7 @@
       opacity: 1;
     }
 
-    .team__member-artistic:hover .team__member-number {
-      color: #00ff88;
-      transform: scale(1.1);
-    }
-
-    .team__member-artistic:hover .team__member-name {
-      color: #00ff88;
-    }
-
     .team__member-social a:hover {
-      background: #00ff88;
-      color: #1e3a8a;
-      border-color: #1e3a8a;
       transform: translateY(-5px) scale(1.1);
     }
 
@@ -723,7 +732,6 @@
         display: block !important;
         font-size: 12px !important;
         margin-bottom: 10px !important;
-        color: #00ff88 !important;
         text-transform: uppercase;
         letter-spacing: 1px;
         font-weight: 600;
@@ -735,7 +743,6 @@
         display: block !important;
         font-size: 32px !important;
         font-weight: 700 !important;
-        color: #1a1a1a !important;
         line-height: 1.2 !important;
         margin: 10px 0 15px 0 !important;
       }
@@ -753,7 +760,6 @@
       .hero__area-3 .hero__text-3 p {
         font-size: 14px !important;
         line-height: 1.6 !important;
-        color: #555 !important;
         margin: 0 !important;
       }
 
@@ -1086,8 +1092,24 @@
               <li>
                 <a href="about.html">about us</a>
               </li>
-              <li>
-                <a href="subsidiaries.html">subsidiary companies</a>
+              <li class="has-dropdown" id="subsidiaries-dropdown-item">
+                <a href="javascript:void(0);" class="dropdown-toggle"
+                  onclick="toggleSubsidiariesDropdown(event); return false;">subsidiary companies
+                  <i class="fa-solid fa-plus dropdown-icon"
+                    onclick="event.stopPropagation(); toggleSubsidiariesDropdown(event); return false;"
+                    style="cursor: pointer; pointer-events: auto;"></i>
+                  <i class="fa-solid fa-minus dropdown-icon"
+                    style="display: none; cursor: pointer; pointer-events: auto;"
+                    onclick="event.stopPropagation(); toggleSubsidiariesDropdown(event); return false;"></i>
+                </a>
+                <ul class="subsidiaries-dropdown-offcanvas" id="subsidiaries-dropdown-list">
+                  <li><a href="gthink-company.html">GTHINK Company</a></li>
+                  <li><a href="grogate-company.html">GROGATE Company</a></li>
+                  <li><a href="ulip-gthink.html">ULIP GTHINK</a></li>
+                  <li><a href="subsidiaries.html"
+                      style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 5px; padding-top: 15px;">View
+                      All</a></li>
+                </ul>
               </li>
               <li>
                 <a href="industry-sector.html">industries and sectors</a>
@@ -1140,7 +1162,7 @@
               <div class="col-xxl-12">
                 <div class="hero__inner-3">
                   <div class="sec-title-wrapper">
-                    <h2 class="sec-sub-title" style="color: #00ff88">
+                    <h2 class="sec-sub-title" style="color: var(--accent-color)">
                       Our Team
                     </h2>
                     <h3 class="sec-title title-left" style=" font-size: 200px;">Leadership</h3>
@@ -1245,7 +1267,7 @@
             <div class="row">
               <div class="col-xxl-12">
                 <div class="sec-title-wrapper pt-130 text-anim">
-                  <h2 class="sec-sub-title title-anim" style="color: #00ff88;">Our Team</h2>
+                  <h2 class="sec-sub-title title-anim" style="color: var(--accent-color);">Our Team</h2>
                   <h3 class="sec-title title-anim">
                     Meet Our <br />
                     Leadership Team
@@ -1838,14 +1860,11 @@
                 <div class="navigation__logo-logomark">
                   <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="28" height="28" rx="6" fill="#00ff88" />
-                    <path
-                      d="M13.0788 5.18059C13.4229 4.36611 14.5771 4.36611 14.9212 5.18059L17.1088 10.3591C17.2101 10.599 17.401 10.7899 17.6409 10.8912L22.8194 13.0788C23.6339 13.4229 23.6339 14.5771 22.8194 14.9212L17.6409 17.1088C17.401 17.2101 17.2101 17.401 17.1088 17.6409L14.9212 22.8194C14.5771 23.6339 13.4229 23.6339 13.0788 22.8194L10.8912 17.6409C10.7899 17.401 10.599 17.2101 10.3591 17.1088L5.18059 14.9212C4.36611 14.5771 4.36611 13.4229 5.18059 13.0788L10.3591 10.8912C10.599 10.7899 10.7899 10.599 10.8912 10.3591L13.0788 5.18059Z"
-                      fill="black" />
-                  </svg>
-                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0.5" y="0.5" width="27" height="27" rx="5.5" stroke="#1e3a8a" stroke-linejoin="round"
-                      stroke-dasharray="2 2" />
-                  </svg>
+                    <path </svg>
+                      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" y="0.5" width="27" height="27" rx="5.5" stroke="#1e3a8a" stroke-linejoin="round"
+                          stroke-dasharray="2 2" />
+                      </svg>
                 </div>
                 <img src="assets/imgs/logo/glogo.png" alt="GTHINK GROUP" class="navigation__logo-title"
                   style="height: 140px; max-height: 200px; width: auto;" />

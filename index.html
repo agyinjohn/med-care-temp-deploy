@@ -1883,6 +1883,101 @@
         max-height: 200px !important;
       }
     }
+
+    /* Industry / Sector Sidebar (shared component) */
+    .industry-sidebar {
+      position: fixed;
+      right: 30px;
+      top: 140px;
+      width: 300px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      padding: 20px;
+      z-index: 1500;
+      transition: transform .25s ease, opacity .25s ease;
+    }
+
+    .industry-sidebar .sidebar-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary-color, #1e3a8a);
+      margin-bottom: 12px;
+    }
+
+    .industry-sidebar .industry-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 18px 0;
+      max-height: 360px;
+      overflow: auto;
+    }
+
+    .industry-sidebar .industry-list li {
+      margin-bottom: 8px;
+    }
+
+    .industry-sidebar .industry-list li a {
+      color: #222;
+      text-decoration: none;
+      display: block;
+      padding: 8px 10px;
+      border-radius: 6px;
+      transition: background .15s ease, color .15s ease;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .industry-sidebar .industry-list li a:hover {
+      background: rgba(30, 58, 138, 0.06);
+      color: var(--primary-color, #1e3a8a);
+      padding-left: 14px;
+    }
+
+    .industry-sidebar .sidebar-contact {
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      padding-top: 14px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .industry-sidebar .sidebar-contact p {
+      margin: 0 0 10px 0;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .industry-sidebar .sidebar-contact .btn {
+      display: inline-block;
+      padding: 8px 14px;
+      background: linear-gradient(135deg, #1e3a8a 0%, #00ff88 100%);
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 6px 18px rgba(30, 58, 138, 0.18);
+    }
+
+    /* Keep sidebar inside container on very wide screens */
+    @media (min-width: 1400px) {
+      .industry-sidebar {
+        right: calc((100vw - 1200px)/2 - 30px);
+      }
+    }
+
+    /* Hide on smaller devices */
+    @media (max-width: 991px) {
+      .industry-sidebar {
+        display: none !important;
+      }
+    }
+
+    /* Small style tweak for ultra small screens */
+    @media (max-width: 575px) {
+      .industry-sidebar {
+        display: none !important;
+      }
+    }
   </style>
 </head>
 
@@ -1980,7 +2075,7 @@
             <ul class="subsidiaries-dropdown">
               <li><a href="gthink-company.html">GTHINK Company</a></li>
               <li><a href="grogate-company.html">GROGATE Company</a></li>
-              <li><a href="ulip-gthink.html">ULIP GTHINK</a></li>
+              <li><a href="ulip-gthink.html">ULIP GTHINK</li>
               <li><a href="subsidiaries.html"
                   style="border-top: 1px solid rgba(0,0,0,0.1); margin-top: 5px; padding-top: 15px;">View All</a></li>
             </ul>
@@ -2838,6 +2933,28 @@
           </div>
         </section>
         <!-- Blog area end -->
+
+        <!-- Insert shared sidebar for desktop -->
+        <!-- <aside class="industry-sidebar" aria-label="Industries & Sectors">
+          <div class="sidebar-title">Industries & Sectors</div>
+          <ul class="industry-list">
+            <li><a href="industry-sector.html#technology">Technology</a></li>
+            <li><a href="industry-sector.html#construction">Construction</a></li>
+            <li><a href="industry-sector.html#logistics">Logistics</a></li>
+            <li><a href="industry-sector.html#business-consulting">Business Consulting</a></li>
+            <li><a href="industry-sector.html#energy">Energy</a></li>
+            <li><a href="industry-sector.html#healthcare">Healthcare</a></li>
+            <li><a href="industry-sector.html#finance">Finance</a></li>
+            <li><a href="industry-sector.html#retail">Retail</a></li>
+            <li><a href="industry-sector.html#manufacturing">Manufacturing</a></li>
+          </ul>
+
+          <div class="sidebar-contact">
+            <p>Want to explore partnerships or projects in any sector?</p>
+            <a href="contact.html" class="btn">Let's Talk</a>
+          </div>
+        </aside> -->
+
       </main>
 
       <!-- Footer area start -->
@@ -2968,14 +3085,11 @@
       const subsidiariesDropdown = document.querySelector('.main-menu-3 > li.has-dropdown');
       if (subsidiariesDropdown) {
         const dropdownLink = subsidiariesDropdown.querySelector('a');
-        const dropdown = subsidiariesDropdown.querySelector('.subsidiaries-dropdown');
-
-        if (dropdownLink && dropdown) {
+        if (dropdownLink) {
+          // Toggle dropdown on click for all screen sizes (prevents navigation when href is "#")
           dropdownLink.addEventListener('click', function (e) {
-            if (window.innerWidth <= 991) {
-              e.preventDefault();
-              subsidiariesDropdown.classList.toggle('active');
-            }
+            e.preventDefault();
+            subsidiariesDropdown.classList.toggle('active');
           });
         }
       }
