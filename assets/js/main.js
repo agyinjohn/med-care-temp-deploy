@@ -4355,7 +4355,58 @@
         }, 500); // Wait for meanmenu to initialize
     });
 
-    /////////////////////////////////////////////////////
+    // New delegated handler: support meanmenu/offcanvas generated markup (mobile) for + / - and toggle links
+    (function () {
+        function toggleDropdownForLi(li) {
+            if (!li) return;
+            const submenu = li.querySelector('ul, .subsidiaries-dropdown-offcanvas, .subsidiaries-dropdown');
+            const plus = li.querySelector('.fa-plus');
+            const minus = li.querySelector('.fa-minus');
+
+            if (li.classList.contains('active')) {
+                li.classList.remove('active');
+                if (submenu) {
+                    submenu.style.cssText = 'max-height: 0 !important; height: 0 !important; padding: 0 !important; opacity: 0 !important; visibility: hidden !important; display: none !important;';
+                }
+                if (plus) plus.style.display = 'inline-block';
+                if (minus) minus.style.display = 'none';
+            } else {
+                li.classList.add('active');
+                if (submenu) {
+                    submenu.style.cssText = 'max-height: 500px !important; height: auto !important; padding: 10px 0 10px 20px !important; opacity: 1 !important; visibility: visible !important; display: block !important;';
+                }
+                if (plus) plus.style.display = 'none';
+                if (minus) minus.style.display = 'inline-block';
+            }
+        }
+
+        // Delegate clicks for mobile menu icons / toggles
+        document.addEventListener('click', function (e) {
+            const el = e.target;
+
+            // clicked on plus/minus icon or the dropdown toggle link or their children
+            const iconClicked = el.closest('.dropdown-icon, .fa-plus, .fa-minus');
+            const toggleLink = el.closest('a.dropdown-toggle') || el.closest('a') && el.closest('li.has-dropdown') && el.closest('li.has-dropdown').querySelector('a');
+
+            if (iconClicked) {
+                e.preventDefault();
+                e.stopPropagation();
+                const li = iconClicked.closest('li.has-dropdown');
+                toggleDropdownForLi(li);
+                return;
+            }
+
+            // handle clicks on the link itself for mobile generated menus
+            if (toggleLink) {
+                const parentLi = toggleLink.closest('li.has-dropdown');
+                if (parentLi && window.innerWidth <= 991) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    toggleDropdownForLi(parentLi);
+                }
+            }
+        }, { passive: false });
+    })();
 
 })(jQuery);
 
